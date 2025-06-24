@@ -8,10 +8,21 @@
 import UIKit
 
 class MelonGrabCell: UICollectionViewCell {
+    
+    
+    @IBOutlet weak var toeDrag: UIImageView!
+    
 
+    @IBOutlet weak var coreShot: UILabel!
+    
+    
+    @IBOutlet weak var thermoFit: UILabel!
+    
+    @IBOutlet weak var buckle: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        toeDrag.zipperLine(lwgber: 18)
     }
 
 }

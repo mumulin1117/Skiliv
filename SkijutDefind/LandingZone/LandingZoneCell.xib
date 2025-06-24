@@ -43,8 +43,8 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOK-kr-Ply">
-                        <rect key="frame" x="259" y="34" width="30" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOK-kr-Ply">
+                        <rect key="frame" x="254" y="28.666666666666671" width="30" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="CWz-An-CZA"/>
                             <constraint firstAttribute="height" constant="15" id="aJx-dR-nLD"/>
@@ -114,6 +114,13 @@
                 <constraint firstItem="03n-fM-21n" firstAttribute="centerY" secondItem="JEx-4h-hkw" secondAttribute="centerY" id="yzv-xN-SZx"/>
             </constraints>
             <size key="customSize" width="460" height="244"/>
+            <connections>
+                <outlet property="baseGrind" destination="03n-fM-21n" id="YBc-b2-Vez"/>
+                <outlet property="bootPack" destination="cOK-kr-Ply" id="6uo-co-kLx"/>
+                <outlet property="chalet" destination="lkS-6e-zBN" id="hpQ-Yg-Ipb"/>
+                <outlet property="lodge" destination="zf7-qR-bo9" id="65T-C0-jfz"/>
+                <outlet property="stompPad" destination="Ehh-eX-pOd" id="Ced-f3-hiZ"/>
+            </connections>
             <point key="canvasLocation" x="158.77862595419847" y="55.633802816901408"/>
         </collectionViewCell>
     </objects>

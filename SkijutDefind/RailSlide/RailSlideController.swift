@@ -7,23 +7,45 @@
 
 import UIKit
 
-class RailSlideController: UIViewController {
-
+class RailSlideController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    private var sideBevel = Array<Dictionary<String,Any>>()
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        sideBevel.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let RailSlideCell = tableView.dequeueReusableCell(withIdentifier: "RailSlideCell", for: indexPath) as! RailSlideCell
+        return RailSlideCell
+    }
+    
+    @IBOutlet weak var userceneter: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        persistentSlab.backgroundColor = .clear
+        persistentSlab.showsVerticalScrollIndicator = false
+        persistentSlab.delegate = self
+        persistentSlab.dataSource = self
+        persistentSlab.register(UINib.init(nibName: "RailSlideCell", bundle: nil), forCellReuseIdentifier: "RailSlideCell")
+        persistentSlab.rowHeight = 120
+        persistentSlab.separatorStyle = .singleLine
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBOutlet weak var persistentSlab: UITableView!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        flexPattern()
     }
-    */
-
+    
+    func flexPattern()  {
+        
+    }
 }

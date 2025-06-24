@@ -9,9 +9,13 @@ import UIKit
 
 class TiemiusierCell: UICollectionViewCell {
 
+    @IBOutlet weak var heelDrag: UIImageView!
+    
+    @IBOutlet weak var duckStance: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        heelDrag.zipperLine(lwgber: 27)
     }
 
 }

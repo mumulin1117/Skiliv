@@ -28,7 +28,7 @@
                             <constraint firstAttribute="width" constant="50" id="rG6-nJ-dXW"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsV-vY-meL">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsV-vY-meL">
                         <rect key="frame" x="296" y="3" width="50" height="22"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.35727572278911562" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
@@ -75,6 +75,13 @@
                 <constraint firstAttribute="bottom" secondItem="T3T-dR-8FS" secondAttribute="bottom" constant="7" id="uGH-lg-JsB"/>
             </constraints>
             <size key="customSize" width="349" height="231"/>
+            <connections>
+                <outlet property="blueIce" destination="nce-9U-7v6" id="uGX-We-HDI"/>
+                <outlet property="breakableCrust" destination="BAZ-um-tx2" id="3DP-4F-1CY"/>
+                <outlet property="crud" destination="SsV-vY-meL" id="xdf-sT-gU2"/>
+                <outlet property="deathCookies" destination="u7M-bp-p8w" id="A2T-3s-bhQ"/>
+                <outlet property="snowSnake" destination="T3T-dR-8FS" id="Lu0-ji-G87"/>
+            </connections>
             <point key="canvasLocation" x="312.21374045801525" y="84.154929577464799"/>
         </collectionViewCell>
     </objects>

@@ -61,6 +61,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="beacon" selectedImage="beacon1" id="hrV-gc-pu7"/>
+                    <connections>
+                        <outlet property="persistentSlab" destination="D31-uZ-Sbz" id="E61-5c-Ngg"/>
+                        <outlet property="userceneter" destination="hd8-Kx-7pu" id="Ym0-eG-Dah"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voH-EW-pqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,9 +134,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Cancel" backgroundImage="carving">
+                                <state key="normal" title="Sign in" backgroundImage="carving">
                                     <color key="titleColor" systemColor="viewFlipsideBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="highbackSignIN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WzK-sw-U2y"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLv-Tp-VCI">
                                 <rect key="frame" x="22" y="749" width="26" height="27"/>
@@ -154,6 +161,9 @@
                                 <state key="normal" title="Terms of Service">
                                     <color key="titleColor" red="0.99607843139999996" green="1" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="shovel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="88D-cR-whx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kql-0e-Phe">
                                 <rect key="frame" x="136" y="771" width="118" height="29"/>
@@ -165,6 +175,9 @@
                                 <state key="normal" title="Privacy Policy">
                                     <color key="titleColor" red="0.99607843139999996" green="1" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="shovel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iG8-mb-n4x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -201,15 +214,21 @@
                             <constraint firstItem="rei-fz-RGd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zPx-7b-wpR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="avvyGear" destination="12S-pa-uG9" id="xFh-cl-UXq"/>
+                        <outlet property="beacon" destination="eiF-9Z-EWG" id="BWj-EA-PD3"/>
+                        <outlet property="probe" destination="OLv-Tp-VCI" id="vgY-NB-Ryx"/>
+                        <outlet property="treeLine" destination="UBl-CZ-Fyw" id="ajB-kn-yNO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1058" y="1379"/>
         </scene>
-        <!--View Controller-->
+        <!--Switch Riding Controller-->
         <scene sceneID="CVu-st-r2w">
             <objects>
-                <viewController id="RHL-Hr-k5x" sceneMemberID="viewController">
+                <viewController id="RHL-Hr-k5x" customClass="SwitchRidingController" customModule="SkijutDefind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mi1-4W-EC3">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,7 +236,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zieouy" translatesAutoresizingMaskIntoConstraints="NO" id="Kwq-9w-niC">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="834"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcN-EY-Nxv">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcN-EY-Nxv">
                                 <rect key="frame" x="16" y="30" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="V7e-gT-c2D"/>
@@ -240,6 +259,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="shovel"/>
+                                <connections>
+                                    <action selector="tapIn:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="PnV-c3-m6q"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1w3-Hm-bxr">
                                 <rect key="frame" x="0.0" y="126" width="390" height="708"/>
@@ -256,6 +278,9 @@
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Fans"/>
+                                                <connections>
+                                                    <action selector="freshTracks:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="rNA-t6-N1T"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-C8-AXJ">
                                                 <rect key="frame" x="71" y="8" width="98" height="47"/>
@@ -265,6 +290,9 @@
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Followings"/>
+                                                <connections>
+                                                    <action selector="catSkiing:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="uA5-Aa-HKB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nsb-gG-iEt">
                                                 <rect key="frame" x="16" y="63" width="265" height="80"/>
@@ -275,6 +303,9 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="My wallent" backgroundImage="champagnePowder"/>
+                                                <connections>
+                                                    <action selector="partnerRescue:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="jAf-zS-G5y"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facerShot0" translatesAutoresizingMaskIntoConstraints="NO" id="lyK-5A-Cje">
                                                 <rect key="frame" x="12" y="174" width="44" height="44"/>
@@ -360,6 +391,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="pnb-DE-bt3"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="baseMaterial:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="W6h-Fr-WjS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="34" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ct8-C7-tFb">
                                                 <rect key="frame" x="0.0" y="250" width="390" height="44"/>
@@ -367,6 +401,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="xOV-ia-5lX"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="baseMaterial:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="hnn-xR-OJs"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="35" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPl-wD-dNR">
                                                 <rect key="frame" x="0.0" y="326" width="390" height="44"/>
@@ -374,6 +411,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="htO-LW-5GI"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="baseMaterial:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="VL8-GO-ahS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="36" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdB-MC-MKa">
                                                 <rect key="frame" x="0.0" y="402" width="390" height="44"/>
@@ -381,6 +421,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="nTk-Wf-CAb"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="baseMaterial:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="Ne2-wb-Rhz"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="37" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRj-uK-HxU">
                                                 <rect key="frame" x="0.0" y="478" width="390" height="44"/>
@@ -388,6 +431,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="31P-Qy-LM6"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="baseMaterial:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="OyY-2O-BAy"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="38" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIu-HY-zzC">
                                                 <rect key="frame" x="0.0" y="554" width="390" height="44"/>
@@ -395,6 +441,9 @@
                                                     <constraint firstAttribute="height" constant="44" id="q7Y-eC-UEB"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="baseMaterial:" destination="RHL-Hr-k5x" eventType="touchUpInside" id="zyV-GA-4fP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -481,6 +530,11 @@
                             <constraint firstItem="SEA-42-KEw" firstAttribute="leading" secondItem="vEa-zd-xl7" secondAttribute="trailing" constant="2" id="w1o-k8-RnP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bonks" destination="jcN-EY-Nxv" id="2DQ-Bm-vcQ"/>
+                        <outlet property="contetnviewSki" destination="ps5-Cz-5mf" id="wUW-yh-LlF"/>
+                        <outlet property="stubbies" destination="vEa-zd-xl7" id="alb-os-nQo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZv-QZ-kbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -554,6 +608,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="treeLine" selectedImage="treeLine1" id="ybZ-2j-w3U"/>
+                    <connections>
+                        <outlet property="deepSlab" destination="0tH-xk-6XR" id="AR1-fY-4qh"/>
+                        <outlet property="userceneter" destination="8Ku-lC-jHY" id="lRW-h0-ESQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="at4-sB-Zue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -597,23 +655,32 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mSA-gE-kxU">
                                 <rect key="frame" x="12" y="277.66666666666669" width="366" height="67"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-gm-sUL">
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-gm-sUL">
                                         <rect key="frame" x="0.0" y="0.0" width="115.33333333333333" height="67"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="sdjiauk"/>
                                         <state key="selected" backgroundImage="sideHit"/>
+                                        <connections>
+                                            <action selector="nightRiding:" destination="MYD-um-X7L" eventType="touchUpInside" id="QVd-Cv-QFF"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjE-Vt-dcF">
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjE-Vt-dcF">
                                         <rect key="frame" x="125.33333333333334" y="0.0" width="115.33333333333334" height="67"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="windLip"/>
                                         <state key="selected" backgroundImage="trenrijfus"/>
+                                        <connections>
+                                            <action selector="nightRiding:" destination="MYD-um-X7L" eventType="touchUpInside" id="f2f-YQ-pXM"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qP-Nk-j2f">
+                                    <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qP-Nk-j2f">
                                         <rect key="frame" x="250.66666666666671" y="0.0" width="115.33333333333334" height="67"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="catTrack"/>
                                         <state key="selected" backgroundImage="Laoidkert"/>
+                                        <connections>
+                                            <action selector="nightRiding:" destination="MYD-um-X7L" eventType="touchUpInside" id="96I-e9-kTG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -621,7 +688,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NJG-J5-jco">
-                                <rect key="frame" x="0.0" y="349.66666666666674" width="390" height="494.33333333333326"/>
+                                <rect key="frame" x="12" y="349.66666666666674" width="366" height="494.33333333333326"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wKT-fR-01Z">
                                     <size key="itemSize" width="128" height="128"/>
@@ -631,7 +698,7 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvs-EM-ZME">
+                            <button opaque="NO" tag="56" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvs-EM-ZME">
                                 <rect key="frame" x="320" y="673" width="58" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="2M9-mq-VyU"/>
@@ -639,6 +706,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="wallRide"/>
+                                <connections>
+                                    <action selector="nightRiding:" destination="MYD-um-X7L" eventType="touchUpInside" id="TEm-XQ-hwG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vbY-b3-NBv"/>
@@ -652,7 +722,7 @@
                             <constraint firstItem="qAI-K8-IZL" firstAttribute="leading" secondItem="vbY-b3-NBv" secondAttribute="leading" constant="16" id="HPc-BM-MmB"/>
                             <constraint firstItem="NJG-J5-jco" firstAttribute="top" secondItem="mSA-gE-kxU" secondAttribute="bottom" constant="5" id="K3B-3i-7eg"/>
                             <constraint firstItem="uvs-EM-ZME" firstAttribute="bottom" secondItem="vbY-b3-NBv" secondAttribute="bottom" constant="-30" id="OGZ-ze-LTu"/>
-                            <constraint firstItem="NJG-J5-jco" firstAttribute="trailing" secondItem="vbY-b3-NBv" secondAttribute="trailing" id="P1t-L6-5up"/>
+                            <constraint firstItem="NJG-J5-jco" firstAttribute="trailing" secondItem="vbY-b3-NBv" secondAttribute="trailing" constant="-12" id="P1t-L6-5up"/>
                             <constraint firstItem="vbY-b3-NBv" firstAttribute="trailing" secondItem="ME5-5d-0kw" secondAttribute="trailing" constant="12" id="RbI-mF-Vpa"/>
                             <constraint firstItem="qAI-K8-IZL" firstAttribute="top" secondItem="vbY-b3-NBv" secondAttribute="top" id="Vi4-FU-f72"/>
                             <constraint firstItem="ME5-5d-0kw" firstAttribute="centerY" secondItem="qAI-K8-IZL" secondAttribute="centerY" id="XNi-Td-PSJ"/>
@@ -661,15 +731,19 @@
                             <constraint firstItem="MCw-vp-ErR" firstAttribute="trailing" secondItem="vbY-b3-NBv" secondAttribute="trailing" id="geK-Jz-6cJ"/>
                             <constraint firstItem="vbY-b3-NBv" firstAttribute="trailing" secondItem="uvs-EM-ZME" secondAttribute="trailing" constant="12" id="kqK-3Q-jJ2"/>
                             <constraint firstItem="vbY-b3-NBv" firstAttribute="trailing" secondItem="mSA-gE-kxU" secondAttribute="trailing" constant="12" id="onF-Xb-0fo"/>
-                            <constraint firstItem="NJG-J5-jco" firstAttribute="leading" secondItem="vbY-b3-NBv" secondAttribute="leading" id="piJ-QH-QAe"/>
+                            <constraint firstItem="NJG-J5-jco" firstAttribute="leading" secondItem="vbY-b3-NBv" secondAttribute="leading" constant="12" id="piJ-QH-QAe"/>
                             <constraint firstItem="MCw-vp-ErR" firstAttribute="leading" secondItem="vbY-b3-NBv" secondAttribute="leading" id="yzt-Yu-WKm"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="probe" selectedImage="probe1" id="qIG-XQ-QlQ"/>
+                    <connections>
+                        <outlet property="hoarFrost" destination="NJG-J5-jco" id="BAa-jQ-dEC"/>
+                        <outlet property="userceneter" destination="qAI-K8-IZL" id="vZa-mE-AgA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bmh-LX-Iy9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10.4" y="-1737.481259370315"/>
+            <point key="canvasLocation" x="-10.769230769230768" y="-1738.1516587677725"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7jD-ci-jPg">
@@ -757,10 +831,13 @@
                                     <constraint firstAttribute="height" constant="82" id="y7H-fi-VSX"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="sluffSlide:" destination="zEq-Ay-8jD" eventType="touchUpInside" id="BdX-hY-Tzq"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0xK-ms-jkK">
                                 <rect key="frame" x="93" y="169" width="297" height="82"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="Spa-hC-xhk"/>
                                 </constraints>
@@ -822,6 +899,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="avvyGear" selectedImage="avvyGear1" id="6DC-H5-fCA"/>
+                    <connections>
+                        <outlet property="looseSnow" destination="0xK-ms-jkK" id="SZe-5t-s2P"/>
+                        <outlet property="terrainTrap" destination="8gw-Fq-Ivz" id="JFP-ZM-pD7"/>
+                        <outlet property="userceneter" destination="lCE-M6-iRp" id="yHd-on-toD"/>
+                        <outlet property="windSlab" destination="VkM-Co-7Z5" id="LzL-bl-GdW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gk3-G1-yKG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -829,7 +912,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lwH-wg-HQW"/>
+        <segue reference="1Lg-2E-7b3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Laoidkert" width="116" height="67"/>

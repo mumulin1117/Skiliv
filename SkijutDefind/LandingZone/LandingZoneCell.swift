@@ -9,9 +9,23 @@ import UIKit
 
 class LandingZoneCell: UICollectionViewCell {
 
+    
+    @IBOutlet weak var chalet: UIImageView!
+    
+    
+    @IBOutlet weak var lodge: UIImageView!
+    
+    @IBOutlet weak var bootPack: UILabel!
+    
+    
+    @IBOutlet weak var baseGrind: UILabel!
+    
+    @IBOutlet weak var stompPad: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.zipperLine(lwgber: 18)
+        chalet.zipperLine(lwgber: 18)
+        lodge.zipperLine(lwgber: 16)
     }
 
 }

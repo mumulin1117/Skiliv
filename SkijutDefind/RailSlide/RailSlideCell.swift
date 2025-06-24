@@ -8,16 +8,24 @@
 import UIKit
 
 class RailSlideCell: UITableViewCell {
-
+    
+    @IBOutlet weak var impactZone: UILabel!
+    
+    @IBOutlet weak var forwardLean: UIImageView!
+    
+    
+    @IBOutlet weak var riserPlate: UILabel!
+    
+    
+    @IBOutlet weak var spineTransfer: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
+        forwardLean.zipperLine(lwgber: 35)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+   
     
 }

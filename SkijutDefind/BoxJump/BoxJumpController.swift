@@ -9,21 +9,32 @@ import UIKit
 
 class BoxJumpController: UIViewController {
 
+    @IBOutlet weak var treeLine: UITextField!
+    
+    @IBOutlet weak var avvyGear: UITextField!
+    
+    
+    @IBOutlet weak var beacon: UIButton!
+    
+    
+    @IBOutlet weak var probe: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  
+    @IBAction func shovel(_ sender: UIButton) {
     }
-    */
-
+    
+    
+    @IBAction func highbackSignIN(_ sender: UIButton) {
+    }
+    
+    
 }

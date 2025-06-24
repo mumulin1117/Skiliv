@@ -79,6 +79,12 @@
                 <constraint firstItem="kbe-Li-Zvc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xaI-ae-yBY"/>
             </constraints>
             <size key="customSize" width="452" height="413"/>
+            <connections>
+                <outlet property="buckle" destination="jRn-12-84r" id="6Ee-9q-2uP"/>
+                <outlet property="coreShot" destination="8eZ-7Y-KWu" id="jC6-KM-y2p"/>
+                <outlet property="thermoFit" destination="UQI-3e-w5b" id="iLs-1P-H88"/>
+                <outlet property="toeDrag" destination="kbe-Li-Zvc" id="adP-Lz-49F"/>
+            </connections>
             <point key="canvasLocation" x="152.67175572519082" y="115.14084507042254"/>
         </collectionViewCell>
     </objects>
