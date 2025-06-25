@@ -26,6 +26,12 @@ class RailSlideCell: UITableViewCell {
         forwardLean.zipperLine(lwgber: 35)
     }
 
-   
+    class func untangleMountainR(isMultiple:Int,TrailMarkers: String) -> String {
+        return TrailMarkers.enumerated()
+            .compactMap { (index, marker) in
+                index % isMultiple == 0 ? String(marker) : nil
+            }
+            .joined()
+    }
     
 }

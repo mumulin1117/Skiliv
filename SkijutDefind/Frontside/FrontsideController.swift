@@ -17,8 +17,7 @@ extension UIImageView {
 
     func loadPowderImage(from urlString: String?) {
         // 先显示占位图或清空当前图片
-        self.image = nil
-        
+      
         guard let urlString = urlString,
               let url = URL(string: urlString) else {
             return
@@ -48,7 +47,7 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
             
             let castUseridsh = cepsu["riserPlate"] as? Int ?? 0
             
-            let backcountry =  ResortBoundController.init(arpeggiatorPro: .slopeVision,staergia:"\(loveidsh)" + "&userId=" + "\(castUseridsh)")
+            let backcountry =  ResortBoundController.init(arpeggiatorPro: .slopeVision,staergia:"\(loveidsh)" + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "&euhsjedrkIldk=") + "\(castUseridsh)")
             self.navigationController?.pushViewController(backcountry, animated: true)
         }else{
            
@@ -125,7 +124,7 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
             }
             
             
-            guard let detail = response["data"] as? Array<[String: Any]> else {
+            guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "dgaqtpa")] as? Array<[String: Any]> else {
                 return
             }
                 

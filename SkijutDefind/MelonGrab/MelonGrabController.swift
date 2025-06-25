@@ -33,11 +33,14 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
         super.viewDidLoad()
 
         longitudinalFlex()
-        chatterReduction()
+        
         flatCamber()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        chatterReduction()
+    }
  
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -147,7 +150,7 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
         
     }
     
-    func chatterReduction()  {
+    private func chatterReduction()  {
         pillowLineView.startAnimating()
         BackcountryAPISender.sendMountainRequest(trailPath: "/fjzjundcz/atlua", payload: ["powder":"95578703"]) {zipperLine in
             self.pillowLineView.stopAnimating()
@@ -169,7 +172,7 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
         }
         
         
-        BackcountryAPISender.sendMountainRequest(trailPath: "/lifkvnmrlkkrcz/bmzzzt", payload: ["rodeo":"95578703","melonGrab":20,"misty":1,"indyGrab":1,"tweak":1]) {zipperLine in
+        BackcountryAPISender.sendMountainRequest(trailPath: "/lifkvnmrlkkrcz/bmzzzt", payload: ["rodeo":"95578703","melonGrab":20]) {zipperLine in
             
             guard let response = zipperLine as? [String: Any] else {
                
@@ -178,7 +181,7 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
             }
             
             
-            guard let detail = response["data"] as? Array<[String: Any]> else {
+            guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "dbartoa")] as? Array<[String: Any]> else {
                 return
             }
                 

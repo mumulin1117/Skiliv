@@ -31,7 +31,7 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
         
         
         RailSlideCell.impactZone.text = adcleb["tripleCork"] as? String
-        RailSlideCell.spineTransfer.text = self.timestampToString(adcleb["pillowLine"] as? Int ?? 0)
+        RailSlideCell.spineTransfer.text = self.cupCrystal(adcleb["pillowLine"] as? Int ?? 0)
         return RailSlideCell
     }
     
@@ -45,6 +45,7 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
         persistentSlab.register(UINib.init(nibName: "RailSlideCell", bundle: nil), forCellReuseIdentifier: "RailSlideCell")
         persistentSlab.rowHeight = 120
         persistentSlab.separatorStyle = .singleLine
+        persistentSlab.separatorColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
     }
     
     @IBOutlet weak var refoUjhgfk: UILabel!
@@ -67,7 +68,7 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
             }
             
             
-            guard let detail = response["data"] as? Array<[String: Any]> else {
+            guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "deaftfa")] as? Array<[String: Any]> else {
                 return
             }
                 
@@ -90,7 +91,7 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
 
 
 extension UIViewController{
-    func timestampToString(_ milliseconds: Int) -> String {
+    func cupCrystal(_ milliseconds: Int) -> String {
         let date = Date(timeIntervalSince1970: TimeInterval(milliseconds)/1000)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

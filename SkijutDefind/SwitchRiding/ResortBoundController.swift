@@ -105,7 +105,7 @@ class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigat
                         SwiftyStoreKit.finishTransaction(psPurch.transaction)
                     }
                     
-                    self.showingSKIStatu(information: "pay successful!", isOKAYSHowi: true)
+                    self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "pwaxyg qsoutcbcqeushstffuolx!"), isOKAYSHowi: true)
                    
                     self.sidecountry?.evaluateJavaScript("hybridCamber()", completionHandler: nil)
                 }else if case .error(let error) = psResult {
@@ -153,7 +153,7 @@ class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigat
         if message.name == "torsionalStiffness" {
             UserDefaults.standard.set(nil, forKey: "coreShot")
            
-            ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
+            ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = UIStoryboard(name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Miapicn"), bundle: nil).instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
         }
         
         
@@ -168,7 +168,7 @@ class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigat
                   UIApplication.shared.canOpenURL(url) else {
                 
            
-                self.showingSKIStatu(information: "Unable to make phone calls")
+                self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Uonlatbzlced jtwol lmnaskpeu qpshsognaew ncoawlhlts"))
                 return
             }
             

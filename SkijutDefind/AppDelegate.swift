@@ -36,13 +36,13 @@ extension AppDelegate {
     
     func slopestyle()  {
         if UserDefaults.standard.object(forKey: "coreShot") == nil {
-            window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
+            window?.rootViewController = UIStoryboard(name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Mnavizn"), bundle: nil).instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
             window?.makeKeyAndVisible()
             return
         }
         
         
-        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "dropIn") as! UINavigationController
+        window?.rootViewController = UIStoryboard(name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Msayicn"), bundle: nil).instantiateViewController(withIdentifier: "dropIn") as! UINavigationController
         window?.makeKeyAndVisible()
     }
 }

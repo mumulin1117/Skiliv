@@ -53,13 +53,13 @@ class BoxJumpController: UIViewController {
     @IBAction func highbackSignIN(_ sender: UIButton) {
         guard let email = treeLine.text, touringBindings(email) else {
            
-            self.showingSKIStatu(information: "Please enter a valid email.")
+            self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Polxeoajszex zehnstlepro kay tvvajlripds gesmuaqiele."))
             return
             
         }
                 
         guard probe.isSelected else {
-            self.showingSKIStatu(information: "Please agree to the privacy policy.")
+            self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Puljeeabsbep kajgvruetek gteov qtzhxek gpwrqiyvfabcdyn gpooglribclye."))
             
             return
         }
@@ -67,27 +67,27 @@ class BoxJumpController: UIViewController {
         
         guard let pased = avvyGear.text, !pased.isEmpty else {
            
-            self.showingSKIStatu(information: "Please enter a valid email.")
+            self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Pnlsedausyes sernttmerrx nab mvtaillijdi aepmlavivlg."))
             return
             
         }
         
         
-        self.showingSKIStatu(information: "Logging in...")
-        self.view.isUserInteractionEnabled = false
+        self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Luotgbgqicnfgp rimng.o.r."))
+      
         pillowLineView.startAnimating()
         BackcountryAPISender.sendMountainRequest(trailPath: "/oxzpnhjzwrmqwiz/kqyyxff", payload: ["buckle":"95578703",
                                                 "thermoFit":email,        "liner":pased]) {zipperLine in
             self.pillowLineView.stopAnimating()
             guard let response = zipperLine as? [String: Any] else {
-                self.showingSKIStatu(information: "Invalid response from server.")
+                self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Iqnrvnaxlkigdf qrtetslpeoanvsjeg ffprjogmm wssecrovtehro."))
                 return
                 
             }
             
             
-            guard let detail = response["data"] as? [String: Any] else {
-                self.showingSKIStatu(information: "Email or password is error!")
+            guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "daaftra")] as? [String: Any] else {
+                self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Ezmbaniili moirq apyalsvsmwgoprvdw giess oejrdrjotru!"))
                 return
                 
             }
@@ -109,7 +109,7 @@ class BoxJumpController: UIViewController {
             UserDefaults.standard.set(detail["zipperLine"] as? String, forKey:"zipperLine")
             UserDefaults.standard.set(detail["fallLine"] as? String, forKey:"fallLine")
             
-            self.showingSKIStatu(information: "Sign in successful!", isOKAYSHowi: true)
+            self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Syihgrna kimnd ssnujcfcmezsvsyfzuolv!"), isOKAYSHowi: true)
             
             ( (UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "dropIn") as! UINavigationController
         } errorHandler: { wer in

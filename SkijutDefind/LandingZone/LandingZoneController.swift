@@ -96,7 +96,7 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
             }
             
             
-            guard let detail = response["data"] as? Array<[String: Any]> else {
+            guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "dfagtja")] as? Array<[String: Any]> else {
                 return
             }
                 

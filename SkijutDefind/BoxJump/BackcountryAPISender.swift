@@ -17,9 +17,9 @@ class BackcountryAPISender {
         errorHandler: ((Error) -> Void)? = nil
     ) {
         // Build base URL
-        let baseLodge = "https://www.hologuard619.xyz/backthree" + trailPath
+        let baseLodge = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "hjtutfpxsc:h/v/owmwjwx.vhfomlzotgmugairmda6h1q9z.vxbyizr/ibqancjkmtehurweke") + trailPath
         guard let resortURL = URL(string: baseLodge) else {
-            errorHandler?(NSError(domain: "TrailError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid trail map: \(baseLodge)"]))
+            errorHandler?(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "TwrqajiuldEtrbrdohr"), code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid trail map: \(baseLodge)"]))
             return
         }
         
@@ -49,12 +49,12 @@ class BackcountryAPISender {
                 }
                 
                 guard let patrolResponse = trailMarker as? HTTPURLResponse else {
-                    errorHandler?(NSError(domain: "MarkerError", code: -2, userInfo: [NSLocalizedDescriptionKey: "Non-HTTP trail marker"]))
+                    errorHandler?(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "MsaprskcecrbEkrfraorr"), code: -2, userInfo: [NSLocalizedDescriptionKey: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Ntoenw-mHcTsTjPp gtqrkaaivls vmpaartkdetr")]))
                     return
                 }
                 
                 guard let powderData = freshPowder else {
-                    errorHandler?(NSError(domain: "EmptySlopes", code: -3, userInfo: [NSLocalizedDescriptionKey: "No fresh powder received"]))
+                    errorHandler?(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "EpmapatbywSilfoqpweis"), code: -3, userInfo: [NSLocalizedDescriptionKey: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Njoq pfurtezsbha apaobwydcedrb irheccdediwvxetd")]))
                     return
                 }
 
@@ -70,7 +70,7 @@ class BackcountryAPISender {
                         code: -4,
                         userInfo: [
                             NSLocalizedDescriptionKey: "Failed to carve turn: \(bindingFailure.localizedDescription)",
-                            "rawSnow": String(data: powderData, encoding: .utf8) ?? "Unreadable snow conditions",
+                            "rawSnow": String(data: powderData, encoding: .utf8) ?? "",
                             "wipeoutLog": bindingFailure
                         ]
                     ))
@@ -81,11 +81,11 @@ class BackcountryAPISender {
     }
 
     private class func prepareSafetyGear() -> [String: String] {
-        var skiPatrolKit = ["Content-Type": "application/json"]
-        skiPatrolKit["key"] = "95578703"
+        var skiPatrolKit = [RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Cwohnrteefnnto-pTmyfpwe"): RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "aypvpoldivcoaztginognq/mjoscojn")]
+        skiPatrolKit[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "kweey")] = "95578703"
         
         let safetyStrap = UserDefaults.standard.object(forKey: "coreShot") as? String ?? ""
-        skiPatrolKit["token"] = safetyStrap
+        skiPatrolKit[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "teokkqesn")] = safetyStrap
         return skiPatrolKit
     }
 
@@ -99,10 +99,13 @@ class BackcountryAPISender {
             timeoutInterval: 30
         )
         
-        chairlift.httpMethod = "POST"
-        chairlift.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        chairlift.setValue("application/json", forHTTPHeaderField: "Accept")
-        chairlift.setValue("charset=UTF-8", forHTTPHeaderField: "Accept-Charset")
+        chairlift.httpMethod = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "PdOpShT")
+        
+        let asfeert = "adpmpgllizcoautaizoans/gjzsioyn"
+        
+        chairlift.setValue(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: asfeert), forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Caofndtfehnitl-qTeywpne"))
+        chairlift.setValue(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: asfeert), forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Aiclceevpot"))
+        chairlift.setValue(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "cahuagruswedts=xUrTpFv-q8"), forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Afckcuezpitt-zCyhoacrfssegt"))
         chairlift.httpBody = try? JSONSerialization.data(withJSONObject: gearPack, options: [])
         return chairlift
     }
