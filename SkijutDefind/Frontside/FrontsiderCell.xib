@@ -20,6 +20,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BAZ-um-tx2">
                         <rect key="frame" x="0.0" y="0.0" width="349" height="231"/>
+                        <color key="backgroundColor" white="1" alpha="0.3660980017006803" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quarterPipe" translatesAutoresizingMaskIntoConstraints="NO" id="nce-9U-7v6">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="24"/>

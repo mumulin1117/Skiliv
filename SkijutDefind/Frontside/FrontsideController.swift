@@ -2,17 +2,61 @@
 //  FrontsideController.swift
 //  SkijutDefind
 //
-//  Created by mumu on 2025/6/24.
+//  Created by SkijutDefind on 2025/6/24.
 //
 
 import UIKit
 
+extension UIViewController{
+    @objc func downFlatDown()  {
+        let backcountry = ResortBoundController.init(arpeggiatorPro: .skiPatrol)
+        self.navigationController?.pushViewController(backcountry, animated: true)
+    }
+}
+extension UIImageView {
+
+    func loadPowderImage(from urlString: String?) {
+        // 先显示占位图或清空当前图片
+        self.image = nil
+        
+        guard let urlString = urlString,
+              let url = URL(string: urlString) else {
+            return
+        }
+        
+        // 异步加载图片
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url),
+               let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.image = image
+                }
+            }
+        }
+    }
+}
 class FrontsideController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+    @IBOutlet weak var pillowLineView: UIActivityIndicatorView!
     private var rebound = Array<Dictionary<String,Any>>()
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cepsu = rebound[indexPath.row]
         
+        let loveidsh = cepsu["forwardLean"] as? Int ?? 0
+        
+        if cepsu["rainbowRail"] as? Int == -1 {//视频
+            
+            let castUseridsh = cepsu["riserPlate"] as? Int ?? 0
+            
+            let backcountry =  ResortBoundController.init(arpeggiatorPro: .slopeVision,staergia:"\(loveidsh)" + "&userId=" + "\(castUseridsh)")
+            self.navigationController?.pushViewController(backcountry, animated: true)
+        }else{
+           
+            let backcountry =  ResortBoundController.init(arpeggiatorPro: .lodgeBase,staergia:"\(loveidsh)")
+            self.navigationController?.pushViewController(backcountry, animated: true)
+            
+            
+        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         rebound.count
@@ -21,6 +65,14 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cepsu = rebound[indexPath.row]
         let dampening = collectionView.dequeueReusableCell(withReuseIdentifier: "FrontsiderCell", for: indexPath) as! FrontsiderCell
+        dampening.blueIce.isHidden = (cepsu["rainbowRail"] as? Int != -1)
+        dampening.breakableCrust.loadPowderImage(from: cepsu["shockPad"] as? String)
+        
+        dampening.deathCookies.text = cepsu["impactZone"] as? String ?? ""
+        
+        dampening.snowSnake.addTarget(self, action: #selector(downFlatDown), for: .touchUpInside)
+        
+        dampening.crud.setTitle(" \(Int.random(in: 0...5))", for: .normal)
         return dampening
         
         
@@ -63,7 +115,25 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     func chatterReduction(jiobetta:Int)  {
+        pillowLineView.startAnimating()
+        BackcountryAPISender.sendMountainRequest(trailPath: "/ipqmssxrfzqquz/pncgzszzftaqi", payload: ["bindingAngle":"95578703","heelDrag":1,"stanceWidth":10,"duckStance":jiobetta]) {zipperLine in
+            self.pillowLineView.stopAnimating()
+            guard let response = zipperLine as? [String: Any] else {
+               
+                return
+                
+            }
+            
+            
+            guard let detail = response["data"] as? Array<[String: Any]> else {
+                return
+            }
+                
+            self.rebound = detail
+            
+            self.hoarFrost.reloadData()
         
+        }
     }
 
     @IBAction func nightRiding(_ sender: UIButton) {
@@ -83,7 +153,8 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
         }
         
         //add
-        
+        let backcountry = ResortBoundController.init(arpeggiatorPro: .freshTracks)
+        self.navigationController?.pushViewController(backcountry, animated: true)
         
     }
 }

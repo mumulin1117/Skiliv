@@ -2,7 +2,7 @@
 //  LandingZoneController.swift
 //  SkijutDefind
 //
-//  Created by mumu on 2025/6/24.
+//  Created by SkijutDefind on 2025/6/24.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import UIKit
 class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var userceneter: UIButton!
     
-    
+    @IBOutlet weak var pillowLineView: UIActivityIndicatorView!
     @IBOutlet weak var deepSlab: UICollectionView!
     
     override func viewDidLoad() {
@@ -19,15 +19,14 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
         longitudinalFlex()
         chatterReduction()
     }
-    
-
- 
-
- 
+  
     private var rebound = Array<Dictionary<String,Any>>()
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let castUseridsh = rebound[indexPath.row]["firstTracks"] as? Int ?? 0
         
+        let backcountry =  ResortBoundController.init(arpeggiatorPro: .stormReport,staergia:"\(castUseridsh)")
+        self.navigationController?.pushViewController(backcountry, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         rebound.count
@@ -36,6 +35,23 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cepsu = rebound[indexPath.row]
         let LandingZoneCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LandingZoneCell", for: indexPath) as! LandingZoneCell
+        
+        LandingZoneCell.chalet.loadPowderImage(from: cepsu["poma"] as? String)
+        
+        if let aclist = cepsu["heliDrop"] as? Array<Dictionary<String,Any>>,let fui = aclist.first?["snowmaking"] as? String{
+            
+            LandingZoneCell.lodge.loadPowderImage(from:fui )
+            LandingZoneCell.bootPack.text = "+ \(aclist.count)"
+           
+        }
+        
+        
+        LandingZoneCell.stompPad.text = String((cepsu["ropeDrop"] as?  String)?.prefix(10) ?? "2025-12-12")//date
+        //active date
+        
+        LandingZoneCell.baseGrind.text = String((cepsu["ropeDrop"] as?  String)?.suffix(8) ?? "10:00:00")
+        LandingZoneCell.avctinopent.text = cepsu["lastChair"] as? String
+        
         return LandingZoneCell
         
         
@@ -67,11 +83,29 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
     }
     
     
-    func chatterReduction()  {
-        
-    }
-
    
+
+    func chatterReduction()  {
+        pillowLineView.startAnimating()
+        BackcountryAPISender.sendMountainRequest(trailPath: "/remshopwlz/hqzlbpwcbro", payload: ["jib":"95578703"]) {zipperLine in
+            self.pillowLineView.stopAnimating()
+            guard let response = zipperLine as? [String: Any] else {
+               
+                return
+                
+            }
+            
+            
+            guard let detail = response["data"] as? Array<[String: Any]> else {
+                return
+            }
+                
+            self.rebound = detail
+            
+            self.deepSlab.reloadData()
+        
+        }
+    }
         
     
 }

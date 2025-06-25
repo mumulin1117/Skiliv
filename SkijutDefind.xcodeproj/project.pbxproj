@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FF30ACF3F5610DB102CD3E9B /* Pods_SkijutDefind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA708935659FAE5949510828 /* Pods_SkijutDefind.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		0226342AB5B0B82C26276927 /* Pods-SkijutDefind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkijutDefind.release.xcconfig"; path = "Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind.release.xcconfig"; sourceTree = "<group>"; };
 		04B4DE432E0A38BC0027C855 /* SkijutDefind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkijutDefind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DAD92BDAC1E7A08B2E1E16D /* Pods-SkijutDefind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkijutDefind.debug.xcconfig"; path = "Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind.debug.xcconfig"; sourceTree = "<group>"; };
+		DA708935659FAE5949510828 /* Pods_SkijutDefind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkijutDefind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF30ACF3F5610DB102CD3E9B /* Pods_SkijutDefind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +55,8 @@
 			children = (
 				04B4DE452E0A38BC0027C855 /* SkijutDefind */,
 				04B4DE442E0A38BC0027C855 /* Products */,
+				3067F1C92BBFD6A50468CAEC /* Pods */,
+				DA07800016B8B957C4C11274 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +68,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3067F1C92BBFD6A50468CAEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DAD92BDAC1E7A08B2E1E16D /* Pods-SkijutDefind.debug.xcconfig */,
+				0226342AB5B0B82C26276927 /* Pods-SkijutDefind.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA07800016B8B957C4C11274 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA708935659FAE5949510828 /* Pods_SkijutDefind.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04B4DE562E0A38BE0027C855 /* Build configuration list for PBXNativeTarget "SkijutDefind" */;
 			buildPhases = (
+				C47A35DB4809762681CAFE5F /* [CP] Check Pods Manifest.lock */,
 				04B4DE3F2E0A38BC0027C855 /* Sources */,
 				04B4DE402E0A38BC0027C855 /* Frameworks */,
 				04B4DE412E0A38BC0027C855 /* Resources */,
+				B510500C9FD15DB75F54F7F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +106,6 @@
 				04B4DE452E0A38BC0027C855 /* SkijutDefind */,
 			);
 			name = SkijutDefind;
-			packageProductDependencies = (
-			);
 			productName = SkijutDefind;
 			productReference = 04B4DE432E0A38BC0027C855 /* SkijutDefind.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +154,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B510500C9FD15DB75F54F7F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C47A35DB4809762681CAFE5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkijutDefind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04B4DE3F2E0A38BC0027C855 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,17 +209,20 @@
 /* Begin XCBuildConfiguration section */
 		04B4DE572E0A38BE0027C855 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAD92BDAC1E7A08B2E1E16D /* Pods-SkijutDefind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkijutDefind/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skiliv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Capture your mountain moments – from fresh tracks to gear setups. Skilliv uses your camera to share snowy adventures with fellow riders.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -162,7 +234,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leart.kreyo.SkijutDefind;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inkingw.skiliv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -176,17 +248,20 @@
 		};
 		04B4DE582E0A38BE0027C855 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0226342AB5B0B82C26276927 /* Pods-SkijutDefind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkijutDefind/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Skiliv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Capture your mountain moments – from fresh tracks to gear setups. Skilliv uses your camera to share snowy adventures with fellow riders.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -198,7 +273,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.leart.kreyo.SkijutDefind;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inkingw.skiliv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

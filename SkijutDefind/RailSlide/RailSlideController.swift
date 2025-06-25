@@ -2,7 +2,7 @@
 //  RailSlideController.swift
 //  SkijutDefind
 //
-//  Created by mumu on 2025/6/24.
+//  Created by SkijutDefind on 2025/6/24.
 //
 
 import UIKit
@@ -10,10 +10,11 @@ import UIKit
 class RailSlideController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private var sideBevel = Array<Dictionary<String,Any>>()
-    
+    @IBOutlet weak var pillowLineView: UIActivityIndicatorView!
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let backcountry = ResortBoundController.init(arpeggiatorPro: .avalancheWhisper, staergia: "\(sideBevel[indexPath.row]["flatSpin"] ?? "")")
+        self.navigationController?.pushViewController(backcountry, animated: true)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         sideBevel.count
@@ -21,6 +22,16 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let RailSlideCell = tableView.dequeueReusableCell(withIdentifier: "RailSlideCell", for: indexPath) as! RailSlideCell
+        
+        let adcleb = sideBevel[indexPath.row]
+        
+        RailSlideCell.forwardLean.loadPowderImage(from: adcleb["frontflip"] as? String)
+        
+        RailSlideCell.riserPlate.text = adcleb["backflip"] as? String
+        
+        
+        RailSlideCell.impactZone.text = adcleb["tripleCork"] as? String
+        RailSlideCell.spineTransfer.text = self.timestampToString(adcleb["pillowLine"] as? Int ?? 0)
         return RailSlideCell
     }
     
@@ -36,7 +47,7 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
         persistentSlab.separatorStyle = .singleLine
     }
     
-
+    @IBOutlet weak var refoUjhgfk: UILabel!
     @IBOutlet weak var persistentSlab: UITableView!
     
     
@@ -46,6 +57,43 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func flexPattern()  {
+        pillowLineView.startAnimating()
+        BackcountryAPISender.sendMountainRequest(trailPath: "/uqkkghyupmgtz/hjrkqug", payload: ["kickerLine":"95578703"]) {zipperLine in
+            self.pillowLineView.stopAnimating()
+            guard let response = zipperLine as? [String: Any] else {
+               
+                return
+                
+            }
+            
+            
+            guard let detail = response["data"] as? Array<[String: Any]> else {
+                return
+            }
+                
+            self.sideBevel = detail.compactMap { item in
+                
+                let dic = (item["huck"] as? [[String: Any]])?.first ?? [:]
+                return dic
+            }
+            
+            self.persistentSlab.reloadData()
+            if self.sideBevel.count == 0{
+                self.refoUjhgfk.isHidden = false
+            }else{
+                self.refoUjhgfk.isHidden = true
+            }
         
+        }
+    }
+}
+
+
+extension UIViewController{
+    func timestampToString(_ milliseconds: Int) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(milliseconds)/1000)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter.string(from: date)
     }
 }

@@ -37,8 +37,8 @@
                             <constraint firstAttribute="width" constant="32" id="Yfh-VJ-l4z"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-hd-vya">
-                        <rect key="frame" x="6" y="219" width="191" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-hd-vya">
+                        <rect key="frame" x="6" y="236" width="191" height="0.0"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -61,10 +61,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehh-eX-pOd">
-                        <rect key="frame" x="236" y="71.666666666666671" width="30" height="15"/>
+                        <rect key="frame" x="236" y="71.666666666666671" width="13.666666666666657" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="San-E3-Mnk"/>
-                            <constraint firstAttribute="width" constant="30" id="oYL-da-C7G"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" white="1" alpha="0.79073660710000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,10 +77,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03n-fM-21n">
-                        <rect key="frame" x="236" y="103.66666666666667" width="30" height="15"/>
+                        <rect key="frame" x="236" y="103.66666666666667" width="13.666666666666657" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="nlI-ZB-44E"/>
-                            <constraint firstAttribute="width" constant="30" id="qLL-Cx-6RY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                         <color key="textColor" white="1" alpha="0.79073660710000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,6 +113,7 @@
             </constraints>
             <size key="customSize" width="460" height="244"/>
             <connections>
+                <outlet property="avctinopent" destination="NG2-hd-vya" id="z5U-vs-HqO"/>
                 <outlet property="baseGrind" destination="03n-fM-21n" id="YBc-b2-Vez"/>
                 <outlet property="bootPack" destination="cOK-kr-Ply" id="6uo-co-kLx"/>
                 <outlet property="chalet" destination="lkS-6e-zBN" id="hpQ-Yg-Ipb"/>

@@ -2,7 +2,7 @@
 //  MelonGrabController.swift
 //  SkijutDefind
 //
-//  Created by mumu on 2025/6/24.
+//  Created by SkijutDefind on 2025/6/24.
 //
 
 import UIKit
@@ -10,15 +10,19 @@ import UIKit
 class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource{
     private var sideBevel = Array<Dictionary<String,Any>>()
     private var rebound = Array<Dictionary<String,Any>>()
-    
+    @IBOutlet weak var pillowLineView: UIActivityIndicatorView!
     @IBOutlet weak var userceneter: UIButton!
     
 
+    
     @IBOutlet weak var looseSnow: UICollectionView!
     
     @IBOutlet weak var windSlab: UICollectionView!
     
     @IBAction func sluffSlide(_ sender: UIButton) {
+        
+        let backcountry = ResortBoundController.init(arpeggiatorPro: .freshLine)
+        self.navigationController?.pushViewController(backcountry, animated: true)
     }
     
     
@@ -36,13 +40,25 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
 
  
 
- 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.x
+        let width = scrollView.frame.width
+        let pageIndex = Int(offset / width)
+        self.terrainTrap.currentPage = pageIndex
+
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.looseSnow {
+            let backcountry = ResortBoundController.init(arpeggiatorPro: .vertView,staergia: "\(sideBevel[indexPath.row]["backcountry"] ?? "")")
+            self.navigationController?.pushViewController(backcountry, animated: true)
+            
             return
         }
+        
+        let backcountry = ResortBoundController.init(arpeggiatorPro: .carveDetails,staergia: "\(rebound[indexPath.row]["floaty"] ?? "")")
+        self.navigationController?.pushViewController(backcountry, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.looseSnow {
@@ -55,12 +71,20 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
         
         if collectionView == self.looseSnow {
             let cepsu = sideBevel[indexPath.row]
-            let MelonGrabCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MelonGrabCell", for: indexPath) as! MelonGrabCell
-            return MelonGrabCell
+            let TiemiusierCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TiemiusierCell", for: indexPath) as! TiemiusierCell
+            TiemiusierCell.heelDrag.loadPowderImage(from: cepsu["carving"] as? String)
+            TiemiusierCell.duckStance.text = cepsu["freeride"] as? String
+            
+            return TiemiusierCell
         }
         let cepsu = rebound[indexPath.row]
-        let LandingZoneCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TiemiusierCell", for: indexPath) as! TiemiusierCell
-        return LandingZoneCell
+        let MelonGrabCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MelonGrabCell", for: indexPath) as! MelonGrabCell
+        MelonGrabCell.toeDrag.loadPowderImage(from: (cepsu["beacon"] as? Array<String> )?.first)
+        MelonGrabCell.coreShot.text = "@" +  (cepsu["quarterPipe"] as? String ?? "No name")
+        
+        MelonGrabCell.thermoFit.text = cepsu["dropIn"] as? String
+        MelonGrabCell.buckle.addTarget(self, action: #selector(downFlatDown), for: .touchUpInside)
+        return MelonGrabCell
         
         
     }
@@ -92,17 +116,20 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
     
     private  lazy var fullRocker: UICollectionViewFlowLayout = {
         let cupCrystal = UICollectionViewFlowLayout.init()
-        let miniaCount:CGFloat = 20
+        let miniaCount:CGFloat = 0
         
         cupCrystal.minimumLineSpacing = miniaCount
         cupCrystal.minimumInteritemSpacing = miniaCount
         cupCrystal.scrollDirection = .horizontal
-        let itemsif = CGSize.init(width: UIScreen.main.bounds.width - 24, height: windSlab.frame.height)
+        let itemsif = CGSize.init(width: UIScreen.main.bounds.width, height: windSlab.frame.height)
         cupCrystal.itemSize = itemsif
         return cupCrystal
     }()
    
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        fullRocker.itemSize = CGSize.init(width: UIScreen.main.bounds.width, height: windSlab.frame.height)
+    }
     
     func flatCamber()  {
         windSlab.collectionViewLayout = self.fullRocker
@@ -111,11 +138,56 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
         windSlab.register(UINib.init(nibName: "MelonGrabCell", bundle: nil), forCellWithReuseIdentifier: "MelonGrabCell")
         windSlab.delegate = self
         windSlab.dataSource = self
+        windSlab.contentInset = UIEdgeInsets(top: 0, left:0, bottom: 0, right: 0)
     }
     
     
-    func chatterReduction()  {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+    }
+    
+    func chatterReduction()  {
+        pillowLineView.startAnimating()
+        BackcountryAPISender.sendMountainRequest(trailPath: "/fjzjundcz/atlua", payload: ["powder":"95578703"]) {zipperLine in
+            self.pillowLineView.stopAnimating()
+            guard let response = zipperLine as? [String: Any] else {
+               
+                return
+                
+            }
+            
+            
+            guard let detail = response["data"] as? Array<[String: Any]> else {
+                return
+            }
+                
+            self.sideBevel = detail
+            
+            self.looseSnow.reloadData()
+        
+        }
+        
+        
+        BackcountryAPISender.sendMountainRequest(trailPath: "/lifkvnmrlkkrcz/bmzzzt", payload: ["rodeo":"95578703","melonGrab":20,"misty":1,"indyGrab":1,"tweak":1]) {zipperLine in
+            
+            guard let response = zipperLine as? [String: Any] else {
+               
+                return
+                
+            }
+            
+            
+            guard let detail = response["data"] as? Array<[String: Any]> else {
+                return
+            }
+                
+            self.rebound = detail
+            self.terrainTrap.numberOfPages = self.rebound.count
+            self.windSlab.reloadData()
+            
+            
+        }
     }
 
 

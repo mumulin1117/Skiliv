@@ -2,7 +2,7 @@
 //  FrontsiderCell.swift
 //  SkijutDefind
 //
-//  Created by mumu on 2025/6/24.
+//  Created by SkijutDefind on 2025/6/24.
 //
 
 import UIKit

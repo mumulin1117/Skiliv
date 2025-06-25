@@ -2,11 +2,11 @@
 //  AppDelegate.swift
 //  SkijutDefind
 //
-//  Created by mumu on 2025/6/24.
+//  Created by SkijutDefind on 2025/6/24.
 //
 
 import UIKit
-
+import SwiftyStoreKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         halfPipe()
         slopestyle()
-        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -30,17 +30,20 @@ extension AppDelegate {
     func halfPipe()  {
         window = UIWindow(frame: UIScreen.main.bounds)
        
-       
+        SwiftyStoreKit.completeTransactions(atomically: true) { results in
+        }
     }
     
     func slopestyle()  {
-        if UserDefaults.standard.object(forKey: "butter") == nil {
+        if UserDefaults.standard.object(forKey: "coreShot") == nil {
             window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
+            window?.makeKeyAndVisible()
             return
         }
         
         
         window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "dropIn") as! UINavigationController
+        window?.makeKeyAndVisible()
     }
 }
 
