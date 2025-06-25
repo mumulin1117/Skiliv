@@ -42,7 +42,7 @@
                                 <rect key="frame" x="16" y="173" width="374" height="671"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No nessage records" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prq-Vm-8DS">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No nessage records" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prq-Vm-8DS">
                                 <rect key="frame" x="101.66666666666667" y="410" width="186.66666666666663" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="0.70753613950000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1009,7 +1009,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nh6-HO-BtA"/>
+        <segue reference="aJQ-7a-pW3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Laoidkert" width="116" height="67"/>

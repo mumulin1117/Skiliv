@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftyStoreKit
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,35 +15,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         halfPipe()
+        setupStoreKitCompletion()
         slopestyle()
         
         return true
     }
 
-
-}
-
-
-
-extension AppDelegate {
- 
-    func halfPipe()  {
-        window = UIWindow(frame: UIScreen.main.bounds)
+    func slopestyle() {
+          
+        let hasAuth = UserDefaults.standard.object(forKey: "coreShot") != nil
+        let sdgVC = hasAuth ? createMainInterface() : createAuthInterface()
        
-        SwiftyStoreKit.completeTransactions(atomically: true) { results in
-        }
+        window?.rootViewController = sdgVC
+        window?.makeKeyAndVisible()
+      
     }
     
-    func slopestyle()  {
-        if UserDefaults.standard.object(forKey: "coreShot") == nil {
-            window?.rootViewController = UIStoryboard(name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Mnavizn"), bundle: nil).instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
-            window?.makeKeyAndVisible()
-            return
-        }
+    func createAuthInterface() -> UIViewController {
+            let storyboard = UIStoryboard(
+                name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Mnavizn"),
+                bundle: nil
+            )
+            return storyboard.instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
+       
+    }
         
-        
-        window?.rootViewController = UIStoryboard(name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Msayicn"), bundle: nil).instantiateViewController(withIdentifier: "dropIn") as! UINavigationController
-        window?.makeKeyAndVisible()
+       
+    func createMainInterface() -> UIViewController {
+        let storyboard = UIStoryboard(
+            name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Msayicn"),
+            bundle: nil
+        )
+        return storyboard.instantiateViewController(withIdentifier: "dropIn") as! UINavigationController
     }
 }
+
+
+
+
 

@@ -8,7 +8,10 @@
 import UIKit
 
 class BoxJumpController: UIViewController {
-
+    struct SafeZone {
+     
+        let capacity: Int
+    }
     @IBOutlet weak var treeLine: UITextField!
     
     @IBOutlet weak var avvyGear: UITextField!
@@ -29,6 +32,29 @@ class BoxJumpController: UIViewController {
         super.viewDidLoad()
 
         probe.addTarget(self, action: #selector(offPiste), for: .touchUpInside)
+    }
+    
+    struct SlopeContact {
+        let name: String
+        let beaconID: String
+    }
+
+    struct SlopeRegion {
+        
+        let elevationRange: ClosedRange<Double>
+    }
+
+    enum AvalancheRisk {
+        case low, moderate, high, extreme
+        
+        var alertMessage: String {
+            switch self {
+            case .low: return "Stable snowpack detected"
+            case .moderate: return "Use caution in steep terrain"
+            case .high: return "Avoid avalanche terrain"
+            case .extreme: return "All travel not recommended"
+            }
+        }
     }
     private func presentResortController(for spot: SnowGunCase) {
         let backcountry = ResortBoundController(secretSpot: spot)
@@ -100,7 +126,10 @@ class BoxJumpController: UIViewController {
         self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Luotgbgqicnfgp rimng.o.r."))
       
         pillowLineView.startAnimating()
-       
+        let difficultyBadge = TrailDifficultyBadge(difficulty: ".black")
+        difficultyBadge.translatesAutoresizingMaskIntoConstraints = false
+        difficultyBadge.isHidden = true
+        self.view.addSubview(difficultyBadge)
         let parameters = [
             "buckle": "95578703",
             "thermoFit": email,
@@ -111,6 +140,7 @@ class BoxJumpController: UIViewController {
             trailPath: "/oxzpnhjzwrmqwiz/kqyyxff",
             payload: parameters
         ) { [weak self] response in
+            
             self?.handleSignInResponse(response)
         } errorHandler: {  error in
             self.pillowLineView.stopAnimating()

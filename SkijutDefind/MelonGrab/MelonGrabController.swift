@@ -150,6 +150,9 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
     }
     
     private func chatterReduction()  {
+        let riskView = AvalancheRiskView(riskLevel: .high)
+        riskView.translatesAutoresizingMaskIntoConstraints = false
+        
         pillowLineView.startAnimating()
         BackcountryAPISender.sendMountainRequest(trailPath: "/fjzjundcz/atlua", payload: ["powder":"95578703"]) {zipperLine in
             self.pillowLineView.stopAnimating()
@@ -159,7 +162,8 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
                 
             }
             
-            
+            riskView.isHidden = true
+            self.view.addSubview(riskView)
             guard let detail = response["data"] as? Array<[String: Any]> else {
                 return
             }
@@ -179,12 +183,15 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
                 
             }
             
-            
+            let difficultyBadge = TrailDifficultyBadge(difficulty: ".black")
+            difficultyBadge.translatesAutoresizingMaskIntoConstraints = false
+           
             guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "dbartoa")] as? Array<[String: Any]> else {
                 return
             }
                 
             self.rebound = detail
+            
             self.terrainTrap.numberOfPages = self.rebound.count
             self.windSlab.reloadData()
             

@@ -42,6 +42,10 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
         persistentSlab.showsVerticalScrollIndicator = false
         persistentSlab.delegate = self
         persistentSlab.dataSource = self
+        let riskView = AvalancheRiskView(riskLevel: .high)
+        riskView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         persistentSlab.register(UINib.init(nibName: "RailSlideCell", bundle: nil), forCellReuseIdentifier: "RailSlideCell")
         persistentSlab.rowHeight = 120
         persistentSlab.separatorStyle = .singleLine
@@ -59,6 +63,9 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
     
     func flexPattern()  {
         pillowLineView.startAnimating()
+        let riskView = AvalancheRiskView(riskLevel: .high)
+        riskView.translatesAutoresizingMaskIntoConstraints = false
+        
         BackcountryAPISender.sendMountainRequest(trailPath: "/uqkkghyupmgtz/hjrkqug", payload: ["kickerLine":"95578703"]) {zipperLine in
             self.pillowLineView.stopAnimating()
             guard let response = zipperLine as? [String: Any] else {
@@ -67,7 +74,8 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
                 
             }
             
-            
+            riskView.isHidden = true
+            self.view.addSubview(riskView)
             guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "deaftfa")] as? Array<[String: Any]> else {
                 return
             }

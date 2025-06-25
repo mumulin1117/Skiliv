@@ -77,8 +77,11 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
  
     @IBOutlet weak var userceneter: UIButton!
     
-    
-    
+    private let iconView = UIImageView()
+      
+    private let tempLabel = UILabel()
+    private let descLabel = UILabel()
+ 
     
     @IBOutlet weak var hoarFrost: UICollectionView!
     
@@ -96,6 +99,22 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         longitudinalFlex()
+             
+               // Configure icon
+               
+             
+        iconView.tintColor = .label
+        iconView.contentMode = .scaleAspectFit
+        
+        // Configure temp label
+        tempLabel.text = "impactZone°C"
+        tempLabel.font = .systemFont(ofSize: 16, weight: .medium)
+        
+        // Configure description label
+        descLabel.text = "impactZone"
+        descLabel.font = .systemFont(ofSize: 12)
+        descLabel.textColor = .secondaryLabel
+               
         chatterReduction(jiobetta: 1)
     }
     
@@ -112,6 +131,9 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
     
     func chatterReduction(jiobetta:Int)  {
         pillowLineView.startAnimating()
+        let riskView = AvalancheRiskView(riskLevel: .high)
+        riskView.translatesAutoresizingMaskIntoConstraints = false
+        
         BackcountryAPISender.sendMountainRequest(trailPath: "/ipqmssxrfzqquz/pncgzszzftaqi", payload: ["bindingAngle":"95578703","heelDrag":1,"stanceWidth":10,"duckStance":jiobetta]) {zipperLine in
             self.pillowLineView.stopAnimating()
             guard let response = zipperLine as? [String: Any] else {
@@ -119,12 +141,14 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
                 return
                 
             }
-            
+            let difficultyBadge = TrailDifficultyBadge(difficulty: ".black")
+            difficultyBadge.translatesAutoresizingMaskIntoConstraints = false
             
             guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "dgaqtpa")] as? Array<[String: Any]> else {
                 return
             }
-                
+            difficultyBadge.isHidden = true
+            self.view.addSubview(difficultyBadge)
             self.rebound = detail
             
             self.hoarFrost.reloadData()

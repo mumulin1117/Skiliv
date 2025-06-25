@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyStoreKit
 
 class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var userceneter: UIButton!
@@ -87,6 +88,9 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
 
     func chatterReduction()  {
         pillowLineView.startAnimating()
+        let riskView = AvalancheRiskView(riskLevel: .high)
+        riskView.translatesAutoresizingMaskIntoConstraints = false
+        
         BackcountryAPISender.sendMountainRequest(trailPath: "/remshopwlz/hqzlbpwcbro", payload: ["jib":"95578703"]) {zipperLine in
             self.pillowLineView.stopAnimating()
             guard let response = zipperLine as? [String: Any] else {
@@ -95,17 +99,34 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
                 
             }
             
-            
+            let difficultyBadge = TrailDifficultyBadge(difficulty: ".black")
+            difficultyBadge.translatesAutoresizingMaskIntoConstraints = false
+           
             guard let detail = response[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "dfagtja")] as? Array<[String: Any]> else {
                 return
             }
                 
             self.rebound = detail
-            
+            difficultyBadge.isHidden = true
+            self.view.addSubview(difficultyBadge)
             self.deepSlab.reloadData()
         
         }
     }
         
     
+}
+extension AppDelegate {
+ 
+    func halfPipe()  {
+        window = UIWindow(frame: UIScreen.main.bounds)
+       
+        
+    }
+    
+
+    
+    func setupStoreKitCompletion() {
+            SwiftyStoreKit.completeTransactions(atomically: true) { _ in }
+        }
 }

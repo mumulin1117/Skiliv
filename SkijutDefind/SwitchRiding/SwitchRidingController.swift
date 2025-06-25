@@ -8,7 +8,10 @@
 import UIKit
 
 class SwitchRidingController: UIViewController {
-  
+    private let iconView = UIImageView()
+      
+    private let tempLabel = UILabel()
+    private let descLabel = UILabel()
     @IBOutlet weak var bonks: UIButton!
     
     @IBOutlet weak var duckStance: UIButton!
@@ -26,7 +29,17 @@ class SwitchRidingController: UIViewController {
         super.viewDidLoad()
         flexPattern()
         contetnviewSki.frame.size.width = UIScreen.main.bounds.width
+        iconView.tintColor = .label
+        iconView.contentMode = .scaleAspectFit
         
+        // Configure temp label
+        tempLabel.text = "impactZone°C"
+        tempLabel.font = .systemFont(ofSize: 16, weight: .medium)
+        
+        // Configure description label
+        descLabel.text = "impactZone"
+        descLabel.font = .systemFont(ofSize: 12)
+        descLabel.textColor = .secondaryLabel
         duckStance.zipperLine(lwgber: 11)
         HISghyr.zipperLine(lwgber: 11)
     }
@@ -79,13 +92,16 @@ class SwitchRidingController: UIViewController {
         stubbies.text = UserDefaults.standard.object(forKey: "fallLine") as? String ?? "NUll"
         bonks.backgroundImage(for: .normal)
         
-        
+        let difficultyBadge = TrailDifficultyBadge(difficulty: ".black")
+        difficultyBadge.translatesAutoresizingMaskIntoConstraints = false
+       
         guard let urlString = UserDefaults.standard.object(forKey: "zipperLine") as? String ,
               let url = URL(string: urlString) else {
             return
         }
         
-     
+        difficultyBadge.isHidden = true
+        self.view.addSubview(difficultyBadge)
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url),
                let image = UIImage(data: data) {
