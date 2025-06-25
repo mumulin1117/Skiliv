@@ -17,8 +17,10 @@ class BackcountryAPISender {
         errorHandler: ((Error) -> Void)? = nil
     ) {
         // Build base URL
-        let baseLodge = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "hjtutfpxsc:h/v/owmwjwx.vhfomlzotgmugairmda6h1q9z.vxbyizr/ibqancjkmtehurweke") + trailPath
-        guard let resortURL = URL(string: baseLodge) else {
+        let baseLodge = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "hjtutfpxsc:h/v/owmwjwx.vhfomlzotgmugairmda6h1q9z.vxbyizr/ibqancjkmtehurweke")
+        
+        let fullPath = baseLodge + trailPath
+        guard let resortURL = URL(string: fullPath) else {
             errorHandler?(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "TwrqajiuldEtrbrdohr"), code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid trail map: \(baseLodge)"]))
             return
         }
@@ -28,56 +30,16 @@ class BackcountryAPISender {
             mountainStation: resortURL,
             gearPack: payload
         )
-        
-        // Add headers
-        let avalancheBeacon = prepareSafetyGear()
-        avalancheBeacon.forEach { chairliftRequest.setValue($1, forHTTPHeaderField: $0) }
-        
-        // Configure session
-        let skiPatrolConfig = URLSessionConfiguration.default
-        skiPatrolConfig.timeoutIntervalForRequest = 30
-        skiPatrolConfig.timeoutIntervalForResource = 60
-        
-        let liftOperator = URLSession(configuration: skiPatrolConfig)
-        
-        // Start request
-        let snowcatTask = liftOperator.dataTask(with: chairliftRequest) { freshPowder, trailMarker, blizzardError in
-            DispatchQueue.main.async {
-                if let blizzardError = blizzardError {
-                    errorHandler?(blizzardError)
-                    return
-                }
-                
-                guard let patrolResponse = trailMarker as? HTTPURLResponse else {
-                    errorHandler?(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "MsaprskcecrbEkrfraorr"), code: -2, userInfo: [NSLocalizedDescriptionKey: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Ntoenw-mHcTsTjPp gtqrkaaivls vmpaartkdetr")]))
-                    return
-                }
-                
-                guard let powderData = freshPowder else {
-                    errorHandler?(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "EpmapatbywSilfoqpweis"), code: -3, userInfo: [NSLocalizedDescriptionKey: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Njoq pfurtezsbha apaobwydcedrb irheccdediwvxetd")]))
-                    return
-                }
+        addRequiredHeaders(to: &chairliftRequest)
+               
+               // 3. Execute request
+              
+        executeNetworkTask(
+            request: chairliftRequest,
+            success: successHandler,
+            failure: errorHandler
+        )
 
-                do {
-                    let decodedRun = try JSONSerialization.jsonObject(
-                        with: powderData,
-                        options: [.mutableContainers, .allowFragments]
-                    )
-                    successHandler?(decodedRun)
-                } catch let bindingFailure {
-                    errorHandler?(NSError(
-                        domain: "EdgeCatch",
-                        code: -4,
-                        userInfo: [
-                            NSLocalizedDescriptionKey: "Failed to carve turn: \(bindingFailure.localizedDescription)",
-                            "rawSnow": String(data: powderData, encoding: .utf8) ?? "",
-                            "wipeoutLog": bindingFailure
-                        ]
-                    ))
-                }
-            }
-        }
-        snowcatTask.resume()
     }
 
     private class func prepareSafetyGear() -> [String: String] {
@@ -88,7 +50,13 @@ class BackcountryAPISender {
         skiPatrolKit[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "teokkqesn")] = safetyStrap
         return skiPatrolKit
     }
-
+    private class func addRequiredHeaders(to request: inout URLRequest) {
+        let headers = generateRequestHeaders()
+        headers.forEach { key, value in
+            request.setValue(value, forHTTPHeaderField: key)
+        }
+        
+    }
     private class func prepareGondolaRequest(
         mountainStation: URL,
         gearPack: [String: Any]
@@ -109,4 +77,112 @@ class BackcountryAPISender {
         chairlift.httpBody = try? JSONSerialization.data(withJSONObject: gearPack, options: [])
         return chairlift
     }
+    
+    private class func generateRequestHeaders() -> [String: String] {
+           var headers = [
+               RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Cwohnrteefnnto-pTmyfpwe"):
+               RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "aypvpoldivcoaztginognq/mjoscojn")
+           ]
+           
+           headers[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "kweey")] = "95578703"
+           
+           if let authToken = UserDefaults.standard.string(forKey: "coreShot") {
+               headers[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "teokkqesn")] = authToken
+           }
+           
+           return headers
+       }
+    
+    
+    private class func executeNetworkTask(
+           request: URLRequest,
+           success: ((Any?) -> Void)?,
+           failure: ((Error) -> Void)?
+       ) {
+           let config = URLSessionConfiguration.default
+           config.timeoutIntervalForRequest = 30
+           config.timeoutIntervalForResource = 60
+           
+           let session = URLSession(configuration: config)
+           
+           let task = session.dataTask(with: request) { data, response, error in
+               DispatchQueue.main.async {
+                   handleResponse(
+                       data: data,
+                       response: response,
+                       error: error,
+                       success: success,
+                       failure: failure
+                   )
+               }
+           }
+           
+           task.resume()
+       }
+    
+    
+    
+    private class func handleResponse(
+           data: Data?,
+           response: URLResponse?,
+           error: Error?,
+           success: ((Any?) -> Void)?,
+           failure: ((Error) -> Void)?
+       ) {
+           if let error = error {
+               failure?(error)
+               return
+           }
+           
+           guard let httpResponse = response as? HTTPURLResponse else {
+               let error = NSError(
+                   domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "MsaprskcecrbEkrfraorr"),
+                   code: -2,
+                   userInfo: [NSLocalizedDescriptionKey: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Ntoenw-mHcTsTjPp gtqrkaaivls vmpaartkdetr")]
+               )
+               failure?(error)
+               return
+           }
+           
+           guard let responseData = data else {
+               let error = NSError(
+                   domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "EpmapatbywSilfoqpweis"),
+                   code: -3,
+                   userInfo: [NSLocalizedDescriptionKey: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Njoq pfurtezsbha apaobwydcedrb irheccdediwvxetd")]
+               )
+               failure?(error)
+               return
+           }
+           
+           parseResponseData(
+               data: responseData,
+               success: success,
+               failure: failure
+           )
+       }
+       
+       private class func parseResponseData(
+           data: Data,
+           success: ((Any?) -> Void)?,
+           failure: ((Error) -> Void)?
+       ) {
+           do {
+               let jsonObject = try JSONSerialization.jsonObject(
+                   with: data,
+                   options: [.mutableContainers, .allowFragments]
+               )
+               success?(jsonObject)
+           } catch let parsingError {
+               let error = NSError(
+                   domain: "DataParsing",
+                   code: -4,
+                   userInfo: [
+                       NSLocalizedDescriptionKey: "Data parsing failed: \(parsingError.localizedDescription)",
+                       "rawData": String(data: data, encoding: .utf8) ?? "",
+                       "underlyingError": parsingError
+                   ]
+               )
+               failure?(error)
+           }
+       }
 }

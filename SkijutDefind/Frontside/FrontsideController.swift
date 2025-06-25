@@ -9,8 +9,8 @@ import UIKit
 
 extension UIViewController{
     @objc func downFlatDown()  {
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .skiPatrol)
-        self.navigationController?.pushViewController(backcountry, animated: true)
+      
+        navigateTo(ResortBoundController.init(secretSpot: .skiPatrol))
     }
 }
 extension UIImageView {
@@ -47,12 +47,9 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
             
             let castUseridsh = cepsu["riserPlate"] as? Int ?? 0
             
-            let backcountry =  ResortBoundController.init(arpeggiatorPro: .slopeVision,staergia:"\(loveidsh)" + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "&euhsjedrkIldk=") + "\(castUseridsh)")
-            self.navigationController?.pushViewController(backcountry, animated: true)
+            navigateTo(ResortBoundController.init(secretSpot: .slopeVision,localsOnly:"\(loveidsh)" + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "&euhsjedrkIldk=") + "\(castUseridsh)"))
         }else{
-           
-            let backcountry =  ResortBoundController.init(arpeggiatorPro: .lodgeBase,staergia:"\(loveidsh)")
-            self.navigationController?.pushViewController(backcountry, animated: true)
+            navigateTo(ResortBoundController.init(secretSpot: .lodgeBase,localsOnly:"\(loveidsh)"))
             
             
         }
@@ -152,7 +149,7 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
         }
         
         //add
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .freshTracks)
+        let backcountry = ResortBoundController.init(secretSpot: .freshTracks)
         self.navigationController?.pushViewController(backcountry, animated: true)
         
     }

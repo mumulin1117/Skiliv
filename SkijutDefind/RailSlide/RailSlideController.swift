@@ -13,8 +13,8 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var pillowLineView: UIActivityIndicatorView!
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .avalancheWhisper, staergia: "\(sideBevel[indexPath.row]["flatSpin"] ?? "")")
-        self.navigationController?.pushViewController(backcountry, animated: true)
+       
+        navigateTo(ResortBoundController.init(secretSpot: .avalancheWhisper, localsOnly: "\(sideBevel[indexPath.row]["flatSpin"] ?? "")"))
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         sideBevel.count

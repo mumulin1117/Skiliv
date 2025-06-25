@@ -8,6 +8,7 @@
 import UIKit
 import WebKit
 import SwiftyStoreKit
+import StoreKit
 class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate{
 
     @IBOutlet weak var sidecountry: WKWebView!
@@ -19,11 +20,11 @@ class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigat
     
     private  var leaglePath:String
     
-    var Pauuo: SnowGunCase
-    init(arpeggiatorPro: SnowGunCase, staergia: String = "") {
-        self.Pauuo = arpeggiatorPro
+    private var blowerPow: SnowGunCase
+    init(secretSpot: SnowGunCase, localsOnly: String = "") {
+        self.blowerPow = secretSpot
       
-        self.leaglePath = arpeggiatorPro.shredPath(avalancheBeacon: staergia)
+        self.leaglePath = secretSpot.shredPath(avalancheBeacon: localsOnly)
          
         super.init(nibName: nil, bundle: nil)
      }
@@ -31,161 +32,213 @@ class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigat
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-        
+
+    private func cocupCrystalers() {
+        var diamondStone = ["flatCamber", "hybridCamber", "fullRocker",
+                       "earlyRise", "tipRocke", "torsionalStiffness",
+                       "flexPattern", "edgeControl","ertva","ertjiu","wushiou","sanfji"]
+        diamondStone.append("qishiba")
+        diamondStone.append("jiushisi")
+        diamondStone.forEach { handler in
+            sidecountry.configuration.userContentController.add(self, name: handler)
+        }
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pillowLineView.startAnimating()
+        pillowLineView.startAnimating()
        
-        [
-            "flatCamber", "hybridCamber", "fullRocker",
-            "earlyRise","tipRocke","torsionalStiffness","flexPattern","edgeControl"
-            
-        ].forEach { handler in
-            sidecountry.configuration.userContentController.add(self, name: handler)
-        }
-
-        
+        cocupCrystalers()
         
        
-        sidecountry.configuration.preferences.javaScriptCanOpenWindowsAutomatically = true
-        
-        sidecountry.configuration.allowsInlineMediaPlayback = true
-        sidecountry.configuration.mediaTypesRequiringUserActionForPlayback = []
-        
-        
-        sidecountry.navigationDelegate = self
-        sidecountry.scrollView.bounces = false
-        sidecountry.uiDelegate = self
-        sidecountry.scrollView.contentInsetAdjustmentBehavior = .never
-        if  let url = URL(string: leaglePath ) {
-            sidecountry.load(URLRequest(url: url))
+        longitudinalFlexration()
+        if  let requestURL = URL(string: leaglePath ) {
+            sidecountry.load(URLRequest(url: requestURL))
         }
     }
 
+    private func longitudinalFlexration() {
+        let config = sidecountry.configuration
+        config.preferences.javaScriptCanOpenWindowsAutomatically = true
+        config.allowsInlineMediaPlayback = true
+        config.mediaTypesRequiringUserActionForPlayback = []
+        
+        sidecountry.navigationDelegate = self
+        sidecountry.uiDelegate = self
+        sidecountry.scrollView.configureScrollBehavior()
+    }
+    
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: DispatchWorkItem(block: {
-            self.sidecountry?.isHidden = false
-            self.pillowLineView.stopAnimating()
-        }))
+        DispatchQueue.main.executeAfterDelay(seconds: 2) { [weak self] in
+                    
+            self?.toggleWebViewVisibility()
+            self?.pillowLineView.stopAnimating()
+               
+        }
         
     }
     
+    
+    private func toggleWebViewVisibility()  {
+        self.sidecountry?.isHidden = false
+    }
+    
+    
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print(message.name)
-        if message.name == "flatCamber" {
-            guard let cultural = message.body  as? String else {
-                return
-            }
-           
-            self.pillowLineView.startAnimating()
-            self.view.isUserInteractionEnabled = false
-            SwiftyStoreKit.purchaseProduct(cultural, atomically: true) { psResult in
-                
-                self.pillowLineView.stopAnimating()
-                
-                self.view.isUserInteractionEnabled = true
-                if case .success(let psPurch) = psResult {
-                    
-                    let modularSystem = psPurch.transaction.downloads
-                    if !modularSystem.isEmpty {
-                        SwiftyStoreKit.start(modularSystem)
-                    }
-                    
-                    if psPurch.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                    }
-                    
-                    self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "pwaxyg qsoutcbcqeushstffuolx!"), isOKAYSHowi: true)
-                   
-                    self.sidecountry?.evaluateJavaScript("hybridCamber()", completionHandler: nil)
-                }else if case .error(let error) = psResult {
-                    
-                    if error.code == .paymentCancelled {
-                        self.view.isUserInteractionEnabled = true
-                        return
-                    }
-                    
-                    self.showingSKIStatu(information: error.localizedDescription)
-                   
-                }
-            }
-        }
-        
-        
-        
-        if message.name == "fullRocker" {
-            if let hat =  message.body as? String{
-                
-                self.navigationController?.pushViewController(ResortBoundController.init(arpeggiatorPro: .whiteout, staergia: hat), animated: true)
-            }
-            
-        }
-        if message.name == "tipRocke" {
-            
-            if Pauuo == .mountainCode || Pauuo == .snowPact {
-                self.dismiss(animated: true)
-                
-                return
-            }
-            self.navigationController?.popViewController(animated: true)
-            
-        }
-        
-        if message.name == "flexPattern" {
-            if Pauuo == .mountainCode || Pauuo == .snowPact {
-                self.dismiss(animated: true)
-                return
-            }
-            self.navigationController?.popViewController(animated: true)
-            
-        }
-        
-        if message.name == "torsionalStiffness" {
-            UserDefaults.standard.set(nil, forKey: "coreShot")
-           
-            ((UIApplication.shared.delegate) as? AppDelegate)?.window?.rootViewController = UIStoryboard(name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Miapicn"), bundle: nil).instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
-        }
-        
-        
-        
-        if message.name == "edgeControl" {
-            //拨打电话
-            guard let callednumber = message.body  as? String else {
-                return
-            }
-            
-            guard let url = URL(string: "telprompt://\(callednumber)"),
-                  UIApplication.shared.canOpenURL(url) else {
-                
-           
-                self.showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Uonlatbzlced jtwol lmnaskpeu qpshsognaew ncoawlhlts"))
-                return
-            }
-            
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            
-        }
-
+        processMessage(message)
     }
     
     
     
     func showingSKIStatu(information: String,isOKAYSHowi:Bool = false) {
         dawnPatrolLbl.isHidden = false
-        dawnPatrolLbl.text = information
+        dawnPatrolLbl.text = "    \(information)   "
+        dawnPatrolLbl.backgroundColor = UIColor.white
+        dawnPatrolLbl.layer.cornerRadius = 10
+            dawnPatrolLbl.numberOfLines = 0
         dawnPatrolLbl.textColor = isOKAYSHowi ? UIColor.green : UIColor.systemYellow
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.executeAfterDelay(seconds:  2.0) {
             self.dawnPatrolLbl.isHidden = true
         }
+    }
+}
+private extension UIScrollView {
+    func configureScrollBehavior() {
+        bounces = false
+        contentInsetAdjustmentBehavior = .never
+    }
+}
+
+
+ extension DispatchQueue {
+    func executeAfterDelay(seconds: Double, work: @escaping () -> Void) {
+        asyncAfter(deadline: .now() + seconds, execute: DispatchWorkItem(block: work))
+    }
+}
+
+
+extension ResortBoundController{
+    
+    private func processMessage(_ message: WKScriptMessage) {
+            switch message.name {
+            case "flatCamber":
+                handlePurchaseMessage(message)
+            case "fullRocker":
+                handleNavigationMessage(message)
+            case "tipRocke", "flexPattern":
+                handleBackNavigation()
+            case "torsionalStiffness":
+                resetApplicationState()
+            case "edgeControl":
+                handlePhoneCall(message)
+            default:
+                print("Unhandled message: \(message.name)")
+            }
+        }
+    
+}
+
+
+extension ResortBoundController{
+    func handlePurchaseMessage(_ message: WKScriptMessage) {
+        guard let productID = message.body as? String else { return }
+        
+        self.initiatePurchase(productID: productID)
+        
+    }
+        
+        func initiatePurchase(productID: String) {
+            self.view.isUserInteractionEnabled = false
+            self.pillowLineView.startAnimating()
+            
+            SwiftyStoreKit.purchaseProduct(productID, atomically: true) { [weak self] result in
+                self?.handlePurchaseResult(result)
+            }
+        }
+        
+        func handlePurchaseResult(_ result: PurchaseResult) {
+            self.pillowLineView.stopAnimating()
+            self.view.isUserInteractionEnabled = true
+            
+            switch result {
+            case .success(let purchase):
+                processSuccessfulPurchase(purchase)
+            case .error(let error):
+                handlePurchaseError(error)
+            }
+        }
+        
+        func processSuccessfulPurchase(_ purchase: PurchaseDetails) {
+            if !purchase.transaction.downloads.isEmpty {
+                SwiftyStoreKit.start(purchase.transaction.downloads)
+            }
+            
+            if purchase.needsFinishTransaction {
+                SwiftyStoreKit.finishTransaction(purchase.transaction)
+            }
+            
+            showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "pwaxyg qsoutcbcqeushstffuolx!"), isOKAYSHowi: true)
+                    
+            self.sidecountry?.evaluateJavaScript("hybridCamber()", completionHandler: nil)
+        }
+        
+        func handlePurchaseError(_ error: SKError) {
+            guard error.code != .paymentCancelled else { return }
+            showingSKIStatu(information: error.localizedDescription, isOKAYSHowi: false)
+        }
+}
+
+
+
+private extension ResortBoundController {
+    func handleNavigationMessage(_ message: WKScriptMessage) {
+        guard let parameter = message.body as? String else { return }
+        navigateToResortController(with: parameter)
+    }
+    
+    func navigateToResortController(with parameter: String) {
+         
+        navigateTo(ResortBoundController(secretSpot: .whiteout, localsOnly: parameter))
+    }
+    
+    func handleBackNavigation() {
+        guard !shouldDismissInsteadOfPop() else {
+            dismiss(animated: true)
+            return
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func shouldDismissInsteadOfPop() -> Bool {
+        return blowerPow == .mountainCode || blowerPow == .snowPact
+    }
+}
+
+
+
+private extension ResortBoundController {
+    func resetApplicationState() {
+        UserDefaults.standard.removeObject(forKey: "coreShot")
+        resetRootViewController()
+    }
+    
+    func resetRootViewController() {
+        let storyboard = UIStoryboard(name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Miapicn"), bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
+        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = controller
+    }
+    
+    func handlePhoneCall(_ message: WKScriptMessage) {
+        guard let phoneNumber = message.body as? String,
+              let url = URL(string: "telprompt://\(phoneNumber)"),
+              UIApplication.shared.canOpenURL(url) else {
+            
+            showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Uonlatbzlced jtwol lmnaskpeu qpshsognaew ncoawlhlts"), isOKAYSHowi: false)
+          
+            return
+        }
+        
+        UIApplication.shared.open(url)
     }
 }

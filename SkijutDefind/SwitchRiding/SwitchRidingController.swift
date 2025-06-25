@@ -32,49 +32,47 @@ class SwitchRidingController: UIViewController {
     }
     
     @IBAction func tapIn(_ sender: UIButton) {
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .waxProfile)
-        self.navigationController?.pushViewController(backcountry, animated: true)
+        
+        navigateTo(ResortBoundController.init(secretSpot: .waxProfile))
     }
     
 
     @IBAction func freshTracks(_ sender: UIButton) {
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .snowCats)
-        self.navigationController?.pushViewController(backcountry, animated: true)
+     
+        navigateTo(ResortBoundController.init(secretSpot: .snowCats))
     }
     
     
     @IBAction func catSkiing(_ sender: UIButton) {
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .trackedRuns)
-        self.navigationController?.pushViewController(backcountry, animated: true)
+        
+        navigateTo(ResortBoundController.init(secretSpot: .trackedRuns))
+       
     }
     
     
     @IBAction func partnerRescue(_ sender: Any) {
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .riderProfile)
-        self.navigationController?.pushViewController(backcountry, animated: true)
+      
+        navigateTo(ResortBoundController.init(secretSpot: .riderProfile))
+        
     }
     
     @IBAction func baseMaterial(_ sender: UIButton) {
-        var casetgor :SnowGunCase = .myVert
-        if sender.tag == 34 {
-            casetgor = .backcountryZones
-        }else if sender.tag == 35 {
-            casetgor = .gearLocker
-        }else if sender.tag == 36 {
-            casetgor = .liftTickets
-        }else if sender.tag == 37 {
-            casetgor = .lastRuns
-        }else if sender.tag == 38 {
-            casetgor = .bindingSetup
-        }
-        let backcountry = ResortBoundController.init(arpeggiatorPro: casetgor)
-        self.navigationController?.pushViewController(backcountry, animated: true)
-        
+        let destination = destinationController(for: sender.tag)
+            navigateTo(destination)
         
         
     }
     
-    
+    private func destinationController(for tag: Int) -> ResortBoundController {
+        switch tag {
+        case 34: return ResortBoundController(secretSpot: .backcountryZones)
+        case 35: return ResortBoundController(secretSpot: .gearLocker)
+        case 36: return ResortBoundController(secretSpot: .liftTickets)
+        case 37: return ResortBoundController(secretSpot: .lastRuns)
+        case 38: return ResortBoundController(secretSpot: .bindingSetup)
+        default: return ResortBoundController(secretSpot: .myVert)
+        }
+    }
    
     
     func flexPattern()  {
@@ -87,7 +85,7 @@ class SwitchRidingController: UIViewController {
             return
         }
         
-        // 异步加载图片
+     
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url),
                let image = UIImage(data: data) {
@@ -98,4 +96,13 @@ class SwitchRidingController: UIViewController {
         }
        
     }
+    
+    
+}
+
+
+extension UIViewController{
+    func navigateTo(_ controller: ResortBoundController) {
+       navigationController?.pushViewController(controller, animated: true)
+   }
 }

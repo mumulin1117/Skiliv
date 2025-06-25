@@ -25,7 +25,7 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let castUseridsh = rebound[indexPath.row]["firstTracks"] as? Int ?? 0
         
-        let backcountry =  ResortBoundController.init(arpeggiatorPro: .stormReport,staergia:"\(castUseridsh)")
+        let backcountry =  ResortBoundController.init(secretSpot: .stormReport,localsOnly:"\(castUseridsh)")
         self.navigationController?.pushViewController(backcountry, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

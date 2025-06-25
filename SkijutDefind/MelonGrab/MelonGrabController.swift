@@ -21,7 +21,7 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
     
     @IBAction func sluffSlide(_ sender: UIButton) {
         
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .freshLine)
+        let backcountry = ResortBoundController.init(secretSpot: .freshLine)
         self.navigationController?.pushViewController(backcountry, animated: true)
     }
     
@@ -54,14 +54,13 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.looseSnow {
-            let backcountry = ResortBoundController.init(arpeggiatorPro: .vertView,staergia: "\(sideBevel[indexPath.row]["backcountry"] ?? "")")
-            self.navigationController?.pushViewController(backcountry, animated: true)
-            
+          
+            navigateTo(ResortBoundController.init(secretSpot: .vertView,localsOnly: "\(sideBevel[indexPath.row]["backcountry"] ?? "")"))
             return
         }
         
-        let backcountry = ResortBoundController.init(arpeggiatorPro: .carveDetails,staergia: "\(rebound[indexPath.row]["floaty"] ?? "")")
-        self.navigationController?.pushViewController(backcountry, animated: true)
+        navigateTo(ResortBoundController.init(secretSpot: .carveDetails,localsOnly: "\(rebound[indexPath.row]["floaty"] ?? "")"))
+      
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.looseSnow {
