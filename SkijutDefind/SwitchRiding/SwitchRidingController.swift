@@ -10,6 +10,9 @@ import UIKit
 class SwitchRidingController: UIViewController {
     private let iconView = UIImageView()
       
+    @IBOutlet weak var zendhaiGromw: UIScrollView!
+    
+    
     private let tempLabel = UILabel()
     private let descLabel = UILabel()
     @IBOutlet weak var bonks: UIButton!
@@ -28,7 +31,18 @@ class SwitchRidingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         flexPattern()
-        contetnviewSki.frame.size.width = UIScreen.main.bounds.width
+        contetnviewSki.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            contetnviewSki.leadingAnchor.constraint(equalTo: zendhaiGromw.leadingAnchor),
+            contetnviewSki.trailingAnchor.constraint(equalTo: zendhaiGromw.trailingAnchor),
+            contetnviewSki.topAnchor.constraint(equalTo: zendhaiGromw.topAnchor),
+            contetnviewSki.bottomAnchor.constraint(equalTo: zendhaiGromw.bottomAnchor),
+            contetnviewSki.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            contetnviewSki.heightAnchor.constraint(equalToConstant: 800)
+        ])
+        
+
         iconView.tintColor = .label
         iconView.contentMode = .scaleAspectFit
         

@@ -523,8 +523,10 @@
                                             <constraint firstItem="DQ7-ug-td8" firstAttribute="leading" secondItem="ps5-Cz-5mf" secondAttribute="leading" id="h58-Gq-J4S"/>
                                             <constraint firstItem="ct8-C7-tFb" firstAttribute="centerY" secondItem="HhJ-PN-diB" secondAttribute="centerY" id="ib4-Pe-CNa"/>
                                             <constraint firstAttribute="trailing" secondItem="WRj-uK-HxU" secondAttribute="trailing" id="jI4-oE-JrR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="390" id="jLh-2V-r5j"/>
                                             <constraint firstAttribute="height" constant="800" id="jdb-JK-8rS"/>
                                             <constraint firstItem="tB7-k3-02p" firstAttribute="top" secondItem="hJH-DC-28w" secondAttribute="bottom" constant="32" id="lcx-RJ-1Eb"/>
+                                            <constraint firstAttribute="width" constant="390" id="m0z-K4-OrX"/>
                                             <constraint firstItem="Mr8-k1-eMQ" firstAttribute="leading" secondItem="HhJ-PN-diB" secondAttribute="trailing" constant="15" id="mJF-AL-6fi"/>
                                             <constraint firstItem="WRj-uK-HxU" firstAttribute="centerY" secondItem="RIs-cg-zV2" secondAttribute="centerY" id="nB4-lq-uVJ"/>
                                             <constraint firstItem="Nsb-gG-iEt" firstAttribute="top" secondItem="w4Z-QQ-VW4" secondAttribute="bottom" constant="8" id="ox2-uC-mdw"/>
@@ -595,6 +597,7 @@
                         <outlet property="contetnviewSki" destination="ps5-Cz-5mf" id="wUW-yh-LlF"/>
                         <outlet property="duckStance" destination="w4Z-QQ-VW4" id="TIA-7J-uFT"/>
                         <outlet property="stubbies" destination="vEa-zd-xl7" id="alb-os-nQo"/>
+                        <outlet property="zendhaiGromw" destination="1w3-Hm-bxr" id="MPD-kH-zQF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZv-QZ-kbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
