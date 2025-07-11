@@ -37,11 +37,11 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
         let cepsu = rebound[indexPath.row]
         let LandingZoneCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LandingZoneCell", for: indexPath) as! LandingZoneCell
         
-        LandingZoneCell.chalet.loadPowderImage(from: cepsu["poma"] as? String)
+        LandingZoneCell.chalet.implementation(skillom: cepsu["poma"] as? String)
         
         if let aclist = cepsu["heliDrop"] as? Array<Dictionary<String,Any>>,let fui = aclist.first?["snowmaking"] as? String{
             
-            LandingZoneCell.lodge.loadPowderImage(from:fui )
+            LandingZoneCell.lodge.implementation(skillom:fui )
             LandingZoneCell.bootPack.text = "+ \(aclist.count)"
            
         }

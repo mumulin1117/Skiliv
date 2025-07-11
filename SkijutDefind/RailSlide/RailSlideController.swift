@@ -25,7 +25,7 @@ class RailSlideController: UIViewController, UITableViewDataSource, UITableViewD
         
         let adcleb = sideBevel[indexPath.row]
         
-        RailSlideCell.forwardLean.loadPowderImage(from: adcleb["frontflip"] as? String)
+        RailSlideCell.forwardLean.implementation(skillom: adcleb["frontflip"] as? String)
         
         RailSlideCell.riserPlate.text = adcleb["backflip"] as? String
         

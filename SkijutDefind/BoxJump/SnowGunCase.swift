@@ -22,7 +22,7 @@ enum AvalancheRisk {
 enum SnowGunCase: String {
     case freshTracks = "pmaqgressf/rCervelavtueiRfokodmu/bilnrdgepxi?"
 
-        
+    case eventDetail = "iowekDpecteafiylssa/eivnedregxi?fancqthinvnictjyuIkdv="
     case lodgeBase = "pgavggemsf/gLviuvgevRhofopmkRcensrtl/mihnadmejxx?dlkiyvselIbde="
     case slopeVision = "pcabgceusu/gLiivvtewRbohoymhVqitdgeyoe/zilnqduevxa?ylkicvfepIldr="
     case avalancheWhisper = "ppaugbegsk/hpgrbifvjaftfezCchpaotd/xikncdqeuxe?wuyszejrbIcdr="
@@ -33,6 +33,8 @@ enum SnowGunCase: String {
     case carveDetails = "pyazgbehst/qPoomsntwDheetwabizlesl/eilnydeeqxo?ldoyknpaemtincgIgdv="
     case vertView = "pwalgoebsb/ahoozmwetpbapgaef/silnhdrewxn?gujspefriIvdq="
     case lastRuns = "pdazgtexsz/nLligvqemHmiksetfoirnyu/gixnfdheoxq?"
+    case createEvent = "sergyifvdex/yipnzdtemxv?"
+       
     case skiPatrol = "pcazgtewso/fryebpvoorpta/yixnfdzeqxz?"
     case gearLocker = "pwagghewss/uMxysGuooovdrsa/oinnwdhewxz?"
     case backcountryZones = "pdavgressc/yMcywAadbdwrbeusfsg/jipnjdpeixu?"
@@ -47,10 +49,8 @@ enum SnowGunCase: String {
     case myVert = "paadgweesf/lmpypAncltbilvpixtuikefsj/yimncdgenxf?"
     case whiteout = ""
     
-    case eventDetail = "iowekDpecteafiylssa/eivnedregxi?fancqthinvnictjyuIkdv="
-      
-    case createEvent = "sergyifvdex/yipnzdtemxv?"
-       
+   
+    
     case myEvents = "dfgtikefsj/yimncdgenxf?"
    
 

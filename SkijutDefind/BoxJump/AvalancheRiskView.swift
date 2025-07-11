@@ -2,7 +2,7 @@
 //  AvalancheRiskView.swift
 //  SkijutDefind
 //
-//  Created by mumu on 2025/6/25.
+//  Created by SkijutDefind on 2025/6/25.
 //
 
 import UIKit

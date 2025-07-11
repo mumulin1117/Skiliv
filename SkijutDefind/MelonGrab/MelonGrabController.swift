@@ -74,14 +74,14 @@ class MelonGrabController: UIViewController ,UICollectionViewDelegate,UICollecti
         if collectionView == self.looseSnow {
             let cepsu = sideBevel[indexPath.row]
             let TiemiusierCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TiemiusierCell", for: indexPath) as! TiemiusierCell
-            TiemiusierCell.heelDrag.loadPowderImage(from: cepsu["carving"] as? String)
+            TiemiusierCell.heelDrag.implementation(skillom: cepsu["carving"] as? String)
             TiemiusierCell.duckStance.text = cepsu["freeride"] as? String
             
             return TiemiusierCell
         }
         let cepsu = rebound[indexPath.row]
         let MelonGrabCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MelonGrabCell", for: indexPath) as! MelonGrabCell
-        MelonGrabCell.toeDrag.loadPowderImage(from: (cepsu["beacon"] as? Array<String> )?.first)
+        MelonGrabCell.toeDrag.implementation(skillom: (cepsu["beacon"] as? Array<String> )?.first)
         MelonGrabCell.coreShot.text = "@" +  (cepsu["quarterPipe"] as? String ?? "No name")
         
         MelonGrabCell.thermoFit.text = cepsu["dropIn"] as? String

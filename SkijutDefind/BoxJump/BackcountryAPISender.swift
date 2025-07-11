@@ -174,10 +174,10 @@ class BackcountryAPISender {
                success?(jsonObject)
            } catch let parsingError {
                let error = NSError(
-                   domain: "DataParsing",
+                   domain: "",
                    code: -4,
                    userInfo: [
-                       NSLocalizedDescriptionKey: "Data parsing failed: \(parsingError.localizedDescription)",
+                       NSLocalizedDescriptionKey: "\(parsingError.localizedDescription)",
                        "rawData": String(data: data, encoding: .utf8) ?? "",
                        "underlyingError": parsingError
                    ]

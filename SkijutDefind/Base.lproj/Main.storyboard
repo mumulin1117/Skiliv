@@ -21,13 +21,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd8-Kx-7pu">
-                                <rect key="frame" x="16" y="91" width="60" height="60"/>
+                                <rect key="frame" x="16" y="91" width="100" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="jtm-iP-EnW"/>
+                                    <constraint firstAttribute="width" constant="100" id="jtm-iP-EnW"/>
                                     <constraint firstAttribute="height" constant="60" id="mmD-GC-0X9"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NOVISki"/>
+                                <state key="normal" title="   &gt;" image="NOVISki"/>
                                 <connections>
                                     <segue destination="RHL-Hr-k5x" kind="show" id="aJQ-7a-pW3"/>
                                 </connections>
@@ -616,13 +617,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ku-lC-jHY">
-                                <rect key="frame" x="16" y="91" width="60" height="60"/>
+                                <rect key="frame" x="16" y="91" width="100" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Ckl-E7-8ql"/>
+                                    <constraint firstAttribute="width" constant="100" id="Ckl-E7-8ql"/>
                                     <constraint firstAttribute="height" constant="60" id="ve3-r6-mag"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NOVISki"/>
+                                <state key="normal" title="   &gt;" image="NOVISki"/>
                                 <connections>
                                     <segue destination="RHL-Hr-k5x" kind="show" id="H1k-25-z2E"/>
                                 </connections>
@@ -704,13 +706,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAI-K8-IZL">
-                                <rect key="frame" x="16" y="91" width="60" height="60"/>
+                                <rect key="frame" x="16" y="91" width="100" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2KE-qi-JKl"/>
-                                    <constraint firstAttribute="width" constant="60" id="rZM-O6-11G"/>
+                                    <constraint firstAttribute="width" constant="100" id="rZM-O6-11G"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NOVISki"/>
+                                <state key="normal" title="   &gt;" image="NOVISki">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="RHL-Hr-k5x" kind="show" id="4oO-3j-i9R"/>
                                 </connections>
@@ -895,13 +900,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCE-M6-iRp">
-                                <rect key="frame" x="16" y="91" width="60" height="60"/>
+                                <rect key="frame" x="16" y="91" width="100" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="87D-v8-h7c"/>
+                                    <constraint firstAttribute="width" constant="100" id="87D-v8-h7c"/>
                                     <constraint firstAttribute="height" constant="60" id="cLw-TQ-Hom"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="NOVISki"/>
+                                <state key="normal" title="   &gt;" image="NOVISki"/>
                                 <connections>
                                     <segue destination="RHL-Hr-k5x" kind="show" id="nh6-HO-BtA"/>
                                 </connections>

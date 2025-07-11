@@ -15,7 +15,7 @@ extension UIViewController{
 }
 extension UIImageView {
 
-    func loadPowderImage(from urlString: String?) {
+    func implementation(skillom urlString: String?) {
         // 先显示占位图或清空当前图片
       
         guard let urlString = urlString,
@@ -43,26 +43,28 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
         
         let loveidsh = cepsu["forwardLean"] as? Int ?? 0
         
-        if cepsu["rainbowRail"] as? Int == -1 {//视频
+        if cepsu["rainbowRail"] as? Int == -1 {
             
             let castUseridsh = cepsu["riserPlate"] as? Int ?? 0
             
             navigateTo(ResortBoundController.init(secretSpot: .slopeVision,localsOnly:"\(loveidsh)" + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "&euhsjedrkIldk=") + "\(castUseridsh)"))
-        }else{
-            navigateTo(ResortBoundController.init(secretSpot: .lodgeBase,localsOnly:"\(loveidsh)"))
-            
-            
+            return
         }
+        
+        significant(loveidsh:loveidsh)
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        rebound.count
+    
+    
+    
+    private func significant(loveidsh:Int)  {
+        navigateTo(ResortBoundController.init(secretSpot: .lodgeBase,localsOnly:"\(loveidsh)"))
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cepsu = rebound[indexPath.row]
         let dampening = collectionView.dequeueReusableCell(withReuseIdentifier: "FrontsiderCell", for: indexPath) as! FrontsiderCell
         dampening.blueIce.isHidden = (cepsu["rainbowRail"] as? Int != -1)
-        dampening.breakableCrust.loadPowderImage(from: cepsu["shockPad"] as? String)
+        dampening.breakableCrust.implementation(skillom: cepsu["shockPad"] as? String)
         
         dampening.deathCookies.text = cepsu["impactZone"] as? String ?? ""
         
@@ -73,7 +75,9 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
         
         
     }
-    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        rebound.count
+    }
  
     @IBOutlet weak var userceneter: UIButton!
     
