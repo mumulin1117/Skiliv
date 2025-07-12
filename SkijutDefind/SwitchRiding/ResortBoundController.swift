@@ -62,6 +62,7 @@ class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigat
         config.preferences.javaScriptCanOpenWindowsAutomatically = true
         config.allowsInlineMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
+        config.allowsAirPlayForMediaPlayback = false
         
         sidecountry.navigationDelegate = self
         sidecountry.uiDelegate = self
@@ -98,12 +99,12 @@ class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigat
         dawnPatrolLbl.layer.cornerRadius = 10
             dawnPatrolLbl.numberOfLines = 0
         dawnPatrolLbl.textColor = isOKAYSHowi ? UIColor.green : UIColor.systemYellow
-        DispatchQueue.main.executeAfterDelay(seconds:  2.0) {
+        DispatchQueue.main.executeAfterDelay(seconds:  1) {
             self.dawnPatrolLbl.isHidden = true
         }
     }
 }
-private extension UIScrollView {
+ extension UIScrollView {
     func configureScrollBehavior() {
         bounces = false
         contentInsetAdjustmentBehavior = .never

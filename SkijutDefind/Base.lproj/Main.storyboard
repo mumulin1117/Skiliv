@@ -798,14 +798,28 @@
                                 </constraints>
                                 <color key="color" red="0.99607843139999996" green="1" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iA-5X-VeK">
+                                <rect key="frame" x="320" y="39" width="54" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7RP-Qp-izn"/>
+                                    <constraint firstAttribute="width" constant="54" id="tiY-ls-aam"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vbY-b3-NBv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="NJG-J5-jco" secondAttribute="bottom" id="2yg-ys-BLY"/>
                             <constraint firstItem="RCh-Iz-CJn" firstAttribute="top" secondItem="qAI-K8-IZL" secondAttribute="bottom" constant="24" id="4fJ-l2-Eoa"/>
+                            <constraint firstItem="2iA-5X-VeK" firstAttribute="top" secondItem="EKi-Vc-gh9" secondAttribute="top" constant="39" id="53z-hu-m5b"/>
                             <constraint firstItem="mSA-gE-kxU" firstAttribute="leading" secondItem="vbY-b3-NBv" secondAttribute="leading" constant="12" id="776-ni-dCH"/>
                             <constraint firstItem="mSA-gE-kxU" firstAttribute="top" secondItem="RCh-Iz-CJn" secondAttribute="bottom" constant="22" id="Af2-2R-l5c"/>
+                            <constraint firstAttribute="trailing" secondItem="2iA-5X-VeK" secondAttribute="trailing" constant="16" id="CGL-7S-WKD"/>
                             <constraint firstItem="MCw-vp-ErR" firstAttribute="top" secondItem="EKi-Vc-gh9" secondAttribute="top" id="Cdr-D9-zot"/>
                             <constraint firstItem="pqX-1E-cEc" firstAttribute="centerX" secondItem="EKi-Vc-gh9" secondAttribute="centerX" id="FIB-O9-Iav"/>
                             <constraint firstItem="qAI-K8-IZL" firstAttribute="leading" secondItem="vbY-b3-NBv" secondAttribute="leading" constant="16" id="HPc-BM-MmB"/>
@@ -829,6 +843,7 @@
                     <connections>
                         <outlet property="hoarFrost" destination="NJG-J5-jco" id="BAa-jQ-dEC"/>
                         <outlet property="pillowLineView" destination="pqX-1E-cEc" id="Vbj-jV-hOZ"/>
+                        <outlet property="sidecountry" destination="2iA-5X-VeK" id="2kx-iH-01O"/>
                         <outlet property="userceneter" destination="qAI-K8-IZL" id="vZa-mE-AgA"/>
                     </connections>
                 </viewController>
@@ -1018,7 +1033,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aJQ-7a-pW3"/>
+        <segue reference="4oO-3j-i9R"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Laoidkert" width="116" height="67"/>

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import WebKit
 extension UIViewController{
     @objc func downFlatDown()  {
       
@@ -35,6 +35,10 @@ extension UIImageView {
     }
 }
 class FrontsideController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+   
+    
+    @IBOutlet weak var sidecountry: WKWebView!
+    
     @IBOutlet weak var pillowLineView: UIActivityIndicatorView!
     private var rebound = Array<Dictionary<String,Any>>()
     
@@ -120,7 +124,13 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
         descLabel.textColor = .secondaryLabel
                
         chatterReduction(jiobetta: 1)
+      
+        if  let requestURL = URL(string: SnowGunCase.createEvent.shredPath(avalancheBeacon: "") ) {
+            sidecountry.load(URLRequest(url: requestURL))
+        }
     }
+
+   
     
     
     func longitudinalFlex()  {
@@ -130,6 +140,7 @@ class FrontsideController: UIViewController, UICollectionViewDelegate, UICollect
         hoarFrost.register(UINib.init(nibName: "FrontsiderCell", bundle: nil), forCellWithReuseIdentifier: "FrontsiderCell")
         hoarFrost.delegate = self
         hoarFrost.dataSource = self
+       
     }
     
     
