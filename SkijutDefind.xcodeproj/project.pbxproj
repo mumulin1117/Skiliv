@@ -213,14 +213,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SkijutDefind/SkijutDefind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkijutDefind/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Skiliv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Capture your mountain moments – from fresh tracks to gear setups. Skilliv uses your camera to share snowy adventures with fellow riders.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Share your location to get tailored recommendations for runs, lifts, and amenities based on your current position on the mountain.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -233,7 +235,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inkingw.skiliv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -252,14 +254,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SkijutDefind/SkijutDefind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkijutDefind/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Skiliv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Capture your mountain moments – from fresh tracks to gear setups. Skilliv uses your camera to share snowy adventures with fellow riders.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Share your location to get tailored recommendations for runs, lifts, and amenities based on your current position on the mountain.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -272,7 +276,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.inkingw.skiliv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

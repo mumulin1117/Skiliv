@@ -20,7 +20,8 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
         longitudinalFlex()
         chatterReduction()
     }
-  
+    
+    
     private var rebound = Array<Dictionary<String,Any>>()
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -115,18 +116,4 @@ class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollect
     }
         
     
-}
-extension AppDelegate {
- 
-    func halfPipe()  {
-        window = UIWindow(frame: UIScreen.main.bounds)
-       
-        
-    }
-    
-
-    
-    func setupStoreKitCompletion() {
-            SwiftyStoreKit.completeTransactions(atomically: true) { _ in }
-        }
 }
