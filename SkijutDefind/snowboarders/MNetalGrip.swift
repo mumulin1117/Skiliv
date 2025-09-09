@@ -12,18 +12,18 @@ import UIKit
 
 
 class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
-    private var creativeGroundbreaker:WKWebView?
-    private let  pillowLineView = UIActivityIndicatorView.init(style: .large)
-    private var statuYamisLabel = UILabel.init()
-    var visualPattern:TimeInterval = Date().timeIntervalSince1970
+    private var skidTurn:WKWebView?
+    private let  polePlant = UIActivityIndicatorView.init(style: .large)
+    private var schussing = UILabel.init()
+    var telemark:TimeInterval = Date().timeIntervalSince1970
     
-    private  var artisticGround = false
-    private var creativeTrendsetter:String
+    private  var skins = false
+    private var splitboard:String
     
-    init(Trendsetter:String,Matrix:Bool) {
-        creativeTrendsetter = Trendsetter
+    init(touringBindings:String,restoonr:Bool) {
+        splitboard = touringBindings
         
-        artisticGround = Matrix
+        skins = restoonr
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,9 +33,9 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "rechargePay")
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "Close")
-        creativeGroundbreaker?.configuration.userContentController.add(self, name: "pageLoaded")
+        skidTurn?.configuration.userContentController.add(self, name: "rechargePay")
+        skidTurn?.configuration.userContentController.add(self, name: "Close")
+        skidTurn?.configuration.userContentController.add(self, name: "pageLoaded")
         
     }
         
@@ -43,42 +43,41 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        creativeGroundbreaker?.configuration.userContentController.removeAllScriptMessageHandlers()
+        skidTurn?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
  
-    private func artisticTrendsetter()  {
-        let creativeForerunner = UIImage(named: "powder")
+    private func sidecountry()  {
         
-        let brushForerunner = UIImageView(image:creativeForerunner )
-        brushForerunner.frame = self.view.frame
-        brushForerunner.contentMode = .scaleAspectFill
-        view.addSubview(brushForerunner)
+        let sluff = UIImageView(image:UIImage(named: "powder") )
+        sluff.frame = self.view.frame
+        sluff.contentMode = .scaleAspectFill
+        view.addSubview(sluff)
     }
    
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        artisticTrendsetter()
-        if artisticGround == true {
-            let  colorIndividuality = UIButton.init()
-            colorIndividuality.setTitle("Quickly log", for: .normal)
-            colorIndividuality.setTitleColor(.black, for: .normal)
-            colorIndividuality.titleLabel?.font = UIFont.systemFont(ofSize: 19)
-            colorIndividuality.setBackgroundImage(UIImage.init(named: "carving"), for: .normal)
-            colorIndividuality.isUserInteractionEnabled = false
-            view.addSubview(colorIndividuality)
-            colorIndividuality.translatesAutoresizingMaskIntoConstraints = false
+        sidecountry()
+        if skins == true {
+            let  spine = UIButton.init()
+            spine.setTitle("Quickly log", for: .normal)
+            spine.setTitleColor(.black, for: .normal)
+            spine.titleLabel?.font = UIFont.systemFont(ofSize: 19)
+            spine.setBackgroundImage(UIImage.init(named: "carving"), for: .normal)
+            spine.isUserInteractionEnabled = false
+            view.addSubview(spine)
+            spine.translatesAutoresizingMaskIntoConstraints = false
 
             NSLayoutConstraint.activate([
                
-                colorIndividuality.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                spine.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                 
-                colorIndividuality.heightAnchor.constraint(equalToConstant: 52),
+                spine.heightAnchor.constraint(equalToConstant: 52),
                 
-                colorIndividuality.widthAnchor.constraint(equalToConstant: 335),
+                spine.widthAnchor.constraint(equalToConstant: 335),
             
-                colorIndividuality.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                spine.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                                   constant: -self.view.safeAreaInsets.bottom - 65)
             ])
         }
@@ -86,45 +85,45 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
         
         
          
-        let visualNetwork = WKWebViewConfiguration()
-        visualNetwork.allowsAirPlayForMediaPlayback = false
-        visualNetwork.allowsInlineMediaPlayback = true
-        visualNetwork.preferences.javaScriptCanOpenWindowsAutomatically = true
-        visualNetwork.mediaTypesRequiringUserActionForPlayback = []
-        visualNetwork.preferences.javaScriptCanOpenWindowsAutomatically = true
+        let kickerLine = WKWebViewConfiguration()
+        kickerLine.allowsAirPlayForMediaPlayback = false
+        kickerLine.allowsInlineMediaPlayback = true
+        kickerLine.preferences.javaScriptCanOpenWindowsAutomatically = true
+        kickerLine.mediaTypesRequiringUserActionForPlayback = []
+        kickerLine.preferences.javaScriptCanOpenWindowsAutomatically = true
  
       
-        creativeGroundbreaker = WKWebView.init(frame: UIScreen.main.bounds, configuration: visualNetwork)
-        creativeGroundbreaker?.isHidden = true
-        creativeGroundbreaker?.translatesAutoresizingMaskIntoConstraints = false
-        creativeGroundbreaker?.scrollView.alwaysBounceVertical = false
+        skidTurn = WKWebView.init(frame: UIScreen.main.bounds, configuration: kickerLine)
+        skidTurn?.isHidden = true
+        skidTurn?.translatesAutoresizingMaskIntoConstraints = false
+        skidTurn?.scrollView.alwaysBounceVertical = false
         
-        creativeGroundbreaker?.scrollView.contentInsetAdjustmentBehavior = .never
-        creativeGroundbreaker?.navigationDelegate = self
+        skidTurn?.scrollView.contentInsetAdjustmentBehavior = .never
+        skidTurn?.navigationDelegate = self
         
-        creativeGroundbreaker?.uiDelegate = self
-        creativeGroundbreaker?.allowsBackForwardNavigationGestures = true
+        skidTurn?.uiDelegate = self
+        skidTurn?.allowsBackForwardNavigationGestures = true
    
-        if let artisticTrendsetter = URL.init(string: creativeTrendsetter) {
-            creativeGroundbreaker?.load(NSURLRequest.init(url:artisticTrendsetter) as URLRequest)
-            visualPattern = Date().timeIntervalSince1970
+        if let knuckle = URL.init(string: splitboard) {
+            skidTurn?.load(NSURLRequest.init(url:knuckle) as URLRequest)
+            telemark = Date().timeIntervalSince1970
         }
-        self.view.addSubview(creativeGroundbreaker!)
-        pillowLineView.hidesWhenStopped = true
-        pillowLineView.color = .white
-        pillowLineView.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        pillowLineView.center = self.view.center
+        self.view.addSubview(skidTurn!)
+        polePlant.hidesWhenStopped = true
+        polePlant.color = .white
+        polePlant.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        polePlant.center = self.view.center
         
-        self.view.addSubview(pillowLineView)
-        pillowLineView.startAnimating()
-        statuYamisLabel.isHidden = true
-        statuYamisLabel.textAlignment = .center
-        statuYamisLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        self.view.addSubview(polePlant)
+        polePlant.startAnimating()
+        schussing.isHidden = true
+        schussing.textAlignment = .center
+        schussing.font = UIFont.systemFont(ofSize: 15, weight: .medium)
        
-        statuYamisLabel.frame.size = CGSize(width: 300, height: 120)
-        statuYamisLabel.center.x = self.view.center.x
-        statuYamisLabel.frame.origin.y = self.pillowLineView.frame.maxY + 30
-        self.view.addSubview(statuYamisLabel)
+        schussing.frame.size = CGSize(width: 300, height: 120)
+        schussing.center.x = self.view.center.x
+        schussing.frame.origin.y = self.polePlant.frame.maxY + 30
+        self.view.addSubview(schussing)
     }
     
     
@@ -145,8 +144,8 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
        
             if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
              
-                if let chuckleChoreographer = navigationAction.request.url {
-                    UIApplication.shared.open(chuckleChoreographer,options: [:]) { bool in
+                if let huck = navigationAction.request.url {
+                    UIApplication.shared.open(huck,options: [:]) { bool in
                        
                     }
                 }
@@ -162,21 +161,21 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        creativeGroundbreaker?.isHidden = false
-        self.pillowLineView.stopAnimating()
-        if artisticGround == true {
+        skidTurn?.isHidden = false
+        self.polePlant.stopAnimating()
+        if skins == true {
      
-            self.showingSKIStatu(information: "Log insuccessful!", isOKAYSHowi: true)
-            artisticGround = false
+            self.windBuff(sastrugi: "Log insuccessful!", hoarFrost: true)
+            skins = false
             
         }
 
-        let creativeForerunner = "/opi/v1/handSheart"
-         let brushForerunner: [String: Any] = [
-            "handShearo":"\(Int(Date().timeIntervalSince1970*1000 - self.visualPattern*1000))"
+        let airtime = "/opi/v1/handSheart"
+         let flatSpin: [String: Any] = [
+            "handShearo":"\(Int(Date().timeIntervalSince1970*1000 - self.telemark*1000))"
          ]
       
-        PTexCandle.artisticArtisan.artisticTrainerFive( creativeForerunner, orVariation: brushForerunner)
+        PTexCandle.blueIce.breakableCrust( airtime, crud: flatSpin)
        
     }
     
@@ -187,63 +186,63 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
       
  
         if message.name == "rechargePay",
-           let creativeTrailblazer = message.body as? Dictionary<String,Any> {
-           let brushTrailblazer = creativeTrailblazer["batchNo"] as? String ?? ""
-           let colorDistinction = creativeTrailblazer["orderCode"] as? String ?? ""
+           let backflip = message.body as? Dictionary<String,Any> {
+           let frontflip = backflip["batchNo"] as? String ?? ""
+           let doubleCork = backflip["orderCode"] as? String ?? ""
          
 
             view.isUserInteractionEnabled = false
            
-            self.pillowLineView.startAnimating()
-            SwiftyStoreKit.purchaseProduct(brushTrailblazer, atomically: true) { artisticTrailblazer in
-                self.pillowLineView.stopAnimating()
+            self.polePlant.startAnimating()
+            SwiftyStoreKit.purchaseProduct(frontflip, atomically: true) { artisticTrailblazer in
+                self.polePlant.stopAnimating()
                 self.view.isUserInteractionEnabled = true
                 if case .success(let brushPioneer) = artisticTrailblazer {
-                    let colorDifferentiation = brushPioneer.transaction.downloads
+                    let tripleCork = brushPioneer.transaction.downloads
                     
                     
-                    if !colorDifferentiation.isEmpty {
+                    if !tripleCork.isEmpty {
                         
-                        SwiftyStoreKit.start(colorDifferentiation)
+                        SwiftyStoreKit.start(tripleCork)
                     }
                     
                   
                    
                    
                 
-                    guard let artisticPioneer = SwiftyStoreKit.localReceiptData,
-                          let creativeInnovator = brushPioneer.transaction.transactionIdentifier,
-                          creativeInnovator.count > 5
+                    guard let grabsTweak = SwiftyStoreKit.localReceiptData,
+                          let pressBox = brushPioneer.transaction.transactionIdentifier,
+                          pressBox.count > 5
                     else {
                         
-                        self.showingSKIStatu(information:"Pay failed", isOKAYSHowi: false)
+                        self.windBuff(sastrugi:"Pay failed", hoarFrost: false)
                        
                         return
                       }
                     
-                    guard let visualAssembly = try? JSONSerialization.data(withJSONObject: ["orderCode":colorDistinction], options: [.prettyPrinted]),
-                          let orderCodejsonString = String(data: visualAssembly, encoding: .utf8) else{
+                    guard let urbanRiding = try? JSONSerialization.data(withJSONObject: ["orderCode":doubleCork], options: [.prettyPrinted]),
+                          let pillowLine = String(data: urbanRiding, encoding: .utf8) else{
                         
-                        self.showingSKIStatu(information:"Pay failed", isOKAYSHowi: false)
+                        self.windBuff(sastrugi:"Pay failed", hoarFrost: false)
                        
                         return
                     }
 
-                    PTexCandle.artisticArtisan.artisticTrainerFive("/opi/v1/pomap", orVariation: [
-                        "pomap":artisticPioneer.base64EncodedString(),//payload
-                        "pomat":creativeInnovator,//transactionId
-                        "pomac":orderCodejsonString//callbackResult
-                    ],creativeTrainerd: true) { creativeOriginator in
+                    PTexCandle.blueIce.breakableCrust("/opi/v1/pomap", crud: [
+                        "pomap":grabsTweak.base64EncodedString(),//payload
+                        "pomat":pressBox,//transactionId
+                        "pomac":pillowLine//callbackResult
+                    ],deathCookies: true) { steeps in
                        
                         self.view.isUserInteractionEnabled = true
                         
-                        switch creativeOriginator{
+                        switch steeps{
                         case .success(_):
-                            self.showingSKIStatu(information: "Pay successful!", isOKAYSHowi: true)
+                            self.windBuff(sastrugi: "Pay successful!", hoarFrost: true)
                            
                          
                         case .failure(let error):
-                            self.showingSKIStatu(information: error.localizedDescription, isOKAYSHowi: false)
+                            self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
                            
                         }
                     }
@@ -261,7 +260,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
                     
                     if error.code != .paymentCancelled {
                         
-                        self.showingSKIStatu(information: error.localizedDescription, isOKAYSHowi: false)
+                        self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
                        
                        
                     }
@@ -274,30 +273,30 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
 
             UserDefaults.standard.set(nil, forKey: "partnerRescue")// 清除本地token
            
-            let brushOriginator = UINavigationController.init(rootViewController: ZmondStone.init())
-            brushOriginator.navigationBar.isHidden = true
+            let couloir = UINavigationController.init(rootViewController: ZmondStone.init())
+            couloir.navigationBar.isHidden = true
             
           
-            TouringBindings.colorMixing?.rootViewController = brushOriginator
+            TouringBindings.platter?.rootViewController = couloir
         }
         
         if message.name == "pageLoaded" {
-            creativeGroundbreaker?.isHidden = false
-            self.pillowLineView.stopAnimating()
+            skidTurn?.isHidden = false
+            self.polePlant.stopAnimating()
         }
     }
    
     
-    func showingSKIStatu(information: String,isOKAYSHowi:Bool = false) {
-        statuYamisLabel.isHidden = false
-        statuYamisLabel.text = information
-        statuYamisLabel.textColor = isOKAYSHowi ? UIColor.green : UIColor.systemYellow
-        statuYamisLabel.backgroundColor = UIColor.white
-        statuYamisLabel.layer.cornerRadius = 10
-        statuYamisLabel.numberOfLines = 0
+    func windBuff(sastrugi: String,hoarFrost:Bool = false) {
+        schussing.isHidden = false
+        schussing.text = sastrugi
+        schussing.textColor = hoarFrost ? UIColor.green : UIColor.systemYellow
+        schussing.backgroundColor = UIColor.white
+        schussing.layer.cornerRadius = 10
+        schussing.numberOfLines = 0
         
         DispatchQueue.main.executeAfterDelay(seconds:   2.0) {
-            self.statuYamisLabel.isHidden = true
+            self.schussing.isHidden = true
         }
     }
 }

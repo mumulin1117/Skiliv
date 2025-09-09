@@ -11,77 +11,77 @@ import CommonCrypto
 
 struct RaseStructure {
     
-    private let ntrunner: Data
-    private let tistic: Data
+    private let rainbowRail: Data
+    private let downFlatDown: Data
     
     init?() {
 #if DEBUG
-        let colorSubtlety = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let retention = "9986sdff5s4y456a"  // 16字节
+        let kinkRail = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+        let flatDownFlat = "9986sdff5s4y456a"  // 16字节
         #else
-        let colorSubtlety = "4vbjai82y20r3k0i" // 16字节(AES128)或32字节(AES256)
-        let retention = "xpmhhvr6sflxecoz"  // 16字节
+        let kinkRail = "4vbjai82y20r3k0i" // 16字节(AES128)或32字节(AES256)
+        let flatDownFlat = "xpmhhvr6sflxecoz"  // 16字节
 #endif
       
-        guard let creativeGroundbreaker = colorSubtlety.data(using: .utf8), let ivData = retention.data(using: .utf8) else {
+        guard let upRail = kinkRail.data(using: .utf8), let ivData = flatDownFlat.data(using: .utf8) else {
             
             return nil
         }
         
-        self.ntrunner = creativeGroundbreaker
-        self.tistic = ivData
+        self.rainbowRail = upRail
+        self.downFlatDown = ivData
     }
     
     // MARK: - 加密方法
-    func artisticIdentity(tity: String) -> String? {
-        guard let data = tity.data(using: .utf8) else {
+    func waveBox(mailbox: String) -> String? {
+        guard let bonks = mailbox.data(using: .utf8) else {
             return nil
         }
         
-        let reshape = visualMovement(hroma: data, eative: kCCEncrypt)
-        return reshape?.colorSubtlety()
+        let stubbies = butterPad(jib: bonks, streetRide: kCCEncrypt)
+        return stubbies?.avvyGear()
     }
     
     // MARK: - 解密方法
     func visualabuTexture(Temper: String) -> String? {
-        guard let data = Data(creativeAdvisor: Temper) else {
+        guard let data = Data(champagnePowder: Temper) else {
             return nil
         }
         
-        let cryptData = visualMovement(hroma: data, eative: kCCDecrypt)
-        return cryptData?.visualSharpness()
+        let cryptData = butterPad(jib: data, streetRide: kCCDecrypt)
+        return cryptData?.wipeout()
     }
     
     // MARK: - 核心加密/解密逻辑
-    private func visualMovement(hroma: Data, eative: Int) -> Data? {
-        let colorBrightness = hroma.count + kCCBlockSizeAES128
-        var alStreng = Data(count: colorBrightness)
+    private func butterPad(jib: Data, streetRide: Int) -> Data? {
+        let urbanFeature = jib.count + kCCBlockSizeAES128
+        var nightRiding = Data(count: urbanFeature)
         
-        let visualFocus = ntrunner.count
-        let artisticExpert = CCOptions(kCCOptionPKCS7Padding)
+        let dawnPatrol = rainbowRail.count
+        let firstTracks = CCOptions(kCCOptionPKCS7Padding)
         
-        var artisticAuthority: size_t = 0
+        var lastChair: size_t = 0
         
-        let visualFidelity = alStreng.withUnsafeMutableBytes { Richne in
-            hroma.withUnsafeBytes { dataBytes in
-                tistic.withUnsafeBytes { ivBytes in
-                    ntrunner.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(eative),
+        let freshTracks = nightRiding.withUnsafeMutableBytes { Richne in
+            jib.withUnsafeBytes { dataBytes in
+                downFlatDown.withUnsafeBytes { ivBytes in
+                    rainbowRail.withUnsafeBytes { keyBytes in
+                        CCCrypt(CCOperation(streetRide),
                                 CCAlgorithm(kCCAlgorithmAES),
-                                artisticExpert,
-                                keyBytes.baseAddress, visualFocus,
+                                firstTracks,
+                                keyBytes.baseAddress, dawnPatrol,
                                 ivBytes.baseAddress,
-                                dataBytes.baseAddress, hroma.count,
-                                Richne.baseAddress, colorBrightness,
-                                &artisticAuthority)
+                                dataBytes.baseAddress, jib.count,
+                                Richne.baseAddress, urbanFeature,
+                                &lastChair)
                     }
                 }
             }
         }
         
-        if visualFidelity == kCCSuccess {
-            alStreng.removeSubrange(artisticAuthority..<alStreng.count)
-            return alStreng
+        if freshTracks == kCCSuccess {
+            nightRiding.removeSubrange(lastChair..<nightRiding.count)
+            return nightRiding
         } else {
            
             return nil

@@ -222,7 +222,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Skiliv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Capture your mountain moments – from fresh tracks to gear setups. Skilliv uses your camera to share snowy adventures with fellow riders.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Share your location to get tailored recommendations for runs, lifts, and amenities based on your current position on the mountain.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable location to find fellow skiers and snowboarders on the mountain. Connect with riders in your area and coordinate meetups at lodges or favorite runs.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -263,7 +263,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Skiliv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Capture your mountain moments – from fresh tracks to gear setups. Skilliv uses your camera to share snowy adventures with fellow riders.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Share your location to get tailored recommendations for runs, lifts, and amenities based on your current position on the mountain.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable location to find fellow skiers and snowboarders on the mountain. Connect with riders in your area and coordinate meetups at lodges or favorite runs.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

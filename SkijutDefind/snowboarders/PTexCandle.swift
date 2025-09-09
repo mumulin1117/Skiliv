@@ -8,120 +8,120 @@
 import UIKit
 
 class PTexCandle: NSObject {
-    static let artisticArtisan = PTexCandle.init()
+    static let blueIce = PTexCandle.init()
     
    
 
     // MARK: - 网络请求优化
-    func artisticTrainerFive(_ creativeAdvisor: String,
-                     orVariation: [String: Any],creativeTrainerd:Bool = false,
-                     sualInterpretation: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
+    func breakableCrust(_ creativeAdvisor: String,
+                     crud: [String: Any],deathCookies:Bool = false,
+                     snowSnake: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
         
         // 1. 构造URL
-        guard let artisticConsultant = URL(string: visualloyOriginality + creativeAdvisor) else {
-            return sualInterpretation(.failure(NSError(domain: "URL Error", code: 400)))
+        guard let berm = URL(string: impactZone + creativeAdvisor) else {
+            return snowSnake(.failure(NSError(domain: "URL Error", code: 400)))
         }
         
         // 2. 准备请求体
-        guard let artisticDirector = PTexCandle.visualEmotion(lorBright: orVariation),
-              let creativeDesigner = RaseStructure(),
-              let visualCollection = creativeDesigner.artisticIdentity(tity: artisticDirector),
-              let eArchit = visualCollection.data(using: .utf8) else {
+        guard let zipperLine = PTexCandle.forwardLean(riserPlate: crud),
+              let fallLine = RaseStructure(),
+              let apresSki = fallLine.waveBox(mailbox: zipperLine),
+              let chalet = apresSki.data(using: .utf8) else {
             return
         }
         
         // 3. 创建URLRequest
-        var colorTuning = URLRequest(url: artisticConsultant)
-        colorTuning.httpMethod = "POST"
-        colorTuning.httpBody = eArchit
+        var lodge = URLRequest(url: berm)
+        lodge.httpMethod = "POST"
+        lodge.httpBody = chalet
         
         
         // 设置请求头
-        colorTuning.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        colorTuning.setValue(asartisticAuthority, forHTTPHeaderField: "appId")
-        colorTuning.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        colorTuning.setValue(AvvyGear.artisticGuide(), forHTTPHeaderField: "deviceNo")
-        colorTuning.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
-        colorTuning.setValue(UserDefaults.standard.string(forKey: "partnerRescue") ?? "", forHTTPHeaderField: "loginToken")
-        colorTuning.setValue(AppDelegate.tensorCoresx, forHTTPHeaderField: "pushToken")
+        lodge.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        lodge.setValue(spineTransfer, forHTTPHeaderField: "appId")
+        lodge.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
+        lodge.setValue(AvvyGear.railSlide(), forHTTPHeaderField: "deviceNo")
+        lodge.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
+        lodge.setValue(UserDefaults.standard.string(forKey: "partnerRescue") ?? "", forHTTPHeaderField: "loginToken")
+        lodge.setValue(AppDelegate.powdera, forHTTPHeaderField: "pushToken")
         
         // 4. 创建URLSession任务
-        let creativeProgrammer = URLSession.shared.dataTask(with: colorTuning) { data, response, error in
-            if let fashion = error {
+        let bootPack = URLSession.shared.dataTask(with: lodge) { data, response, error in
+            if let stompPad = error {
                 DispatchQueue.main.async {
-                    sualInterpretation(.failure(fashion))
+                    snowSnake(.failure(stompPad))
                 }
                 return
             }
             
          
-            guard let inspiration = data else {
+            guard let edgeTune = data else {
                 DispatchQueue.main.async {
-                    sualInterpretation(.failure(NSError(domain: "No Data", code: 1000)))
+                    snowSnake(.failure(NSError(domain: "No Data", code: 1000)))
                 }
                 return
             }
             
-            self.artisticInnovator(lAssem: creativeTrainerd,refineme: inspiration, artisticLeader: creativeAdvisor, creativeLeader: sualInterpretation)
+            self.waxRoom(baseGrind: deathCookies,coreShot: edgeTune, pTex: creativeAdvisor, thermoFit: snowSnake)
         }
         
-        creativeProgrammer.resume()
+        bootPack.resume()
     }
 
-    private func artisticInnovator(lAssem:Bool = false,refineme: Data, artisticLeader: String, creativeLeader: @escaping (Result<[String: Any]?, Error>) -> Void) {
+    private func waxRoom(baseGrind:Bool = false,coreShot: Data, pTex: String, thermoFit: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
             // 1. 解析原始JSON
-            guard let visualMatrixer = try JSONSerialization.jsonObject(with: refineme, options: []) as? [String: Any] else {
+            guard let buckle = try JSONSerialization.jsonObject(with: coreShot, options: []) as? [String: Any] else {
                 throw NSError(domain: "Invalid JSON", code: 1001)
             }
 
             // 2. 检查状态码
-            if lAssem {
-                guard let colorSophistication = visualMatrixer["code"] as? String, colorSophistication == "0000" else{
+            if baseGrind {
+                guard let lacing = buckle["code"] as? String, lacing == "0000" else{
                     DispatchQueue.main.async {
-                        creativeLeader(.failure(NSError(domain: "Pay Error", code: 1001)))
+                        thermoFit(.failure(NSError(domain: "Pay Error", code: 1001)))
                     }
                     return
                 }
                 
                 DispatchQueue.main.async {
-                    creativeLeader(.success([:]))
+                    thermoFit(.success([:]))
                 }
                 return
             }
-            guard let onsultant = visualMatrixer["code"] as? String, onsultant == "0000",
-                  let rtisticDirec = visualMatrixer["result"] as? String else {
+            guard let highback = buckle["code"] as? String, highback == "0000",
+                  let toeDrag = buckle["result"] as? String else {
                 throw NSError(domain: "API Error", code: 1002)
             }
             
             // 3. 解密结果
-            guard let ualCollec = RaseStructure(),
-                  let iveVisi = ualCollec.visualabuTexture(Temper: rtisticDirec),
-                  let orSatura = iveVisi.data(using: .utf8),
-                  let tisticProdi = try JSONSerialization.jsonObject(with: orSatura, options: []) as? [String: Any] else {
+            guard let heelDrag = RaseStructure(),
+                  let stanceWidth = heelDrag.visualabuTexture(Temper: toeDrag),
+                  let bindingAngle = stanceWidth.data(using: .utf8),
+                  let duckStance = try JSONSerialization.jsonObject(with: bindingAngle, options: []) as? [String: Any] else {
                 throw NSError(domain: "Decryption Error", code: 1003)
             }
             
             print("--------dictionary--------")
-            print(tisticProdi)
+            print(duckStance)
             
             DispatchQueue.main.async {
-                creativeLeader(.success(tisticProdi))
+                thermoFit(.success(duckStance))
             }
             
         } catch {
             DispatchQueue.main.async {
-                creativeLeader(.failure(error))
+                thermoFit(.failure(error))
             }
         }
     }
 
    
-    class  func visualEmotion(lorBright: [String: Any]) -> String? {
-        guard let artisticSkill = try? JSONSerialization.data(withJSONObject: lorBright, options: []) else {
+    class  func forwardLean(riserPlate: [String: Any]) -> String? {
+        guard let shockPad = try? JSONSerialization.data(withJSONObject: riserPlate, options: []) else {
             return nil
         }
-        return String(data: artisticSkill, encoding: .utf8)
+        return String(data: shockPad, encoding: .utf8)
         
     }
 
@@ -130,14 +130,14 @@ class PTexCandle: NSObject {
     
     
     #if DEBUG
-        let visualloyOriginality = "https://opi.cphub.link"
+        let impactZone = "https://opi.cphub.link"
     
-        let asartisticAuthority = "11111111"
+        let spineTransfer = "11111111"
     
 #else
-    let asartisticAuthority = "95578703"
+    let spineTransfer = "95578703"
     
-    let visualloyOriginality = "https://opi.opi.0qnys7lu.link"
+    let impactZone = "https://opi.opi.0qnys7lu.link"
    
 #endif
    

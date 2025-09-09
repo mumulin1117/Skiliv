@@ -10,16 +10,16 @@ import SwiftyStoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static var tensorCoresx:String = ""
+    static var powdera:String = ""
   
 
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         halfPipe()
-        computeShaders()
-        instanceSegmentation()
-        setupStoreKitCompletion()
+        offPiste()
+        groomers()
+        backcountry()
         slopestyle()
         
         return true
@@ -67,22 +67,22 @@ extension AppDelegate {
     
 
     
-    func setupStoreKitCompletion() {
-        SwiftyStoreKit.completeTransactions(atomically: true) { resultPaying in
+    func backcountry() {
+        SwiftyStoreKit.completeTransactions(atomically: true) { carving in
            
                     
-            for aitmt in resultPaying {
-                switch aitmt.transaction.transactionState {
+            for freeride in carving {
+                switch freeride.transaction.transactionState {
                 case .purchased, .restored:
                    
-                    let miaj = aitmt.transaction.downloads
+                    let shredding = freeride.transaction.downloads
                     
-                    if !miaj.isEmpty  {
+                    if !shredding.isEmpty  {
                    
-                        SwiftyStoreKit.start(miaj)
-                    } else if aitmt.needsFinishTransaction {
+                        SwiftyStoreKit.start(shredding)
+                    } else if freeride.needsFinishTransaction {
                       
-                        SwiftyStoreKit.finishTransaction(aitmt.transaction)
+                        SwiftyStoreKit.finishTransaction(freeride.transaction)
                     }
                 case .failed, .purchasing, .deferred:
                    break
@@ -94,7 +94,7 @@ extension AppDelegate {
         }
         }
     
-    private func instanceSegmentation() {
+    private func groomers() {
         
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
@@ -107,26 +107,26 @@ extension AppDelegate {
     }
     
     
-    private func computeShaders()  {
-        let poseEstimation = UITextField()
-        poseEstimation.isSecureTextEntry = true
+    private func offPiste()  {
+        let bigAir = UITextField()
+        bigAir.isSecureTextEntry = true
 
-        if (!window!.subviews.contains(poseEstimation))  {
-            window!.addSubview(poseEstimation)
+        if (!window!.subviews.contains(bigAir))  {
+            window!.addSubview(bigAir)
             
-            poseEstimation.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+            bigAir.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
            
-            poseEstimation.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            bigAir.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
             
-            window!.layer.superlayer?.addSublayer(poseEstimation.layer)
+            window!.layer.superlayer?.addSublayer(bigAir.layer)
            
             
             if #available(iOS 17.0, *) {
                 
-                poseEstimation.layer.sublayers?.last?.addSublayer(window!.layer)
+                bigAir.layer.sublayers?.last?.addSublayer(window!.layer)
             } else {
                
-                poseEstimation.layer.sublayers?.first?.addSublayer(window!.layer)
+                bigAir.layer.sublayers?.first?.addSublayer(window!.layer)
             }
         }
     }
@@ -135,7 +135,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let distributedTraining = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
-        AppDelegate.tensorCoresx = distributedTraining
+        let slopestyle = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        AppDelegate.powdera = slopestyle
     }
 }

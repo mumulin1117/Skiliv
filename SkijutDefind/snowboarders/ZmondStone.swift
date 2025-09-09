@@ -11,48 +11,48 @@ import CoreLocation
 
 
 class ZmondStone: UIViewController ,CLLocationManagerDelegate {
-    private let  pillowLineView = UIActivityIndicatorView.init(style: .large)
-    let  statuYamisLabel: UILabel = UILabel.init()
+    private let  sideHit = UIActivityIndicatorView.init(style: .large)
+    let  backcountryGate: UILabel = UILabel.init()
     
-    private let augmentedReality = CLLocationManager()
-    private let realTimeRendering = CLGeocoder()
+    private let avalancheDog = CLLocationManager()
+    private let beaconCheck = CLGeocoder()
 
-    private var canvasLayer:String = ""
+    private var partnerRescue:String = ""
    
-    private  var strokeEngine:NSNumber = 0.0
-    private  var colorTheory:NSNumber = 0.0
-    private func artisticFilter()  {
-        let creativeProcess = UIImage(named: "powder")
+    private  var avyCourse:NSNumber = 0.0
+    private  var snowStudy:NSNumber = 0.0
+    private func compressionTest()  {
+        let propagationTest = UIImage(named: "powder")
         
-        let visualDesign = UIImageView(image:creativeProcess )
-        visualDesign.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        view.addSubview(visualDesign)
+        let handShear = UIImageView(image:propagationTest )
+        handShear.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        view.addSubview(handShear)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        artisticFilter()
+        compressionTest()
         
         
-        let  artGeneration = UIButton.init()
-        artGeneration.setBackgroundImage(UIImage.init(named: "upcycling"), for: .normal)
-        artGeneration.setTitleColor(.black, for: .normal)
-        artGeneration.titleLabel?.font = UIFont.systemFont(ofSize: 19)
-        artGeneration.setTitle("Quickly Log", for: .normal)
-        artGeneration.setBackgroundImage(UIImage.init(named: "carving"), for: .normal)
-        view.addSubview(artGeneration)
-        artGeneration.addTarget(self, action: #selector(digitalPainting), for: .touchUpInside)
+        let  stormSlab = UIButton.init()
+        stormSlab.setBackgroundImage(UIImage.init(named: "upcycling"), for: .normal)
+        stormSlab.setTitleColor(.black, for: .normal)
+        stormSlab.titleLabel?.font = UIFont.systemFont(ofSize: 19)
+        stormSlab.setTitle("Quickly Log", for: .normal)
+        stormSlab.setBackgroundImage(UIImage.init(named: "carving"), for: .normal)
+        view.addSubview(stormSlab)
+        stormSlab.addTarget(self, action: #selector(sluffSlide), for: .touchUpInside)
       
         
-        artGeneration.translatesAutoresizingMaskIntoConstraints = false
+        stormSlab.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
           
-            artGeneration.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            artGeneration.heightAnchor.constraint(equalToConstant: 56),
-            artGeneration.widthAnchor.constraint(equalToConstant: 335),
-            artGeneration.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+            stormSlab.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            stormSlab.heightAnchor.constraint(equalToConstant: 56),
+            stormSlab.widthAnchor.constraint(equalToConstant: 335),
+            stormSlab.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                               constant: -self.view.safeAreaInsets.bottom - 85)
         ])
         
@@ -61,90 +61,90 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
         
         
                 
-        creativeProcess()
+        surfaceHoar()
         
-        augmentedReality.delegate = self
-        pillowLineView.hidesWhenStopped = true
-        pillowLineView.color = .white
-        pillowLineView.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-        pillowLineView.center = self.view.center
+        avalancheDog.delegate = self
+        sideHit.hidesWhenStopped = true
+        sideHit.color = .white
+        sideHit.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        sideHit.center = self.view.center
         
-        self.view.addSubview(pillowLineView)
-        statuYamisLabel.numberOfLines = 0
-        statuYamisLabel.isHidden = true
-        statuYamisLabel.textAlignment = .center
-        statuYamisLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        statuYamisLabel.center = self.view.center
-        statuYamisLabel.frame.origin.y = self.pillowLineView.frame.maxY + 30
-        self.view.addSubview(statuYamisLabel)
+        self.view.addSubview(sideHit)
+        backcountryGate.numberOfLines = 0
+        backcountryGate.isHidden = true
+        backcountryGate.textAlignment = .center
+        backcountryGate.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        backcountryGate.center = self.view.center
+        backcountryGate.frame.origin.y = self.sideHit.frame.maxY + 30
+        self.view.addSubview(backcountryGate)
     }
     
     
-    func showingSKIStatu(information: String,isOKAYSHowi:Bool = false) {
-        statuYamisLabel.isHidden = false
-        statuYamisLabel.text = information
-        statuYamisLabel.textColor = isOKAYSHowi ? UIColor.green : UIColor.systemYellow
-        statuYamisLabel.backgroundColor = UIColor.white
-        statuYamisLabel.layer.cornerRadius = 10
-        statuYamisLabel.numberOfLines = 0
-        statuYamisLabel.frame.size = CGSize(width: 300, height: 120)
+    func persistentSlab(deepSlab: String,looseSnow:Bool = false) {
+        backcountryGate.isHidden = false
+        backcountryGate.text = deepSlab
+        backcountryGate.textColor = looseSnow ? UIColor.green : UIColor.systemYellow
+        backcountryGate.backgroundColor = UIColor.white
+        backcountryGate.layer.cornerRadius = 10
+        backcountryGate.numberOfLines = 0
+        backcountryGate.frame.size = CGSize(width: 300, height: 120)
         DispatchQueue.main.executeAfterDelay(seconds:   2.0) {
-            self.statuYamisLabel.isHidden = true
+            self.backcountryGate.isHidden = true
         }
     }
    
     
-    @objc func digitalPainting() {
+    @objc func sluffSlide() {
                 
-        creativeProcess()
+        surfaceHoar()
         
-        pillowLineView.startAnimating()
+        sideHit.startAnimating()
         
 
-        let creativeExpression = "/opi/v1/coreRepairl"
+        let cornFall = "/opi/v1/coreRepairl"
         
-        var artisticStyle: [String: Any] = [
+        var windSlab: [String: Any] = [
            
-            "coreRepairn":AvvyGear.artisticGuide(),
+            "coreRepairn":AvvyGear.railSlide(),
             "coreRepairv":[
                
-                "countryCode":canvasLayer,
-                "latitude":strokeEngine,
-                "longitude":colorTheory
+                "countryCode":partnerRescue,
+                "latitude":avyCourse,
+                "longitude":snowStudy
             ]
            
             
         ]
         
-        if let visualEffects = AvvyGear.brushInstructor() {
-            artisticStyle["coreRepaird"] = visualEffects
+        if let terrainTrap = AvvyGear.frontside() {
+            windSlab["coreRepaird"] = terrainTrap
         }
   
-        PTexCandle.artisticArtisan.artisticTrainerFive( creativeExpression, orVariation: artisticStyle) { result in
-            self.pillowLineView.stopAnimating()
+        PTexCandle.blueIce.breakableCrust( cornFall, crud: windSlab) { runoutZone in
+            self.sideHit.stopAnimating()
             
-            switch result{
-            case .success(let colorMixing):
+            switch runoutZone{
+            case .success(let safeZone):
                
 
-                guard let brushTexture = colorMixing,
-                      let jesterLogic = brushTexture["token"] as? String,
-                      let whopperWare = UserDefaults.standard.object(forKey: "rockerProfile")  as? String
+                guard let exposure = safeZone,
+                      let aspect = exposure["token"] as? String,
+                      let elevation = UserDefaults.standard.object(forKey: "rockerProfile")  as? String
                 else {
-                    self.showingSKIStatu(information: "Data weak!", isOKAYSHowi: false)
+                    self.persistentSlab(deepSlab: "Data weak!", looseSnow: false)
                   
                     return
                 }
-                if let textureMapping = brushTexture["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
-                    AvvyGear.artisticInstructor(textureMapping)
+                if let treeline = exposure["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+                    AvvyGear.switchRiding(treeline)
                     
                 }
                 
-                UserDefaults.standard.set(jesterLogic, forKey: "partnerRescue")
-              let augmentedReality =  [
-                    "token":jesterLogic,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                UserDefaults.standard.set(aspect, forKey: "partnerRescue")
+              let alpineZone =  [
+                    "token":aspect,"timestamp":"\(Int(Date().timeIntervalSince1970))"
                 ]
-                guard let realTimeRendering = PTexCandle.visualEmotion(lorBright: augmentedReality) else {
+                guard let realTimeRendering = PTexCandle.forwardLean(riserPlate: alpineZone) else {
                     
                     return
                     
@@ -152,24 +152,24 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
                 print(realTimeRendering)
                 // 2. 进行AES加密
                 
-                guard let canvasLayer = RaseStructure(),
-                      let strokeEngine = canvasLayer.artisticIdentity(tity: realTimeRendering) else {
+                guard let subAlpine = RaseStructure(),
+                      let snowpack = subAlpine.waveBox(mailbox: realTimeRendering) else {
                     
                     return
                 }
                 print("--------encryptedString--------")
-                print(strokeEngine)
+                print(snowpack)
                 
                 
-                let colorTheory = whopperWare  + "/?openParams=" + strokeEngine + "&appId=" + "\(PTexCandle.artisticArtisan.asartisticAuthority)"
-                print(colorTheory)
-                let artisticFilter = MNetalGrip.init(Trendsetter: colorTheory, Matrix: true)
-                TouringBindings.colorMixing?.rootViewController = artisticFilter
+                let cupCrystal = elevation  + "/?openParams=" + snowpack + "&appId=" + "\(PTexCandle.blueIce.spineTransfer)"
+                print(cupCrystal)
+                let depthHoar = MNetalGrip.init(touringBindings: cupCrystal, restoonr: true)
+                TouringBindings.platter?.rootViewController = depthHoar
                
                
             case .failure(let error):
                 
-                self.showingSKIStatu(information: error.localizedDescription, isOKAYSHowi: false)
+                self.persistentSlab(deepSlab: error.localizedDescription, looseSnow: false)
             }
         }
         
@@ -178,18 +178,18 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
     }
    
     
-    private func creativeProcess() {
+    private func surfaceHoar() {
         
         
-        if augmentedReality.authorizationStatus  ==  .authorizedWhenInUse || augmentedReality.authorizationStatus  ==  .authorizedAlways{
-            augmentedReality.startUpdatingLocation()
+        if avalancheDog.authorizationStatus  ==  .authorizedWhenInUse || avalancheDog.authorizationStatus  ==  .authorizedAlways{
+            avalancheDog.startUpdatingLocation()
           
-       }else if augmentedReality.authorizationStatus  ==  .denied{
+       }else if avalancheDog.authorizationStatus  ==  .denied{
            
-           self.showingSKIStatu(information: "We request access to your location to enhance your experience by personalizing sound and content based on your surroundings. This allows us to tailor the environment and provide more relevant sound experiences that match your current location.", isOKAYSHowi: false)
+           self.persistentSlab(deepSlab: "We request access to your location to enhance your experience by personalizing sound and content based on your surroundings. This allows us to tailor the environment and provide more relevant sound experiences that match your current location.", looseSnow: false)
          
-       }else if augmentedReality.authorizationStatus  ==  .notDetermined{
-           augmentedReality.requestWhenInUseAuthorization()
+       }else if avalancheDog.authorizationStatus  ==  .notDetermined{
+           avalancheDog.requestWhenInUseAuthorization()
            
        }
        
@@ -197,26 +197,26 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let artGeneration = locations.last else {
+        guard let temperatureGradient = locations.last else {
             return
         }
         
        
-        strokeEngine =   NSNumber(value: artGeneration.coordinate.latitude)
-        colorTheory =   NSNumber(value: artGeneration.coordinate.longitude)
+        avyCourse =   NSNumber(value: temperatureGradient.coordinate.latitude)
+        snowStudy =   NSNumber(value: temperatureGradient.coordinate.longitude)
        
   
 
        
-        realTimeRendering.reverseGeocodeLocation(artGeneration) { [self] (plcaevfg, error) in
+        beaconCheck.reverseGeocodeLocation(temperatureGradient) { [self] (plcaevfg, error) in
             if error != nil {
                 
                 return
             }
            
-            guard let digitalPainting = plcaevfg?.first else { return }
+            guard let gradientTest = plcaevfg?.first else { return }
           
-            canvasLayer = digitalPainting.country ?? ""
+            partnerRescue = gradientTest.country ?? ""
           
             
         }
@@ -227,7 +227,7 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
 
        
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-                creativeProcess()
+                surfaceHoar()
         
     }
 }
