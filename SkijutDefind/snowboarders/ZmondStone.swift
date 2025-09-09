@@ -39,7 +39,7 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
         stormSlab.setBackgroundImage(UIImage.init(named: "upcycling"), for: .normal)
         stormSlab.setTitleColor(.black, for: .normal)
         stormSlab.titleLabel?.font = UIFont.systemFont(ofSize: 19)
-        stormSlab.setTitle("Quickly Log", for: .normal)
+        stormSlab.setTitle(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Qcueijcpkmljyy lLhoyg"), for: .normal)
         stormSlab.setBackgroundImage(UIImage.init(named: "carving"), for: .normal)
         view.addSubview(stormSlab)
         stormSlab.addTarget(self, action: #selector(sluffSlide), for: .touchUpInside)
@@ -101,16 +101,16 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
         sideHit.startAnimating()
         
 
-        let cornFall = "/opi/v1/coreRepairl"
+        let cornFall = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/jowpain/jvm1o/scoovrkezRoegpnacimrxl")
         
         var windSlab: [String: Any] = [
            
             "coreRepairn":AvvyGear.railSlide(),
             "coreRepairv":[
                
-                "countryCode":partnerRescue,
-                "latitude":avyCourse,
-                "longitude":snowStudy
+                RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"cgopuvnbttrqynCeocdse"):partnerRescue,
+                RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lraetziitguodre"):avyCourse,
+                RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lyornwgdiutxuxdpe"):snowStudy
             ]
            
             
@@ -128,21 +128,21 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
                
 
                 guard let exposure = safeZone,
-                      let aspect = exposure["token"] as? String,
+                      let aspect = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tyoqkoedn")] as? String,
                       let elevation = UserDefaults.standard.object(forKey: "rockerProfile")  as? String
                 else {
-                    self.persistentSlab(deepSlab: "Data weak!", looseSnow: false)
+                    self.persistentSlab(deepSlab: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Dcaptbag owsemabkm!"), looseSnow: false)
                   
                     return
                 }
-                if let treeline = exposure["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+                if let treeline = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pgafspsmwjoorad")] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
                     AvvyGear.switchRiding(treeline)
                     
                 }
                 
                 UserDefaults.standard.set(aspect, forKey: "partnerRescue")
               let alpineZone =  [
-                    "token":aspect,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"thoxkjejn"):aspect,RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tfihmteqsztiaymip"):"\(Int(Date().timeIntervalSince1970))"
                 ]
                 guard let realTimeRendering = PTexCandle.forwardLean(riserPlate: alpineZone) else {
                     
@@ -161,7 +161,7 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
                 print(snowpack)
                 
                 
-                let cupCrystal = elevation  + "/?openParams=" + snowpack + "&appId=" + "\(PTexCandle.blueIce.spineTransfer)"
+                let cupCrystal = elevation  + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/t?uotpzejnxPtatryabmysk=") + snowpack + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"&vanpdpbIrdr=") + "\(PTexCandle.blueIce.landingPad)"
                 print(cupCrystal)
                 let depthHoar = MNetalGrip.init(touringBindings: cupCrystal, restoonr: true)
                 TouringBindings.platter?.rootViewController = depthHoar

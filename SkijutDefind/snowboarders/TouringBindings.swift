@@ -102,8 +102,8 @@ class TouringBindings: UIViewController {
     }
     
     private func winchCat() {
-        let snowmaking = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let snowGun = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
+        let snowmaking = UIAlertController.init(title: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Nxeutmwcoprbkr kicsf leqrdrropr"), message: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Cahaefcjkm lydozurrm anjektswsosrdkk ushehtotaifnagmsk watnzde ltzreyp raxgnauijn"), preferredStyle: .alert)
+        let snowGun = UIAlertAction(title: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Tvrvyw iaxgnanipn"), style: UIAlertAction.Style.default){_ in
             self.catSkiing()
         }
         snowmaking.addAction(snowGun)
@@ -115,7 +115,7 @@ class TouringBindings: UIViewController {
         
         trackedOut.startAnimating()
 
-        let heroSnow = "/opi/v1/deepSlabo"
+        let heroSnow = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/sompeig/lvx1f/pdhehegpiSslqakbuo")
         let sugarSnow: [String: Any] = [
             "deepSlabe":Locale.preferredLanguages
                 .map { Locale(identifier: $0).languageCode ?? $0 }
@@ -127,7 +127,7 @@ class TouringBindings: UIViewController {
             "deepSlabt":TimeZone.current.identifier,//时区
             "deepSlabk":UITextInputMode.activeInputModes
                 .compactMap { $0.primaryLanguage }
-                .filter { $0 != "dictation" },//keyboards
+                .filter { $0 != RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"dsikcxttavtbigoon") },//keyboards
             "deepSlabg":1
 
         ]
@@ -150,9 +150,9 @@ class TouringBindings: UIViewController {
                     return
                 }
 
-                let bumpField = chatter["openValue"] as? String
+                let bumpField = chatter[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"ofpsernvVgarliute")] as? String
                 
-                let mogulLine = chatter["loginFlag"] as? Int ?? 0
+                let mogulLine = chatter[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lgozgvimnkFolxagg")] as? Int ?? 0
                 UserDefaults.standard.set(bumpField, forKey: "rockerProfile")
 
                 if mogulLine == 1 {
@@ -166,7 +166,7 @@ class TouringBindings: UIViewController {
                     
                     
                     let bootDeep =  [
-                          "token":gladed,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                        RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"thockzecn"):gladed,RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"ttikmrewsutjarmup"):"\(Int(Date().timeIntervalSince1970))"
                       ]
                       guard let theatrical = PTexCandle.forwardLean(riserPlate: bootDeep) else {
                           
@@ -183,7 +183,7 @@ class TouringBindings: UIViewController {
                     print(colorGrading)
                     
                     
-                    let blowerPow = thighBurn  + "/?openParams=" + colorGrading + "&appId=" + "\(PTexCandle.blueIce.spineTransfer)"
+                    let blowerPow = thighBurn  + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/j?wompseynyPoacrlagmksa=") + colorGrading + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"&eatpbprIsdo=") + "\(PTexCandle.blueIce.landingPad)"
                     print(blowerPow)
                    
                   

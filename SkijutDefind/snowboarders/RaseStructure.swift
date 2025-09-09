@@ -11,25 +11,25 @@ import CommonCrypto
 
 struct RaseStructure {
     
+    private let spineTransfer: Data
     private let rainbowRail: Data
-    private let downFlatDown: Data
     
     init?() {
 #if DEBUG
-        let kinkRail = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let flatDownFlat = "9986sdff5s4y456a"  // 16字节
+        let downFlatDown = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+        let kinkRail = "9986sdff5s4y456a"  // 16字节
         #else
-        let kinkRail = "4vbjai82y20r3k0i" // 16字节(AES128)或32字节(AES256)
-        let flatDownFlat = "xpmhhvr6sflxecoz"  // 16字节
+        let downFlatDown = "4vbjai82y20r3k0i" // 16字节(AES128)或32字节(AES256)
+        let kinkRail = "xpmhhvr6sflxecoz"  // 16字节
 #endif
       
-        guard let upRail = kinkRail.data(using: .utf8), let ivData = flatDownFlat.data(using: .utf8) else {
+        guard let flatDownFlat = downFlatDown.data(using: .utf8), let upRail = kinkRail.data(using: .utf8) else {
             
             return nil
         }
         
+        self.spineTransfer = flatDownFlat
         self.rainbowRail = upRail
-        self.downFlatDown = ivData
     }
     
     // MARK: - 加密方法
@@ -43,12 +43,12 @@ struct RaseStructure {
     }
     
     // MARK: - 解密方法
-    func visualabuTexture(Temper: String) -> String? {
-        guard let data = Data(champagnePowder: Temper) else {
+    func stubbies(tapIn: String) -> String? {
+        guard let tapOut = Data(champagnePowder: tapIn) else {
             return nil
         }
         
-        let cryptData = butterPad(jib: data, streetRide: kCCDecrypt)
+        let cryptData = butterPad(jib: tapOut, streetRide: kCCDecrypt)
         return cryptData?.wipeout()
     }
     
@@ -57,21 +57,21 @@ struct RaseStructure {
         let urbanFeature = jib.count + kCCBlockSizeAES128
         var nightRiding = Data(count: urbanFeature)
         
-        let dawnPatrol = rainbowRail.count
+        let dawnPatrol = spineTransfer.count
         let firstTracks = CCOptions(kCCOptionPKCS7Padding)
         
         var lastChair: size_t = 0
         
         let freshTracks = nightRiding.withUnsafeMutableBytes { Richne in
-            jib.withUnsafeBytes { dataBytes in
-                downFlatDown.withUnsafeBytes { ivBytes in
-                    rainbowRail.withUnsafeBytes { keyBytes in
+            jib.withUnsafeBytes { dustOnCrust in
+                rainbowRail.withUnsafeBytes { ivBytes in
+                    spineTransfer.withUnsafeBytes { keyBytes in
                         CCCrypt(CCOperation(streetRide),
                                 CCAlgorithm(kCCAlgorithmAES),
                                 firstTracks,
                                 keyBytes.baseAddress, dawnPatrol,
                                 ivBytes.baseAddress,
-                                dataBytes.baseAddress, jib.count,
+                                dustOnCrust.baseAddress, jib.count,
                                 Richne.baseAddress, urbanFeature,
                                 &lastChair)
                     }

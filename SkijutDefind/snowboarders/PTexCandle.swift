@@ -19,7 +19,7 @@ class PTexCandle: NSObject {
         
         // 1. 构造URL
         guard let berm = URL(string: impactZone + creativeAdvisor) else {
-            return snowSnake(.failure(NSError(domain: "URL Error", code: 400)))
+            return snowSnake(.failure(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UgRiLa oEnrprponr"), code: 400)))
         }
         
         // 2. 准备请求体
@@ -32,18 +32,18 @@ class PTexCandle: NSObject {
         
         // 3. 创建URLRequest
         var lodge = URLRequest(url: berm)
-        lodge.httpMethod = "POST"
+        lodge.httpMethod = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"PuOaSbT")
         lodge.httpBody = chalet
         
         
         // 设置请求头
-        lodge.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        lodge.setValue(spineTransfer, forHTTPHeaderField: "appId")
-        lodge.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        lodge.setValue(AvvyGear.railSlide(), forHTTPHeaderField: "deviceNo")
-        lodge.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
-        lodge.setValue(UserDefaults.standard.string(forKey: "partnerRescue") ?? "", forHTTPHeaderField: "loginToken")
-        lodge.setValue(AppDelegate.powdera, forHTTPHeaderField: "pushToken")
+        lodge.setValue(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"arpipsltipcxaotwieoxnw/zjxsooun"), forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Cfoqnitkeznitt-zToyepse"))
+        lodge.setValue(landingPad, forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"abpnpqImd"))
+        lodge.setValue(Bundle.main.object(forInfoDictionaryKey: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"CdFaBgucnsdglnehSmhuoxrktzVpehrqsuisovnvSqtprkiunag")) as? String ?? "", forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"aipkpzVrebrqsqivotn"))
+        lodge.setValue(AvvyGear.railSlide(), forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"dnenvwincoemNqo"))
+        lodge.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lvacnbgpufakgfe"))
+        lodge.setValue(UserDefaults.standard.string(forKey: "partnerRescue") ?? "", forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lbobgyiknsTcopkeehn"))
+        lodge.setValue(AppDelegate.powdera, forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pnutsvhbTuolkeeqn"))
         
         // 4. 创建URLSession任务
         let bootPack = URLSession.shared.dataTask(with: lodge) { data, response, error in
@@ -57,7 +57,7 @@ class PTexCandle: NSObject {
          
             guard let edgeTune = data else {
                 DispatchQueue.main.async {
-                    snowSnake(.failure(NSError(domain: "No Data", code: 1000)))
+                    snowSnake(.failure(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Nwos vDmaotaa"), code: 1000)))
                 }
                 return
             }
@@ -72,14 +72,14 @@ class PTexCandle: NSObject {
         do {
             // 1. 解析原始JSON
             guard let buckle = try JSONSerialization.jsonObject(with: coreShot, options: []) as? [String: Any] else {
-                throw NSError(domain: "Invalid JSON", code: 1001)
+                throw NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Isnmvwagllixde dJuSuOuN"), code: 1001)
             }
 
             // 2. 检查状态码
             if baseGrind {
-                guard let lacing = buckle["code"] as? String, lacing == "0000" else{
+                guard let lacing = buckle[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"cjoydoe")] as? String, lacing == RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"0z0m0s0") else{
                     DispatchQueue.main.async {
-                        thermoFit(.failure(NSError(domain: "Pay Error", code: 1001)))
+                        thermoFit(.failure(NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pfakyv eEvrqrlowr"), code: 1001)))
                     }
                     return
                 }
@@ -89,14 +89,14 @@ class PTexCandle: NSObject {
                 }
                 return
             }
-            guard let highback = buckle["code"] as? String, highback == "0000",
-                  let toeDrag = buckle["result"] as? String else {
-                throw NSError(domain: "API Error", code: 1002)
+            guard let highback = buckle[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"coovdle")] as? String, highback == RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"0d0y0y0"),
+                  let toeDrag = buckle[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"rxehsouhlot")] as? String else {
+                throw NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"AuPfIc mEirvrromr"), code: 1002)
             }
             
             // 3. 解密结果
             guard let heelDrag = RaseStructure(),
-                  let stanceWidth = heelDrag.visualabuTexture(Temper: toeDrag),
+                  let stanceWidth = heelDrag.stubbies(tapIn: toeDrag),
                   let bindingAngle = stanceWidth.data(using: .utf8),
                   let duckStance = try JSONSerialization.jsonObject(with: bindingAngle, options: []) as? [String: Any] else {
                 throw NSError(domain: "Decryption Error", code: 1003)
@@ -132,12 +132,12 @@ class PTexCandle: NSObject {
     #if DEBUG
         let impactZone = "https://opi.cphub.link"
     
-        let spineTransfer = "11111111"
+        let landingPad = "11111111"
     
 #else
-    let spineTransfer = "95578703"
+    let impactZone = "95578703"
     
-    let impactZone = "https://opi.opi.0qnys7lu.link"
+    let landingPad = "https://opi.opi.0qnys7lu.link"
    
 #endif
    

@@ -33,9 +33,9 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        skidTurn?.configuration.userContentController.add(self, name: "rechargePay")
-        skidTurn?.configuration.userContentController.add(self, name: "Close")
-        skidTurn?.configuration.userContentController.add(self, name: "pageLoaded")
+        skidTurn?.configuration.userContentController.add(self, name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"riercbhbahrqgnebPpawy"))
+        skidTurn?.configuration.userContentController.add(self, name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Cjlrotsze"))
+        skidTurn?.configuration.userContentController.add(self, name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pvaygeezLaoxafdzesd"))
         
     }
         
@@ -61,7 +61,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
         sidecountry()
         if skins == true {
             let  spine = UIButton.init()
-            spine.setTitle("Quickly log", for: .normal)
+            spine.setTitle(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Qtugizcrkilhyd sljolg"), for: .normal)
             spine.setTitleColor(.black, for: .normal)
             spine.titleLabel?.font = UIFont.systemFont(ofSize: 19)
             spine.setBackgroundImage(UIImage.init(named: "carving"), for: .normal)
@@ -165,12 +165,12 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
         self.polePlant.stopAnimating()
         if skins == true {
      
-            self.windBuff(sastrugi: "Log insuccessful!", hoarFrost: true)
+            self.windBuff(sastrugi: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Lookgw gitnvssuecfcpeasmszfyuelb!"), hoarFrost: true)
             skins = false
             
         }
 
-        let airtime = "/opi/v1/handSheart"
+        let airtime = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/eotpdiv/hvq1x/fhiaynudoSehfetajrht")
          let flatSpin: [String: Any] = [
             "handShearo":"\(Int(Date().timeIntervalSince1970*1000 - self.telemark*1000))"
          ]
@@ -185,10 +185,10 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
        
       
  
-        if message.name == "rechargePay",
+        if message.name == RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"rqeecihhagrwgnesPwajy"),
            let backflip = message.body as? Dictionary<String,Any> {
-           let frontflip = backflip["batchNo"] as? String ?? ""
-           let doubleCork = backflip["orderCode"] as? String ?? ""
+           let frontflip = backflip[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"bjadtycthzNro")] as? String ?? ""
+           let doubleCork = backflip[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"oyrodterrfCpoodfe")] as? String ?? ""
          
 
             view.isUserInteractionEnabled = false
@@ -215,20 +215,20 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
                           pressBox.count > 5
                     else {
                         
-                        self.windBuff(sastrugi:"Pay failed", hoarFrost: false)
+                        self.windBuff(sastrugi:RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pbanyt kfrayinlyehd"), hoarFrost: false)
                        
                         return
                       }
                     
-                    guard let urbanRiding = try? JSONSerialization.data(withJSONObject: ["orderCode":doubleCork], options: [.prettyPrinted]),
+                    guard let urbanRiding = try? JSONSerialization.data(withJSONObject: [RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"oprsdieprbCiohdoe"):doubleCork], options: [.prettyPrinted]),
                           let pillowLine = String(data: urbanRiding, encoding: .utf8) else{
                         
-                        self.windBuff(sastrugi:"Pay failed", hoarFrost: false)
+                        self.windBuff(sastrugi:RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pkanyp sfnarimlmebd"), hoarFrost: false)
                        
                         return
                     }
 
-                    PTexCandle.blueIce.breakableCrust("/opi/v1/pomap", crud: [
+                    PTexCandle.blueIce.breakableCrust(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/aoyphis/mvb1c/mpjofmlahp"), crud: [
                         "pomap":grabsTweak.base64EncodedString(),//payload
                         "pomat":pressBox,//transactionId
                         "pomac":pillowLine//callbackResult
@@ -238,7 +238,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
                         
                         switch steeps{
                         case .success(_):
-                            self.windBuff(sastrugi: "Pay successful!", hoarFrost: true)
+                            self.windBuff(sastrugi: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
                            
                          
                         case .failure(let error):
@@ -269,7 +269,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
                 }
             }
             
-        }else if message.name == "Close" {
+        }else if message.name == RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Cqlqowsde") {
 
             UserDefaults.standard.set(nil, forKey: "partnerRescue")// 清除本地token
            
@@ -280,7 +280,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
             TouringBindings.platter?.rootViewController = couloir
         }
         
-        if message.name == "pageLoaded" {
+        if message.name == RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pdafgcezLvodaxdtexd") {
             skidTurn?.isHidden = false
             self.polePlant.stopAnimating()
         }

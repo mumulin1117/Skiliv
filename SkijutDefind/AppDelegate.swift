@@ -135,7 +135,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let slopestyle = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        let slopestyle = deviceToken.map { String(format: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"%s0u2r.v2qhihtx"), $0) }.joined()
         AppDelegate.powdera = slopestyle
     }
 }

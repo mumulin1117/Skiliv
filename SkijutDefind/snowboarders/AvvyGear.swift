@@ -102,7 +102,8 @@ class AvvyGear: NSObject {
 extension Data {
     // 将Data转换为十六进制字符串
     func avvyGear() -> String {
-        return map { String(format: "%02hhx", $0) }.joined()
+        //"%02hhx"    %02hhx
+        return map { String(format: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:""), $0) }.joined()
     }
     
     // 从十六进制字符串创建Data
