@@ -49,10 +49,22 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
  
     private func sidecountry()  {
         
-        let sluff = UIImageView(image:UIImage(named: "powder") )
+        let sluff = UIImageView(image:UIImage(named: "powdershine") )
         sluff.frame = self.view.frame
         sluff.contentMode = .scaleAspectFill
         view.addSubview(sluff)
+        
+        let junba = UIImageView(image:UIImage(named: "junba") )
+        junba.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(junba)
+        NSLayoutConstraint.activate([
+          
+            junba.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            junba.heightAnchor.constraint(equalToConstant: 115),
+            junba.widthAnchor.constraint(equalToConstant: 235),
+            junba.bottomAnchor.constraint(equalTo: view.bottomAnchor,
+                                              constant: -self.view.safeAreaInsets.bottom - 65 - 52 - 25)
+        ])
     }
    
     override func viewDidLoad() {

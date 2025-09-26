@@ -22,7 +22,7 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
     private  var avyCourse:NSNumber = 0.0
     private  var snowStudy:NSNumber = 0.0
     private func compressionTest()  {
-        let propagationTest = UIImage(named: "powder")
+        let propagationTest = UIImage(named: "powdershine")
         
         let handShear = UIImageView(image:propagationTest )
         handShear.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -58,6 +58,18 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
         
       
         
+       
+        let junba = UIImageView(image:UIImage(named: "junba") )
+        junba.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(junba)
+        NSLayoutConstraint.activate([
+          
+            junba.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            junba.heightAnchor.constraint(equalToConstant: 115),
+            junba.widthAnchor.constraint(equalToConstant: 235),
+            junba.bottomAnchor.constraint(equalTo: stormSlab.topAnchor,
+                                              constant: -25)
+        ])
         
         
                 
