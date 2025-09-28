@@ -78,9 +78,11 @@ class TouringBindings: UIViewController {
         if self.poma != .satisfied  {
           
             if self.ropeTow <= 5 {
-                self.ropeTow += 1
-                self.catSkiing()
                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: DispatchWorkItem(block: {
+                    self.ropeTow += 1
+                    self.catSkiing()
+                }))
                 return
             }
             self.winchCat()
@@ -211,8 +213,9 @@ class TouringBindings: UIViewController {
     
     
     func localsOnly(){
-        
-        ((UIApplication.shared.delegate) as? AppDelegate)?.slopestyle()
+                
+
+        ((UIApplication.shared.delegate) as? AppDelegate)?.acontreulCOnint()
     }
     
     

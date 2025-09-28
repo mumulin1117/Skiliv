@@ -34,6 +34,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       
     }
     
+    
+    func acontreulCOnint()  {
+        let hasAuth = UserDefaults.standard.object(forKey: "coreShot") != nil
+        let sdgVC = hasAuth ? createMainInterface() : createAuthInterface()
+
+        
+       window?.rootViewController = sdgVC
+    }
     func createAuthInterface() -> UIViewController {
             let storyboard = UIStoryboard(
                 name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Mnavizn"),
