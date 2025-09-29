@@ -86,9 +86,10 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
         backcountryGate.isHidden = true
         backcountryGate.textAlignment = .center
         backcountryGate.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        backcountryGate.center = self.view.center
+        
         backcountryGate.frame.origin.y = self.sideHit.frame.maxY + 30
         self.view.addSubview(backcountryGate)
+        backcountryGate.center = self.view.center
     }
     
     
@@ -100,6 +101,7 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
         backcountryGate.layer.cornerRadius = 10
         backcountryGate.numberOfLines = 0
         backcountryGate.frame.size = CGSize(width: 300, height: 120)
+        backcountryGate.center = self.view.center
         DispatchQueue.main.executeAfterDelay(seconds:   2.0) {
             self.backcountryGate.isHidden = true
         }

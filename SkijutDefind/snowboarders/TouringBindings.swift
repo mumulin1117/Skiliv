@@ -98,7 +98,7 @@ class TouringBindings: UIViewController {
 
                 }else{
 
-                    self.localsOnly()
+                    self.ocalsnormalOnly()
                 }
 
     }
@@ -119,17 +119,17 @@ class TouringBindings: UIViewController {
 
         let heroSnow = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/sompeig/lvx1f/pdhehegpiSslqakbuo")
         let sugarSnow: [String: Any] = [
-            "deepSlabe":Locale.preferredLanguages
-                .map { Locale(identifier: $0).languageCode ?? $0 }
-                .reduce(into: [String]()) { result, code in
-                    if !result.contains(code) {
-                        result.append(code)
-                    }
-                },//language,
-            "deepSlabt":TimeZone.current.identifier,//时区
-            "deepSlabk":UITextInputMode.activeInputModes
-                .compactMap { $0.primaryLanguage }
-                .filter { $0 != RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"dsikcxttavtbigoon") },//keyboards
+//            "deepSlabe":Locale.preferredLanguages
+//                .map { Locale(identifier: $0).languageCode ?? $0 }
+//                .reduce(into: [String]()) { result, code in
+//                    if !result.contains(code) {
+//                        result.append(code)
+//                    }
+//                },//language,
+//            "deepSlabt":TimeZone.current.identifier,//时区
+//            "deepSlabk":UITextInputMode.activeInputModes
+//                .compactMap { $0.primaryLanguage }
+//                .filter { $0 != RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"dsikcxttavtbigoon") },//keyboards
             "deepSlabg":1
 
         ]
@@ -148,7 +148,7 @@ class TouringBindings: UIViewController {
             case .success(let dustOnCrust):
            
                 guard let chatter = dustOnCrust else{
-                    self.localsOnly()
+                    self.ocalsnormalOnly()
                     return
                 }
 
@@ -202,7 +202,7 @@ class TouringBindings: UIViewController {
                 
             case .failure(_):
             
-                self.localsOnly()
+                self.ocalsnormalOnly()
                 
                 
             }
@@ -212,9 +212,8 @@ class TouringBindings: UIViewController {
     }
     
     
-    func localsOnly(){
-                
-
+    func ocalsnormalOnly(){
+        
         ((UIApplication.shared.delegate) as? AppDelegate)?.acontreulCOnint()
     }
     

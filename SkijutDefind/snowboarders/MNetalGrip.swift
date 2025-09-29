@@ -9,8 +9,6 @@ import SwiftyStoreKit
 import WebKit
 import UIKit
 
-
-
 class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var skidTurn:WKWebView?
     private let  polePlant = UIActivityIndicatorView.init(style: .large)
@@ -177,7 +175,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
         self.polePlant.stopAnimating()
         if skins == true {
      
-            self.windBuff(sastrugi: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Lookgw gitnvssuecfcpeasmszfyuelb!"), hoarFrost: true)
+//            self.windBuff(sastrugi: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Lookgw gitnvssuecfcpeasmszfyuelb!"), hoarFrost: true)
             skins = false
             
         }
