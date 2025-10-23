@@ -7,7 +7,11 @@
 
 import UIKit
 import SwiftyStoreKit
-
+//产品名称：Skiliv
+//应用识别码：woodhgkc5j40
+//事件名称及识别码：
+//Install: 6qafr6
+//purchase: hv0zta
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static var powdera:String = ""
