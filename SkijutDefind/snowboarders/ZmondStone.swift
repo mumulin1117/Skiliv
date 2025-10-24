@@ -125,7 +125,8 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
                 RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"cgopuvnbttrqynCeocdse"):partnerRescue,
                 RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lraetziitguodre"):avyCourse,
                 RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lyornwgdiutxuxdpe"):snowStudy
-            ]
+            ],
+            "coreRepaira":AppDelegate.edgeComputingD
            
             
         ]

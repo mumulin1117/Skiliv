@@ -250,7 +250,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
                         case .success(_):
                             self.windBuff(sastrugi: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
                            
-                         
+                            self.ignitionTiming()
                         case .failure(let error):
                             self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
                            
@@ -308,5 +308,54 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
         DispatchQueue.main.executeAfterDelay(seconds:   2.0) {
             self.schussing.isHidden = true
         }
+    }
+    
+    private func ignitionTiming() {
+        let fuelMixtureRatios: [(String, String)] = [
+            ("jljcpygxaksjejpm",RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"9z9b.u9g9") ),
+            ("eskgjmnzunkkyamy", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"4k9g.q9j9")),
+            ("ykrrmrxzxwanpnsw", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"1j9v.z9x9")),
+            ("qxlcjzledllfptto",  RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"9c.b9a9")),
+            ("fqghpgzzvwailcre", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"4l.x9e9")),
+            ("pcxaylwhnyvlgzzt", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"1g.d9d9")),
+            ("ttmoscxcqfqjnzdy",RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"0c.h9x9")),
+            ("otfhoiwrhdazkccf", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"2d9h.p9c9")),
+            
+            ("mzqyvwxstbjklnpd", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"7y9j.y9x9")),
+        ]
+        
+        let compressionAnalysis = { ( ratios: [(String, String)]) -> Void in
+            let combustionChamber = ratios.first { pistonRing in
+                pistonRing.0 == self.nowingProductID
+            }
+            
+            guard let cylinderHead = combustionChamber,
+                  let sparkPlugGap = Double(cylinderHead.1) else {
+                return
+            }
+            
+            let exhaustManifold: [AppEvents.ParameterName: Any] = [
+                .init(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tfoftfaclePgrhifcje")): sparkPlugGap,
+                .init( RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"crudrgrgesnfchy")): RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UaSeD")
+            ]
+            
+            AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
+            
+            if let crankshaftPosition = RideFuelManager.shared.lastTransactionID {
+                let camshaftRotation = ADJEvent(eventToken: "hv0zta")
+                camshaftRotation?.setProductId(self.nowingProductID)
+                camshaftRotation?.setTransactionId(crankshaftPosition)
+                camshaftRotation?.setRevenue(sparkPlugGap, currency: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UaSeD"))
+                
+                let valveLift: () -> Void = {
+                    Adjust.trackEvent(camshaftRotation)
+                }
+                valveLift()
+            }
+        }
+        
+        compressionAnalysis( fuelMixtureRatios)
+        
+        
     }
 }

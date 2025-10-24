@@ -8,4 +8,6 @@ target 'SkijutDefind' do
   # Pods for SkijutDefind
 pod "IQKeyboardManager"
 pod 'SwiftyStoreKit'
+pod 'Adjust', '~> 5.1.1'
+pod 'FBSDKCoreKit'
 end

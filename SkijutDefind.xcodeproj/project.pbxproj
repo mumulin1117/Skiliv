@@ -225,6 +225,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable location to find fellow skiers and snowboarders on the mountain. Connect with riders in your area and coordinate meetups at lodges or favorite runs.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Personalize your experience and connect with fellow skiers and snowboarders who share your passion for the mountains.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -266,6 +267,7 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable location to find fellow skiers and snowboarders on the mountain. Connect with riders in your area and coordinate meetups at lodges or favorite runs.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Personalize your experience and connect with fellow skiers and snowboarders who share your passion for the mountains.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

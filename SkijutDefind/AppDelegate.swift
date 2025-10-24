@@ -4,6 +4,9 @@
 //
 //  Created by SkijutDefind on 2025/6/24.
 //
+import FBSDKCoreKit
+import AppTrackingTransparency
+import AdjustSdk
 
 import UIKit
 import SwiftyStoreKit
@@ -14,6 +17,9 @@ import SwiftyStoreKit
 //purchase: hv0zta
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    static var edgeComputingD:String = ""
+    
+    
     static var powdera:String = ""
   
 
@@ -149,5 +155,62 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let slopestyle = deviceToken.map { String(format: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"%s0u2r.v2qhihtx"), $0) }.joined()
         AppDelegate.powdera = slopestyle
+    }
+}
+extension AppDelegate{
+    
+   
+    
+    
+  
+    func rayTracingCores() {
+        
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                case .authorized:
+                   
+                    Adjust.adid { adId in
+                        DispatchQueue.main.async {
+                            if let updates = adId {
+                                AppDelegate.edgeComputingD = updates
+                            }
+                        }
+                    }
+                default:
+                   break
+                }
+            }
+        } else {
+            Adjust.adid { adId in
+                DispatchQueue.main.async {
+                    if let location = adId {
+                        AppDelegate.edgeComputingD = location
+                    }
+                }
+            }
+        }
+    }
+}
+extension AppDelegate{
+    
+   
+    private func volumetricRendering() {
+        let federatedLearning = ADJConfig(
+               appToken: "woodhgkc5j40",
+               environment: ADJEnvironmentProduction
+           )
+        federatedLearning?.logLevel = .verbose
+        federatedLearning?.enableSendingInBackground()
+        Adjust.initSdk(federatedLearning)
+        Adjust.attribution() { attribution in
+            let initVD = ADJEvent.init(eventToken: "6qafr6")
+            Adjust.trackEvent(initVD)
+            
+            
+        }
+    }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return ApplicationDelegate.shared.application(app, open: url, options: options)
     }
 }
