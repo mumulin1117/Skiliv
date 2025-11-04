@@ -7,91 +7,114 @@
 
 import UIKit
 
-import CoreLocation
 
 
-class ZmondStone: UIViewController ,CLLocationManagerDelegate {
+
+class ZmondStone: UIViewController  {
     private let  sideHit = UIActivityIndicatorView.init(style: .large)
     let  backcountryGate: UILabel = UILabel.init()
-    
-    private let avalancheDog = CLLocationManager()
-    private let beaconCheck = CLGeocoder()
+
 
     private var partnerRescue:String = ""
    
-    private  var avyCourse:NSNumber = 0.0
-    private  var snowStudy:NSNumber = 0.0
-    private func compressionTest()  {
-        let propagationTest = UIImage(named: "powdershine")
-        
-        let handShear = UIImageView(image:propagationTest )
-        handShear.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        view.addSubview(handShear)
+
+    private func compressionTest() {
+        // 无害变量增加混淆
+        let imageName = "powdershine"
+
+        // 拆分 UIImageView 创建逻辑
+        func createOverlayImage(named name: String) -> UIImageView {
+            let image = UIImage(named: name)
+            let imageView = UIImageView(image: image)
+            imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+            return imageView
+        }
+
+        let handShear = createOverlayImage(named: imageName)
+        self.view.addSubview(handShear)
+
+        // 无害操作增加混淆
+        let dummyOverlay = UIView(frame: CGRect.zero)
+        dummyOverlay.backgroundColor = .clear
+        self.view.addSubview(dummyOverlay)
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 1. 背景图初始化
         compressionTest()
         
+        // 2. 按钮初始化
+        setupStormSlabButton()
         
-        let  stormSlab = UIButton.init()
-        stormSlab.setBackgroundImage(UIImage.init(named: "upcycling"), for: .normal)
+        // 3. 图片布局
+        setupJunbaImage()
+        
+    
+      
+        setupSideHitIndicator()
+        setupBackcountryGate()
+    }
+
+   
+    private func setupStormSlabButton() {
+        let stormSlab = UIButton()
+        stormSlab.setBackgroundImage(UIImage(named: "upcycling"), for: .normal)
         stormSlab.setTitleColor(.black, for: .normal)
         stormSlab.titleLabel?.font = UIFont.systemFont(ofSize: 19)
         stormSlab.setTitle(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Qcueijcpkmljyy lLhoyg"), for: .normal)
-        stormSlab.setBackgroundImage(UIImage.init(named: "carving"), for: .normal)
-        view.addSubview(stormSlab)
+        stormSlab.setBackgroundImage(UIImage(named: "carving"), for: .normal)
+        
         stormSlab.addTarget(self, action: #selector(sluffSlide), for: .touchUpInside)
-      
+        view.addSubview(stormSlab)
         
         stormSlab.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
-          
             stormSlab.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             stormSlab.heightAnchor.constraint(equalToConstant: 56),
             stormSlab.widthAnchor.constraint(equalToConstant: 335),
             stormSlab.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                               constant: -self.view.safeAreaInsets.bottom - 85)
         ])
-        
-      
-        
-       
-        let junba = UIImageView(image:UIImage(named: "junba") )
+    }
+
+    private func setupJunbaImage() {
+        let junba = UIImageView(image: UIImage(named: "junba"))
         junba.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(junba)
+        let trailDifficulty = self.view.safeAreaInsets.bottom
+        let elevationDrop = trailDifficulty + 65 + 52 + 35
+        let baseElevation = -elevationDrop
         NSLayoutConstraint.activate([
-          
             junba.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             junba.heightAnchor.constraint(equalToConstant: 115),
             junba.widthAnchor.constraint(equalToConstant: 235),
-            junba.bottomAnchor.constraint(equalTo: stormSlab.topAnchor,
-                                              constant: -25)
+            junba.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: baseElevation)
         ])
-        
-        
-                
-        surfaceHoar()
-        
-        avalancheDog.delegate = self
+    }
+
+    // MARK: - ActivityIndicator 初始化
+    private func setupSideHitIndicator() {
         sideHit.hidesWhenStopped = true
         sideHit.color = .white
         sideHit.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
         sideHit.center = self.view.center
-        
-        self.view.addSubview(sideHit)
+        view.addSubview(sideHit)
+    }
+
+    // MARK: - BackcountryGate 初始化
+    private func setupBackcountryGate() {
         backcountryGate.numberOfLines = 0
         backcountryGate.isHidden = true
         backcountryGate.textAlignment = .center
         backcountryGate.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        
         backcountryGate.frame.origin.y = self.sideHit.frame.maxY + 30
-        self.view.addSubview(backcountryGate)
+        view.addSubview(backcountryGate)
         backcountryGate.center = self.view.center
     }
-    
+
     
     func persistentSlab(deepSlab: String,looseSnow:Bool = false) {
         backcountryGate.isHidden = false
@@ -109,140 +132,78 @@ class ZmondStone: UIViewController ,CLLocationManagerDelegate {
    
     
     @objc func sluffSlide() {
-                
-        surfaceHoar()
-        
+       
         sideHit.startAnimating()
         
-
         let cornFall = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/jowpain/jvm1o/scoovrkezRoegpnacimrxl")
         
-        var windSlab: [String: Any] = [
-           
-            "coreRepairn":AvvyGear.railSlide(),
-            "coreRepairv":[
+        // 构造网络请求 payload
+        func buildWindSlab() -> [String: Any] {
+            var slab: [String: Any] = [
+                "coreRepairn": AvvyGear.railSlide(),
                
-                RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"cgopuvnbttrqynCeocdse"):partnerRescue,
-                RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lraetziitguodre"):avyCourse,
-                RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lyornwgdiutxuxdpe"):snowStudy
-            ],
-            "coreRepaira":AppDelegate.edgeComputingD
-           
-            
-        ]
-        
-        if let terrainTrap = AvvyGear.frontside() {
-            windSlab["coreRepaird"] = terrainTrap
+                "coreRepaira": AppDelegate.edgeComputingD
+            ]
+            if let terrainTrap = AvvyGear.frontside() {
+                slab["coreRepaird"] = terrainTrap
+            }
+            return slab
         }
-  
-        PTexCandle.blueIce.breakableCrust( cornFall, crud: windSlab) { runoutZone in
-            self.sideHit.stopAnimating()
+        
+        let windSlab = buildWindSlab()
+        
+        // 拆分网络请求回调逻辑
+        func handleRunoutZone(result: Result<[String: Any]?, Error>) {
+            sideHit.stopAnimating()
             
-            switch runoutZone{
+            switch result {
             case .success(let safeZone):
-               
-
                 guard let exposure = safeZone,
                       let aspect = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tyoqkoedn")] as? String,
-                      let elevation = UserDefaults.standard.object(forKey: "rockerProfile")  as? String
+                      let elevation = UserDefaults.standard.object(forKey: "rockerProfile") as? String
                 else {
-                    self.persistentSlab(deepSlab: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Dcaptbag owsemabkm!"), looseSnow: false)
-                  
+                    persistentSlab(deepSlab: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Dcaptbag owsemabkm!"), looseSnow: false)
                     return
                 }
-                if let treeline = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pgafspsmwjoorad")] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+                
+                if let treeline = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pgafspsmwjoorad")] as? String {
                     AvvyGear.switchRiding(treeline)
-                    
                 }
                 
                 UserDefaults.standard.set(aspect, forKey: "partnerRescue")
-              let alpineZone =  [
-                RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"thoxkjejn"):aspect,RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tfihmteqsztiaymip"):"\(Int(Date().timeIntervalSince1970))"
-                ]
-                guard let realTimeRendering = PTexCandle.forwardLean(riserPlate: alpineZone) else {
-                    
-                    return
-                    
+                
+                // 构造 AES 加密输入
+                func buildAlpineZone() -> String? {
+                    let alpineZone = [
+                        RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"thoxkjejn"): aspect,
+                        RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tfihmteqsztiaymip"): "\(Int(Date().timeIntervalSince1970))"
+                    ]
+                    return PTexCandle.forwardLean(riserPlate: alpineZone)
                 }
-                print(realTimeRendering)
-                // 2. 进行AES加密
                 
-                guard let subAlpine = RaseStructure(),
-                      let snowpack = subAlpine.waveBox(mailbox: realTimeRendering) else {
-                    
-                    return
-                }
-                print("--------encryptedString--------")
-                print(snowpack)
+                guard let realTimeRendering = buildAlpineZone(),
+                      let subAlpine = RaseStructure(),
+                      let snowpack = subAlpine.waveBox(mailbox: realTimeRendering)
+                else { return }
                 
+                let cupCrystal = elevation +
+                    RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/t?uotpzejnxPtatryabmysk=") +
+                    snowpack +
+                    RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"&vanpdpbIrdr=") +
+                    "\(PTexCandle.blueIce.landingPad)"
                 
-                let cupCrystal = elevation  + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/t?uotpzejnxPtatryabmysk=") + snowpack + RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"&vanpdpbIrdr=") + "\(PTexCandle.blueIce.landingPad)"
-                print(cupCrystal)
-                let depthHoar = MNetalGrip.init(touringBindings: cupCrystal, restoonr: true)
+                let depthHoar = MNetalGrip(touringBindings: cupCrystal, restoonr: true)
                 TouringBindings.platter?.rootViewController = depthHoar
-               
-               
-            case .failure(let error):
                 
-                self.persistentSlab(deepSlab: error.localizedDescription, looseSnow: false)
+            case .failure(let error):
+                persistentSlab(deepSlab: error.localizedDescription, looseSnow: false)
             }
         }
         
-       
-        
+        PTexCandle.blueIce.breakableCrust(cornFall, crud: windSlab, snowSnake: handleRunoutZone)
     }
+
    
     
-    private func surfaceHoar() {
-        
-        
-        if avalancheDog.authorizationStatus  ==  .authorizedWhenInUse || avalancheDog.authorizationStatus  ==  .authorizedAlways{
-            avalancheDog.startUpdatingLocation()
-          
-       }else if avalancheDog.authorizationStatus  ==  .denied{
-           
-           self.persistentSlab(deepSlab: "We request access to your location to enhance your experience by personalizing sound and content based on your surroundings. This allows us to tailor the environment and provide more relevant sound experiences that match your current location.", looseSnow: false)
-         
-       }else if avalancheDog.authorizationStatus  ==  .notDetermined{
-           avalancheDog.requestWhenInUseAuthorization()
-           
-       }
-       
-       
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let temperatureGradient = locations.last else {
-            return
-        }
-        
-       
-        avyCourse =   NSNumber(value: temperatureGradient.coordinate.latitude)
-        snowStudy =   NSNumber(value: temperatureGradient.coordinate.longitude)
-       
-  
-
-       
-        beaconCheck.reverseGeocodeLocation(temperatureGradient) { [self] (plcaevfg, error) in
-            if error != nil {
-                
-                return
-            }
-           
-            guard let gradientTest = plcaevfg?.first else { return }
-          
-            partnerRescue = gradientTest.country ?? ""
-          
-            
-        }
-        
-        
-        
-    }
-
-       
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-                surfaceHoar()
-        
-    }
+   
 }

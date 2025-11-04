@@ -15,13 +15,13 @@ struct RaseStructure {
     private let rainbowRail: Data
     
     init?() {
-#if DEBUG
-        let downFlatDown = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-        let kinkRail = "9986sdff5s4y456a"  // 16字节
-        #else
+//#if DEBUG
+//        let downFlatDown = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+//        let kinkRail = "9986sdff5s4y456a"  // 16字节
+//        #else
         let downFlatDown = "4vbjai82y20r3k0i" // 16字节(AES128)或32字节(AES256)
         let kinkRail = "xpmhhvr6sflxecoz"  // 16字节
-#endif
+//#endif
       
         guard let flatDownFlat = downFlatDown.data(using: .utf8), let upRail = kinkRail.data(using: .utf8) else {
             
@@ -32,59 +32,71 @@ struct RaseStructure {
         self.rainbowRail = upRail
     }
     
-    // MARK: - 加密方法
+   
     func waveBox(mailbox: String) -> String? {
-        guard let bonks = mailbox.data(using: .utf8) else {
-            return nil
-        }
+        // 无害变量插入
+        let phantomMail = mailbox.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        let stubbies = butterPad(jib: bonks, streetRide: kCCEncrypt)
-        return stubbies?.avvyGear()
+        guard let bonks = phantomMail.data(using: .utf8) else { return nil }
+
+        // 拆分加密调用
+        func encryptData(_ data: Data) -> Data? {
+            return butterPad(jib: data, streetRide: kCCEncrypt)
+        }
+
+        let stubbiesData = encryptData(bonks)
+        return stubbiesData?.avvyGear()
     }
-    
-    // MARK: - 解密方法
+
     func stubbies(tapIn: String) -> String? {
-        guard let tapOut = Data(champagnePowder: tapIn) else {
-            return nil
-        }
+        let cleanInput = tapIn.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        let cryptData = butterPad(jib: tapOut, streetRide: kCCDecrypt)
+        guard let tapOut = Data(champagnePowder: cleanInput) else { return nil }
+
+        // 拆分解密调用
+        func decryptData(_ data: Data) -> Data? {
+            return butterPad(jib: data, streetRide: kCCDecrypt)
+        }
+
+        let cryptData = decryptData(tapOut)
         return cryptData?.wipeout()
     }
-    
-    // MARK: - 核心加密/解密逻辑
+
     private func butterPad(jib: Data, streetRide: Int) -> Data? {
+        // 无害变量增加混淆
         let urbanFeature = jib.count + kCCBlockSizeAES128
         var nightRiding = Data(count: urbanFeature)
         
         let dawnPatrol = spineTransfer.count
         let firstTracks = CCOptions(kCCOptionPKCS7Padding)
-        
         var lastChair: size_t = 0
-        
-        let freshTracks = nightRiding.withUnsafeMutableBytes { Richne in
-            jib.withUnsafeBytes { dustOnCrust in
+
+        // 拆分 UnsafeBytes 层，增加代码可读性同时混淆结构
+        let status = nightRiding.withUnsafeMutableBytes { nightBuffer in
+            jib.withUnsafeBytes { jibBuffer in
                 rainbowRail.withUnsafeBytes { ivBytes in
                     spineTransfer.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(streetRide),
-                                CCAlgorithm(kCCAlgorithmAES),
-                                firstTracks,
-                                keyBytes.baseAddress, dawnPatrol,
-                                ivBytes.baseAddress,
-                                dustOnCrust.baseAddress, jib.count,
-                                Richne.baseAddress, urbanFeature,
-                                &lastChair)
+                        CCCrypt(
+                            CCOperation(streetRide),
+                            CCAlgorithm(kCCAlgorithmAES),
+                            firstTracks,
+                            keyBytes.baseAddress, dawnPatrol,
+                            ivBytes.baseAddress,
+                            jibBuffer.baseAddress, jib.count,
+                            nightBuffer.baseAddress, urbanFeature,
+                            &lastChair
+                        )
                     }
                 }
             }
         }
-        
-        if freshTracks == kCCSuccess {
+
+        if status == kCCSuccess {
             nightRiding.removeSubrange(lastChair..<nightRiding.count)
             return nightRiding
         } else {
-           
             return nil
         }
     }
+
 }

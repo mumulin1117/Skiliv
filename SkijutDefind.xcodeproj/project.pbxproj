@@ -96,7 +96,7 @@
 				04B4DE3F2E0A38BC0027C855 /* Sources */,
 				04B4DE402E0A38BC0027C855 /* Frameworks */,
 				04B4DE412E0A38BC0027C855 /* Resources */,
-				B510500C9FD15DB75F54F7F9 /* [CP] Embed Pods Frameworks */,
+				499BAFDCF00E40FFEE403AA0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,7 +155,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B510500C9FD15DB75F54F7F9 /* [CP] Embed Pods Frameworks */ = {
+		499BAFDCF00E40FFEE403AA0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -222,7 +222,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Skiliv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Capture your mountain moments – from fresh tracks to gear setups. Skilliv uses your camera to share snowy adventures with fellow riders.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable location to find fellow skiers and snowboarders on the mountain. Connect with riders in your area and coordinate meetups at lodges or favorite runs.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Personalize your experience and connect with fellow skiers and snowboarders who share your passion for the mountains.";
@@ -264,7 +263,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Skiliv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Capture your mountain moments – from fresh tracks to gear setups. Skilliv uses your camera to share snowy adventures with fellow riders.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable location to find fellow skiers and snowboarders on the mountain. Connect with riders in your area and coordinate meetups at lodges or favorite runs.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Chat with your slope crew! Enable microphone access for real-time conversations about conditions, routes, and après-ski plans.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload your best runs and trail maps to inspire others. Skilliv accesses photos to showcase your winter journey.";
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Personalize your experience and connect with fellow skiers and snowboarders who share your passion for the mountains.";

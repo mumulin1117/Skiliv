@@ -8,6 +8,6 @@ target 'SkijutDefind' do
   # Pods for SkijutDefind
 
 
-pod 'Adjust', '~> 5.1.1'
-pod 'FBSDKCoreKit'
+  pod 'Adjust', '~> 5.1.1'
+  pod 'FBSDKCoreKit'
 end

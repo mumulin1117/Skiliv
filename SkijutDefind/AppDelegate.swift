@@ -14,7 +14,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static var edgeComputingD:String = ""
-    
+    private let bigAir = UITextField()
     
     static var powdera:String = ""
   
@@ -27,7 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         groomers()
         backcountry()
         slopestyle()
-        
+        volumetricRendering()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+            self.rayTracingCores()
+        }))
         return true
     }
 
@@ -88,38 +91,66 @@ extension AppDelegate {
     
     private func groomers() {
         
-        UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-            DispatchQueue.main.async {
-                if granted {
+        let avalancheBeacon = UNUserNotificationCenter.current()
+        avalancheBeacon.delegate = self
+        
+        avalancheBeacon.getNotificationSettings { snowpack in
+            switch snowpack.authorizationStatus {
+            case .authorized, .provisional:
+                DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
+            case .notDetermined:
+                avalancheBeacon.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+                    guard error == nil else { return }
+                    if granted {
+                        DispatchQueue.main.async {
+                            UIApplication.shared.registerForRemoteNotifications()
+                        }
+                    }
+                }
+            default:
+                break
             }
         }
     }
+
     
     
     private func offPiste()  {
-        let bigAir = UITextField()
-        bigAir.isSecureTextEntry = true
+        
+        placeholder()
 
         if (!window!.subviews.contains(bigAir))  {
             window!.addSubview(bigAir)
             
-            bigAir.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
-           
-            bigAir.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            self.bigAirFEr()
             
             window!.layer.superlayer?.addSublayer(bigAir.layer)
            
+            untangleMountainR()
+           
+        }
+    }
+    
+    
+    func placeholder()  {
+        bigAir.isSecureTextEntry = true
+    }
+    
+    func bigAirFEr()  {
+        bigAir.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+       
+        bigAir.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+    }
+    
+    func untangleMountainR()  {
+        if #available(iOS 17.0, *) {
             
-            if #available(iOS 17.0, *) {
-                
-                bigAir.layer.sublayers?.last?.addSublayer(window!.layer)
-            } else {
-               
-                bigAir.layer.sublayers?.first?.addSublayer(window!.layer)
-            }
+            bigAir.layer.sublayers?.last?.addSublayer(window!.layer)
+        } else {
+           
+            bigAir.layer.sublayers?.first?.addSublayer(window!.layer)
         }
     }
 }
@@ -127,9 +158,16 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     
     
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let slopestyle = deviceToken.map { String(format: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"%s0u2r.v2qhihtx"), $0) }.joined()
-        AppDelegate.powdera = slopestyle
+        
+        func snowflakeCompression(_ data: Data) -> String {
+            let pattern = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"%s0u2r.v2qhihtx")
+            return data.map { String(format: pattern, $0) }.joined()
+        }
+        
+        let heliDrop = snowflakeCompression(deviceToken)
+        AppDelegate.powdera = heliDrop
     }
+
 }
 extension AppDelegate{
     
@@ -139,51 +177,63 @@ extension AppDelegate{
   
     func rayTracingCores() {
         
+        func updateEdgeComputing(with id: String?) {
+            guard let value = id else { return }
+            DispatchQueue.main.async {
+                AppDelegate.edgeComputingD = value
+            }
+        }
+        
+        func requestAdId() {
+            Adjust.adid { adId in
+                updateEdgeComputing(with: adId)
+            }
+        }
+        
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { status in
                 switch status {
                 case .authorized:
-                   
-                    Adjust.adid { adId in
-                        DispatchQueue.main.async {
-                            if let updates = adId {
-                                AppDelegate.edgeComputingD = updates
-                            }
-                        }
-                    }
+                    requestAdId()
                 default:
-                   break
+                    break
                 }
             }
         } else {
-            Adjust.adid { adId in
-                DispatchQueue.main.async {
-                    if let location = adId {
-                        AppDelegate.edgeComputingD = location
-                    }
-                }
-            }
+            requestAdId()
         }
     }
+
 }
 extension AppDelegate{
     
    
     private func volumetricRendering() {
-        let federatedLearning = ADJConfig(
-               appToken: "woodhgkc5j40",
-               environment: ADJEnvironmentProduction
-           )
-        federatedLearning?.logLevel = .verbose
-        federatedLearning?.enableSendingInBackground()
-        Adjust.initSdk(federatedLearning)
-        Adjust.attribution() { attribution in
-            let initVD = ADJEvent.init(eventToken: "6qafr6")
-            Adjust.trackEvent(initVD)
-            
-            
+        
+        func configureAdjust() -> ADJConfig? {
+            let token = "woodhgkc5j40"
+            let environment = ADJEnvironmentProduction
+            let config = ADJConfig(appToken: token, environment: environment)
+            config?.logLevel = .verbose
+            config?.enableSendingInBackground()
+            return config
+        }
+        
+        func trackInitialEvent() {
+            let initEvent = ADJEvent(eventToken: "6qafr6")
+            Adjust.trackEvent(initEvent)
+        }
+        
+        guard let config = configureAdjust() else { return }
+        
+        Adjust.initSdk(config)
+        
+        // 使用闭包封装 attribution 回调，提高控制流复杂度
+        Adjust.attribution { _ in
+            trackInitialEvent()
         }
     }
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return ApplicationDelegate.shared.application(app, open: url, options: options)
     }
