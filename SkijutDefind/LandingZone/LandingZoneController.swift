@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftyStoreKit
+
 
 class LandingZoneController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var userceneter: UIButton!

@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-import SwiftyStoreKit
+
 import StoreKit
 class ResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate{
 
@@ -152,32 +152,24 @@ extension ResortBoundController{
         func initiatePurchase(productID: String) {
             self.view.isUserInteractionEnabled = false
             self.pillowLineView.startAnimating()
-            
-            SwiftyStoreKit.purchaseProduct(productID, atomically: true) { [weak self] result in
-                self?.handlePurchaseResult(result)
+            PutAccessory.shared.startPurchase(id: productID) { zhuhua in
+                self.pillowLineView.stopAnimating()
+                self.view.isUserInteractionEnabled = true
+                switch zhuhua{
+                    
+                case .success():
+                    self.processSuccessfulPurchase()
+                case .failure(let mkki):
+                    self.showingSKIStatu(information: mkki.localizedDescription, isOKAYSHowi: false)
+                }
             }
+            
         }
         
-        func handlePurchaseResult(_ result: PurchaseResult) {
-            self.pillowLineView.stopAnimating()
-            self.view.isUserInteractionEnabled = true
-            
-            switch result {
-            case .success(let purchase):
-                processSuccessfulPurchase(purchase)
-            case .error(let error):
-                handlePurchaseError(error)
-            }
-        }
+      
         
-        func processSuccessfulPurchase(_ purchase: PurchaseDetails) {
-            if !purchase.transaction.downloads.isEmpty {
-                SwiftyStoreKit.start(purchase.transaction.downloads)
-            }
-            
-            if purchase.needsFinishTransaction {
-                SwiftyStoreKit.finishTransaction(purchase.transaction)
-            }
+        func processSuccessfulPurchase() {
+           
             
             showingSKIStatu(information: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "pwaxyg qsoutcbcqeushstffuolx!"), isOKAYSHowi: true)
                     

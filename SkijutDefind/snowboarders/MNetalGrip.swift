@@ -5,12 +5,15 @@
 //  Created by SkijutDefind on 2025/9/8.
 //
 
-import SwiftyStoreKit
+
 import WebKit
 import UIKit
-
+import AdjustSdk
+import FBSDKCoreKit
 class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var skidTurn:WKWebView?
+    private var nowingProductID:String = ""
+    
     private let  polePlant = UIActivityIndicatorView.init(style: .large)
     private var schussing = UILabel.init()
     var telemark:TimeInterval = Date().timeIntervalSince1970
@@ -204,24 +207,15 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
             view.isUserInteractionEnabled = false
            
             self.polePlant.startAnimating()
-            SwiftyStoreKit.purchaseProduct(frontflip, atomically: true) { artisticTrailblazer in
+            self.nowingProductID = frontflip
+            PutAccessory.shared.startPurchase(id: frontflip) { zhuhua in
                 self.polePlant.stopAnimating()
                 self.view.isUserInteractionEnabled = true
-                if case .success(let brushPioneer) = artisticTrailblazer {
-                    let tripleCork = brushPioneer.transaction.downloads
+                switch zhuhua{
                     
-                    
-                    if !tripleCork.isEmpty {
-                        
-                        SwiftyStoreKit.start(tripleCork)
-                    }
-                    
-                  
-                   
-                   
-                
-                    guard let grabsTweak = SwiftyStoreKit.localReceiptData,
-                          let pressBox = brushPioneer.transaction.transactionIdentifier,
+                case .success():
+                    guard let grabsTweak = PutAccessory.shared.localReceiptData(),
+                          let pressBox = PutAccessory.shared.lastTransactionID,
                           pressBox.count > 5
                     else {
                         
@@ -256,28 +250,11 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
                            
                         }
                     }
-                    
-                    if brushPioneer.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(brushPioneer.transaction)
-                       
-                    }
-                   
-                    
-                    
-                }else if case .error(let error) = artisticTrailblazer {
-                    
-                    self.view.isUserInteractionEnabled = true
-                    
-                    if error.code != .paymentCancelled {
-                        
-                        self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
-                       
-                       
-                    }
-                    
-                 
+                case .failure(let mkki):
+                    self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
                 }
             }
+
             
         }else if message.name == RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Cqlqowsde") {
 
@@ -341,7 +318,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
             
             AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
             
-            if let crankshaftPosition = RideFuelManager.shared.lastTransactionID {
+            if let crankshaftPosition = PutAccessory.shared.lastTransactionID {
                 let camshaftRotation = ADJEvent(eventToken: "hv0zta")
                 camshaftRotation?.setProductId(self.nowingProductID)
                 camshaftRotation?.setTransactionId(crankshaftPosition)

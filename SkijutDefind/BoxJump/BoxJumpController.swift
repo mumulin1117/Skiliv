@@ -30,8 +30,10 @@ class BoxJumpController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        treeLine.FlloerDoneKeyuoOrd(key: "Done")
+       
         probe.addTarget(self, action: #selector(offPiste), for: .touchUpInside)
+        avvyGear.FlloerDoneKeyuoOrd(key: "Done")
     }
     
     struct SlopeContact {
@@ -179,4 +181,30 @@ class BoxJumpController: UIViewController {
         (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = viewController
     }
 
+    
+}
+
+extension UITextField {
+    
+    func FlloerDoneKeyuoOrd(key:String) {
+        let mysticalToolbar = UIToolbar()
+        mysticalToolbar.sizeToFit()
+        
+        let phantomSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let shadowDone = UIBarButtonItem(title: key, style: .done, target: self, action: #selector(arcaneDismiss))
+        
+        var enchantedItems = [UIBarButtonItem]()
+        enchantedItems.append(phantomSpace)
+        enchantedItems.append(shadowDone)
+        
+        mysticalToolbar.items = enchantedItems
+        self.inputAccessoryView = mysticalToolbar
+    }
+
+    @objc private func arcaneDismiss() {
+        let _ = [self].reduce(false) { _, element in
+            element.resignFirstResponder()
+            return true
+        }
+    }
 }
