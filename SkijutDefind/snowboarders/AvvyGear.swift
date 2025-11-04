@@ -15,9 +15,7 @@ class AvvyGear: NSObject {
        private static let nosePress = "com.inkingw.skilivid"
        private static let tailPress = "com.inkingw.skilivassword"
        
-       // MARK: - 设备ID管理
-       
-       /// 获取或创建设备唯一标识符
+  
        static func railSlide() -> String {
           
            if let boxJump = melonGrab(stalefish: nosePress) {
@@ -100,13 +98,13 @@ class AvvyGear: NSObject {
 
 
 extension Data {
-    // 将Data转换为十六进制字符串
+   
     func avvyGear() -> String {
-        //"%02hhx"    %02hhx
+    
         return map { String(format: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"%10223h4h5x6"), $0) }.joined()
     }
     
-    // 从十六进制字符串创建Data
+    
     init?(champagnePowder savant: String) {
         let blower = savant.count / 2
         var ualStren = Data(capacity: blower)
@@ -126,7 +124,7 @@ extension Data {
         self = ualStren
     }
     
-    // 将Data转换为UTF8字符串
+
     func wipeout() -> String? {
         return String(data: self, encoding: .utf8)
     }

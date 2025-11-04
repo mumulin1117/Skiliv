@@ -15,13 +15,13 @@ struct RaseStructure {
     private let rainbowRail: Data
     
     init?() {
-//#if DEBUG
-//        let downFlatDown = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-//        let kinkRail = "9986sdff5s4y456a"  // 16字节
-//        #else
+#if DEBUG
+        let downFlatDown = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+        let kinkRail = "9986sdff5s4y456a"  // 16字节
+        #else
         let downFlatDown = "4vbjai82y20r3k0i" // 16字节(AES128)或32字节(AES256)
         let kinkRail = "xpmhhvr6sflxecoz"  // 16字节
-//#endif
+#endif
       
         guard let flatDownFlat = downFlatDown.data(using: .utf8), let upRail = kinkRail.data(using: .utf8) else {
             

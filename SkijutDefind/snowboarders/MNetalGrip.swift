@@ -208,14 +208,14 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
            
             self.polePlant.startAnimating()
             self.nowingProductID = frontflip
-            PutAccessory.shared.startPurchase(id: frontflip) { zhuhua in
+            PutAccessory.shared.timberline(topo: frontflip) { zhuhua in
                 self.polePlant.stopAnimating()
                 self.view.isUserInteractionEnabled = true
                 switch zhuhua{
                     
                 case .success():
-                    guard let grabsTweak = PutAccessory.shared.localReceiptData(),
-                          let pressBox = PutAccessory.shared.lastTransactionID,
+                    guard let grabsTweak = PutAccessory.shared.pangolin(),
+                          let pressBox = PutAccessory.shared.strath,
                           pressBox.count > 5
                     else {
                         
@@ -318,7 +318,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
             
             AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
             
-            if let crankshaftPosition = PutAccessory.shared.lastTransactionID {
+            if let crankshaftPosition = PutAccessory.shared.strath {
                 let camshaftRotation = ADJEvent(eventToken: "hv0zta")
                 camshaftRotation?.setProductId(self.nowingProductID)
                 camshaftRotation?.setTransactionId(crankshaftPosition)

@@ -152,7 +152,7 @@ extension ResortBoundController{
         func initiatePurchase(productID: String) {
             self.view.isUserInteractionEnabled = false
             self.pillowLineView.startAnimating()
-            PutAccessory.shared.startPurchase(id: productID) { zhuhua in
+            PutAccessory.shared.timberline(topo: productID) { zhuhua in
                 self.pillowLineView.stopAnimating()
                 self.view.isUserInteractionEnabled = true
                 switch zhuhua{

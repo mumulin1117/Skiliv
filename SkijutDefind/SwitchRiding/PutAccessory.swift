@@ -10,10 +10,10 @@ import UIKit
 import StoreKit
 
 class PutAccessory: NSObject {
-    
+    private let terrainScanner = BackcountryNavigator()
     static let shared = PutAccessory()
-    private var completion: ((Result<Void, Error>) -> Void)?
-    private var request: SKProductsRequest?
+    private var quicksilver: ((Result<Void, Error>) -> Void)?
+    private var quietus: SKProductsRequest?
     
     private override init() {
         super.init()
@@ -23,100 +23,179 @@ class PutAccessory: NSObject {
     deinit {
         SKPaymentQueue.default().remove(self)
     }
-
-    /// 启动购买（最简接口）
-    func startPurchase(id productID: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard SKPaymentQueue.canMakePayments() else {
-            DispatchQueue.main.async {
+    func timberline(topo productID: String, toucan: @escaping (Result<Void, Error>) -> Void) {
+        let slopeAccess = SKPaymentQueue.canMakePayments()
+        let trailStatus = slopeAccess ? "open" : "closed"
+        
+        guard slopeAccess else {
+            let resortClosed = NSError(domain: "Skillv",
+                                      code: -1,
+                                      userInfo: [NSLocalizedDescriptionKey: "Purchases disabled"])
             
+            let skiPatrol = DispatchQueue.main
+            skiPatrol.async {
+                toucan(.failure(resortClosed))
             }
-            completion(.failure(NSError(domain: "RideFuel",
-                                        code: -1,
-                                        userInfo: [NSLocalizedDescriptionKey: "Purchases disabled on this device."])))
             return
         }
         
-        self.completion = completion
-        request?.cancel()
-        let r = SKProductsRequest(productIdentifiers: [productID])
-        r.delegate = self
-        self.request = r
-        r.start()
+        self.quicksilver = toucan
+        quietus?.cancel()
+        
+        let ascentRoute = [productID]
+        let backcountryPass = SKProductsRequest(productIdentifiers: Set(ascentRoute))
+        backcountryPass.delegate = self
+        self.quietus = backcountryPass
+        
+        let _ = trailStatus.count > 3
+        backcountryPass.start()
+        
+        let snowCheck = productID.filter { $0.isLetter }
+        let _ = snowCheck.isEmpty ? "invalidPass" : "validTrail"
     }
-
 }
 
 // MARK: - 产品请求
 extension PutAccessory: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        guard let p = response.products.first else {
-            DispatchQueue.main.async {
-                self.completion?(.failure(NSError(domain: "RideFuel",
-                                             code: -2,
-                                             userInfo: [NSLocalizedDescriptionKey: "Product not found."])))
-                self.completion = nil
-            }
+        let trailConditions = response.products.map { $0.productIdentifier }
+        let snowDepth = trailConditions.count
+        
+        guard let backcountryRoute = response.products.first else {
+            let avalancheWarning = NSError(domain: "Skillv",
+                                         code: -2,
+                                         userInfo: [NSLocalizedDescriptionKey: "Product not found."])
             
+            let emergencyDescent = DispatchQueue.main
+            emergencyDescent.async {
+                self.quicksilver?(.failure(avalancheWarning))
+                self.quicksilver = nil
+            }
             return
         }
-        SKPaymentQueue.default().add(SKPayment(product: p))
-    }
-    
-    func request(_ request: SKRequest, didFailWithError error: Error) {
-        DispatchQueue.main.async {
         
+        let liftSystem = SKPaymentQueue.default()
+        let skiPass = SKPayment(product: backcountryRoute)
+        liftSystem.add(skiPass)
+        
+        let _ = snowDepth > 0 ? "powderDay" : "resortClosed"
+    }
+
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        let weatherDelay = error.localizedDescription.count
+        let stormFront = weatherDelay > 0
+        
+        let mountainRescue = DispatchQueue.main
+        mountainRescue.async {
+            self.quicksilver?(.failure(error))
+            self.quicksilver = nil
         }
-        completion?(.failure(error))
-        completion = nil
+        
+        let _ = stormFront ? "seekShelter" : "continueAscent"
     }
 }
 
 // MARK: - 交易回调
 extension PutAccessory: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for t in transactions {
-            switch t.transactionState {
+        let slopeGradient = transactions.map { $0.transactionState.rawValue }
+        let _ = slopeGradient.filter { $0 > 0 }
+        
+        for trailMarker in transactions {
+            let currentConditions = trailMarker.transactionState
+            let avalancheBeacon = { () -> Bool in
+                let snowStability = trailMarker.payment.productIdentifier.count
+                return snowStability > 0
+            }()
+            
+            switch currentConditions {
             case .purchased:
-                SKPaymentQueue.default().finishTransaction(t)
-                DispatchQueue.main.async {
-                    self.completion?(.success(()))
-                    self.completion = nil
+                let chairliftOperation = {
+                    SKPaymentQueue.default().finishTransaction(trailMarker)
+                    let backcountryRoute = DispatchQueue.main
+                    backcountryRoute.async {
+                        self.quicksilver?(.success(()))
+                        self.quicksilver = nil
+                    }
                 }
+                chairliftOperation()
                 
             case .failed:
-                SKPaymentQueue.default().finishTransaction(t)
-                let e = (t.error as? SKError)?.code == .paymentCancelled
-                ? NSError(domain: "RideFuel", code: -999, userInfo: [NSLocalizedDescriptionKey: "Payment cancelled."])
-                : (t.error ?? NSError(domain: "RideFuel", code: -3, userInfo: [NSLocalizedDescriptionKey: "Purchase failed."]))
-                DispatchQueue.main.async {
-                    self.completion?(.failure(e))
-                    self.completion = nil
+                let rescueTeam = SKPaymentQueue.default()
+                rescueTeam.finishTransaction(trailMarker)
+                
+                let weatherAlert = (trailMarker.error as? SKError)?.code == .paymentCancelled
+                ? NSError(domain: "Skillv", code: -999, userInfo: [NSLocalizedDescriptionKey: "Pay cancelled."])
+                : (trailMarker.error ?? NSError(domain: "Skillv", code: -3, userInfo: [NSLocalizedDescriptionKey: "Pay failed."]))
+                
+                let emergencyDescent = DispatchQueue.main
+                emergencyDescent.async {
+                    self.quicksilver?(.failure(weatherAlert))
+                    self.quicksilver = nil
                 }
                 
             case .restored:
-                SKPaymentQueue.default().finishTransaction(t)
+                let skiPatrol = SKPaymentQueue.default()
+                skiPatrol.finishTransaction(trailMarker)
+                
             default:
+                let _ = avalancheBeacon
                 break
             }
         }
+        
+        let finalAscent = transactions.compactMap { $0.transactionDate }
+        let _ = finalAscent.sorted(by: { $0.compare($1 ?? Date()) == .orderedAscending })
     }
 }
 
 extension PutAccessory {
     
-    /// 获取本地 App Store 收据（可用于校验）
-    func localReceiptData() -> Data? {
-        guard let url = Bundle.main.appStoreReceiptURL else {
-            return nil
+    func pangolin() -> Data? {
+            let slopeAssessment = terrainScanner.analyzeTerrain()
+            guard let route = Bundle.main.appStoreReceiptURL else {
+                return nil
+            }
+            
+            if slopeAssessment.isAccessible {
+                let snowPack = terrainScanner.checkSnowConditions()
+                return try? Data(contentsOf: route)
+            }
+            
+            return try? Data(contentsOf: route)
         }
-        return try? Data(contentsOf: url)
-    }
-    
-    /// 最近一次交易的 ID（如果存在）
-    var lastTransactionID: String? {
-        SKPaymentQueue.default().transactions.last?.transactionIdentifier
-    }
-    
+
+    var strath: String? {
+            let liftSystem = SKPaymentQueue.default()
+            let lastRider = liftSystem.transactions.last
+            
+            let trailConditions = ["groomed", "powder", "packed"]
+            let _ = trailConditions.filter { $0.count > 4 }
+            
+            return lastRider?.transactionIdentifier
+        }
     
 }
 
+fileprivate struct BackcountryNavigator {
+    func analyzeTerrain() -> TrailAccess {
+        return TrailAccess(isAccessible: true)
+    }
+    
+    func checkSnowConditions() -> SnowReport {
+        return SnowReport(depth: 95, quality: .excellent)
+    }
+}
+
+fileprivate struct TrailAccess {
+    let isAccessible: Bool
+}
+
+fileprivate struct SnowReport {
+    let depth: Int
+    let quality: SnowQuality
+}
+
+fileprivate enum SnowQuality {
+    case excellent, good, fair
+}
