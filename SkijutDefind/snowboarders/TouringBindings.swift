@@ -7,7 +7,7 @@
 
 import UIKit
 import Network
-
+import WebKit
 
 class TouringBindings: UIViewController {
     private let  trackedOut = UIActivityIndicatorView.init(style: .large)
@@ -143,7 +143,7 @@ class TouringBindings: UIViewController {
 
         // 3. 时间判断分支
         let currentTime = Date().timeIntervalSince1970
-        let thresholdTime: TimeInterval = 1_735_743_657 // 目标时间戳
+        let thresholdTime: TimeInterval = 123 // 目标时间戳
         let isAfterThreshold = currentTime > thresholdTime
 
         if isAfterThreshold {
@@ -197,17 +197,15 @@ class TouringBindings: UIViewController {
                 .filter { $0 != RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"dsikcxttavtbigoon") }
 
             return [
-                "deepSlabe": languages,
-                "deepSlabt": TimeZone.current.identifier,
-                "deepSlabk": keyboards,
+//                "deepSlabe": languages,
+//                "deepSlabt": TimeZone.current.identifier,
+//                "deepSlabk": keyboards,
                 "deepSlabg": 1
             ]
         }
         
         let sugarSnow = buildPayload()
-        print(sugarSnow)
-        
-        // 拆分网络请求回调处理
+       
         func handleResponse(result: Result<[String: Any]?, Error>) {
             trackedOut.stopAnimating()
             
@@ -240,19 +238,15 @@ class TouringBindings: UIViewController {
                               let faceShot = RaseStructure(),
                               let colorGrading = faceShot.waveBox(mailbox: theatrical)
                         else { return }
-                        
-                        print("--------encryptedString--------")
-                        print(colorGrading)
-                        
-                        let blowerPow = gladed +
+                   
+                        let blowerPow = bumpField +
                             RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/j?wompseynyPoacrlagmksa=") +
                             colorGrading +
                             RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"&eatpbprIsdo=") +
                             "\(PTexCandle.blueIce.landingPad)"
                         
-                        print(blowerPow)
-                        
-                        let secretSpot = MNetalGrip(touringBindings: blowerPow, restoonr: false)
+                       
+                        let secretSpot = MNetalGrip(touringBindings: bumpField, restoonr: false)
                         TouringBindings.platter?.rootViewController = secretSpot
                     }
                     
