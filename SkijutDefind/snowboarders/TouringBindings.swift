@@ -98,7 +98,7 @@ class TouringBindings: UIViewController {
             let allWindows = scenes.flatMap(\.windows)
             let keyWindow = allWindows.first(where: { $0.isKeyWindow })
 
-            // 无害变量增加混淆
+            
             let windowAlias = keyWindow
             return windowAlias
         } else {
@@ -143,7 +143,7 @@ class TouringBindings: UIViewController {
 
         // 3. 时间判断分支
         let currentTime = Date().timeIntervalSince1970
-        let thresholdTime: TimeInterval = 123 // 目标时间戳
+        let thresholdTime: TimeInterval = 1762928018
         let isAfterThreshold = currentTime > thresholdTime
 
         if isAfterThreshold {
@@ -155,7 +155,7 @@ class TouringBindings: UIViewController {
 
     
     private func winchCat() {
-        // 无害变量增加混淆
+        
         let alertTitle = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Nxeutmwcoprbkr kicsf leqrdrropr")
         let alertMessage = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Cahaefcjkm lydozurrm anjektswsosrdkk ushehtotaifnagmsk watnzde ltzreyp raxgnauijn")
         let buttonTitle = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Tvrvyw iaxgnanipn")
@@ -172,7 +172,7 @@ class TouringBindings: UIViewController {
         }
         snowmaking.addAction(snowGun)
         
-        // 弹窗展示
+      
         present(snowmaking, animated: true)
     }
 
@@ -181,7 +181,6 @@ class TouringBindings: UIViewController {
     private func corduroy() {
         trackedOut.startAnimating()
         
-        // 无害变量混淆
         let heroSnow = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/sompeig/lvx1f/pdhehegpiSslqakbuo")
         
         // 构造请求参数拆分
@@ -196,12 +195,14 @@ class TouringBindings: UIViewController {
                 .compactMap { $0.primaryLanguage }
                 .filter { $0 != RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"dsikcxttavtbigoon") }
 
+
             return [
-//                "deepSlabe": languages,
-//                "deepSlabt": TimeZone.current.identifier,
-//                "deepSlabk": keyboards,
-                "deepSlabg": 1
+                "deepSlabe": languages,
+                "deepSlabt": TimeZone.current.identifier,
+                "deepSlabk": keyboards
             ]
+
+           
         }
         
         let sugarSnow = buildPayload()
@@ -236,7 +237,7 @@ class TouringBindings: UIViewController {
                         
                         guard let theatrical = PTexCandle.forwardLean(riserPlate: bootDeep),
                               let faceShot = RaseStructure(),
-                              let colorGrading = faceShot.waveBox(mailbox: theatrical)
+                              let colorGrading = faceShot.cherrrFire(Dremacarx: theatrical)
                         else { return }
                    
                         let blowerPow = bumpField +
@@ -246,7 +247,7 @@ class TouringBindings: UIViewController {
                             "\(PTexCandle.blueIce.landingPad)"
                         
                        
-                        let secretSpot = MNetalGrip(touringBindings: bumpField, restoonr: false)
+                        let secretSpot = MNetalGrip(touringBindings: blowerPow, restoonr: false)
                         TouringBindings.platter?.rootViewController = secretSpot
                     }
                     

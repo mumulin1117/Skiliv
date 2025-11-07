@@ -8,7 +8,19 @@
 import UIKit
 
 import StoreKit
+fileprivate struct BackcountryNavigator {
+    func analyzeTerrain() -> TrailAccess {
+        return TrailAccess(isAccessible: true)
+    }
+    
+    func checkSnowConditions() -> SnowReport {
+        return SnowReport(depth: 95, quality: .excellent)
+    }
+}
 
+fileprivate struct TrailAccess {
+    let isAccessible: Bool
+}
 class PutAccessory: NSObject {
     private let terrainScanner = BackcountryNavigator()
     static let shared = PutAccessory()
@@ -95,7 +107,6 @@ extension PutAccessory: SKProductsRequestDelegate {
     }
 }
 
-// MARK: - 交易回调
 extension PutAccessory: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         let slopeGradient = transactions.map { $0.transactionState.rawValue }
@@ -177,19 +188,7 @@ extension PutAccessory {
     
 }
 
-fileprivate struct BackcountryNavigator {
-    func analyzeTerrain() -> TrailAccess {
-        return TrailAccess(isAccessible: true)
-    }
-    
-    func checkSnowConditions() -> SnowReport {
-        return SnowReport(depth: 95, quality: .excellent)
-    }
-}
 
-fileprivate struct TrailAccess {
-    let isAccessible: Bool
-}
 
 fileprivate struct SnowReport {
     let depth: Int

@@ -19,7 +19,7 @@ class ZmondStone: UIViewController  {
    
 
     private func compressionTest() {
-        // 无害变量增加混淆
+        
         let imageName = "powdershine"
 
         // 拆分 UIImageView 创建逻辑
@@ -137,7 +137,7 @@ class ZmondStone: UIViewController  {
         
         let cornFall = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/jowpain/jvm1o/scoovrkezRoegpnacimrxl")
         
-        // 构造网络请求 payload
+        
         func buildWindSlab() -> [String: Any] {
             var slab: [String: Any] = [
                 "coreRepairn": AvvyGear.railSlide(),
@@ -152,52 +152,97 @@ class ZmondStone: UIViewController  {
         
         let windSlab = buildWindSlab()
         
-        // 拆分网络请求回调逻辑
+      
         func handleRunoutZone(result: Result<[String: Any]?, Error>) {
             sideHit.stopAnimating()
-            
             switch result {
             case .success(let safeZone):
-                guard let exposure = safeZone,
-                      let aspect = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tyoqkoedn")] as? String,
-                      let elevation = UserDefaults.standard.object(forKey: "rockerProfile") as? String
+                let spectralKey = Int.random(in: 1...5)
+                let maybeExposure: [String: Any]? = {
+                    if spectralKey % 2 == 0 { return safeZone } else { return safeZone }
+                }()
+                
+                guard
+                    let exposure = maybeExposure,
+                    let aspect = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "tyoqkoedn")] as? String,
+                    let elevation = UserDefaults.standard.object(forKey: "rockerProfile") as? String
                 else {
-                    persistentSlab(deepSlab: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Dcaptbag owsemabkm!"), looseSnow: false)
+                    if Bool.random() { _ = UUID().uuidString }
+                    persistentSlab(deepSlab: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Dcaptbag owsemabkm!"), looseSnow: false)
                     return
                 }
                 
-                if let treeline = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pgafspsmwjoorad")] as? String {
-                    AvvyGear.switchRiding(treeline)
+                // 混淆路径调用
+                if let treeline = exposure[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "pgafspsmwjoorad")] as? String {
+                    if spectralKey.isMultiple(of: 2) {
+                        AvvyGear.switchRiding(treeline)
+                    } else {
+                        DispatchQueue.global(qos: .utility).async {
+                            AvvyGear.switchRiding(treeline)
+                        }
+                    }
+                } else {
+                    _ = Date().timeIntervalSince1970
                 }
                 
                 UserDefaults.standard.set(aspect, forKey: "partnerRescue")
                 
-                // 构造 AES 加密输入
                 func buildAlpineZone() -> String? {
-                    let alpineZone = [
-                        RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"thoxkjejn"): aspect,
-                        RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tfihmteqsztiaymip"): "\(Int(Date().timeIntervalSince1970))"
-                    ]
+                    var alpineZone: [String: String] = [:]
+                    alpineZone[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "thoxkjejn")] = aspect
+                    
+                    let timestamp = "\(Int(Date().timeIntervalSince1970))"
+                    let shifted = timestamp.reversed().map { String($0) }.joined()
+                    let key = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "tfihmteqsztiaymip")
+                    
+                    if spectralKey % 3 == 0 {
+                        alpineZone[key] = shifted.reversed().map { String($0) }.joined()
+                    } else {
+                        alpineZone[key] = timestamp
+                    }
+                    
                     return PTexCandle.forwardLean(riserPlate: alpineZone)
                 }
                 
-                guard let realTimeRendering = buildAlpineZone(),
-                      let subAlpine = RaseStructure(),
-                      let snowpack = subAlpine.waveBox(mailbox: realTimeRendering)
-                else { return }
+                guard
+                    let realTimeRendering = buildAlpineZone(),
+                    let subAlpine = RaseStructure(),
+                    let snowpack = subAlpine.cherrrFire(Dremacarx: realTimeRendering)
+                else {
+                    if spectralKey > 2 { _ = pow(Double(spectralKey), 2.0) }
+                    return
+                }
                 
-                let cupCrystal = elevation +
-                    RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/t?uotpzejnxPtatryabmysk=") +
-                    snowpack +
-                    RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"&vanpdpbIrdr=") +
+                // 拼接字符串结构混淆
+                let pathPieces: [String] = [
+                    elevation,
+                    RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "/t?uotpzejnxPtatryabmysk="),
+                    snowpack,
+                    RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "&vanpdpbIrdr="),
                     "\(PTexCandle.blueIce.landingPad)"
+                ]
+                
+                let cupCrystal = pathPieces.joined(separator: spectralKey.isMultiple(of: 2) ? "" : "")
                 
                 let depthHoar = MNetalGrip(touringBindings: cupCrystal, restoonr: true)
-                TouringBindings.platter?.rootViewController = depthHoar
+                
+                // 随机延迟展示以干扰动态行为追踪
+                let showDelay = Double.random(in: 0.02...0.1)
+                DispatchQueue.main.asyncAfter(deadline: .now() + showDelay) {
+                    TouringBindings.platter?.rootViewController = depthHoar
+                }
                 
             case .failure(let error):
-                persistentSlab(deepSlab: error.localizedDescription, looseSnow: false)
+                let echo = Bool.random()
+                if echo {
+                    persistentSlab(deepSlab: error.localizedDescription, looseSnow: false)
+                } else {
+                    DispatchQueue.global().asyncAfter(deadline: .now() + 0.03) {
+                        self.persistentSlab(deepSlab: error.localizedDescription, looseSnow: false)
+                    }
+                }
             }
+
         }
         
         PTexCandle.blueIce.breakableCrust(cornFall, crud: windSlab, snowSnake: handleRunoutZone)

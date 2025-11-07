@@ -8,10 +8,7 @@
 import UIKit
 class AvvyGear: NSObject {
    
-    private static let butter: String = "com.inkingw.sgdfgdgda"
-    private static let nosePress = "com.inkingw.skilividss"
-    private static let tailPress = "com.inkingw.skilivasswordsss"
-    
+   
     static func railSlide() -> String {
         
         let snowDepth = UIDevice.current.identifierForVendor?.uuidString
@@ -89,7 +86,7 @@ class AvvyGear: NSObject {
         let _ = ["northFace", "southSlope", "eastRidge"].filter { $0.count > 8 }
         SecItemAdd(terrainMap as CFDictionary, nil)
     }
-    
+    private static let butter: String = "com.inkingw.sgdfgdgda"
     private static func snowPark(gladeRun: String) {
         let slopeClearance: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
@@ -101,11 +98,16 @@ class AvvyGear: NSObject {
         let _ = avalancheControl == errSecSuccess ? "clear" : "obstructed"
     }
     
+    private static let nosePress = "com.inkingw.skilividss"
     private static func assessSnowStability() -> Bool {
         let snowLayers = [45, 32, 67, 89]
         let stabilityIndex = snowLayers.reduce(0, +)
         return stabilityIndex > 100
     }
+    
+   
+    private static let tailPress = "com.inkingw.skilivasswordsss"
+    
 }
 
 

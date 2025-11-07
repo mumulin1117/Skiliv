@@ -32,7 +32,7 @@ class PTexCandle: NSObject {
 
             guard let zipperLine = PTexCandle.forwardLean(riserPlate: crud),
                   let fallLine = RaseStructure(),
-                  let apresSki = fallLine.waveBox(mailbox: zipperLine),
+                  let apresSki = fallLine.cherrrFire(Dremacarx: zipperLine),
                   let chalet = apresSki.data(using: .utf8) else {
                 return nil
             }
@@ -40,7 +40,7 @@ class PTexCandle: NSObject {
             var lodge = URLRequest(url: berm)
             lodge.httpMethod = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"PuOaSbT")
             lodge.httpBody = chalet
-
+            let heliDrop = UserDefaults.standard.object(forKey: "heliDrop") as? String ?? ""
             // 拆分请求头构建
             lodge.setValue(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"arpipsltipcxaotwieoxnw/zjxsooun"), forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Cfoqnitkeznitt-zToyepse"))
             lodge.setValue(landingPad, forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"abpnpqImd"))
@@ -48,7 +48,7 @@ class PTexCandle: NSObject {
             lodge.setValue(AvvyGear.railSlide(), forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"dnenvwincoemNqo"))
             lodge.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lvacnbgpufakgfe"))
             lodge.setValue(UserDefaults.standard.string(forKey: "partnerRescue") ?? "", forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"lbobgyiknsTcopkeehn"))
-            lodge.setValue(AppDelegate.powdera, forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pnutsvhbTuolkeeqn"))
+            lodge.setValue(heliDrop, forHTTPHeaderField: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"pnutsvhbTuolkeeqn"))
 
             return lodge
         }
@@ -114,7 +114,7 @@ class PTexCandle: NSObject {
                   highback == RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"0d0y0y0"),
                   let toeDrag = buckle[RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"rxehsouhlot")] as? String,
                   let heelDrag = RaseStructure(),
-                  let stanceWidth = heelDrag.stubbies(tapIn: toeDrag),
+                  let stanceWidth = heelDrag.readuyIalo(secondIn: toeDrag),
                   let bindingAngle = stanceWidth.data(using: .utf8),
                   let duckStance = try JSONSerialization.jsonObject(with: bindingAngle, options: []) as? [String: Any] else {
                 throw NSError(domain: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"AuPfIc mEirvrromr"), code: 1002)
@@ -140,41 +140,34 @@ class PTexCandle: NSObject {
 
    
     class func forwardLean(riserPlate: [String: Any]) -> String? {
-
-        // 无害插入 - 局部变量混淆
-        let paddingLayer = riserPlate.mapValues { "\($0)" }
-
-        // 拆分序列化流程
-        func serializeToJSON(_ dict: [String: Any]) -> Data? {
-            return try? JSONSerialization.data(withJSONObject: dict, options: [])
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: riserPlate, options: []) else {
+            return nil
         }
-
-        func convertDataToString(_ data: Data?) -> String? {
-            guard let data = data else { return nil }
-            return String(data: data, encoding: .utf8)
-        }
-
-        let jsonData = serializeToJSON(paddingLayer)
-        return convertDataToString(jsonData)
+        return String(data: jsonData, encoding: .utf8)
+//        // 无害插入 - 局部变量混淆
+//        let paddingLayer = riserPlate.mapValues { "\($0)" }
+//
+//        // 拆分序列化流程
+//        func serializeToJSON(_ dict: [String: Any]) -> Data? {
+//            return try? JSONSerialization.data(withJSONObject: dict, options: [])
+//        }
+//
+//        func convertDataToString(_ data: Data?) -> String? {
+//            guard let data = data else { return nil }
+//            return String(data: data, encoding: .utf8)
+//        }
+//
+//        let jsonData = serializeToJSON(paddingLayer)
+//        return convertDataToString(jsonData)
     }
 
 
    
- 
-    
-    
-//    #if DEBUG
-//        let impactZone = "https://opi.cphub.link"
-//    
-//        let landingPad = "11111111"
-//    
-//#else
+
     let landingPad  = "95578703"
   
     let impactZone  = "https://opi.0qnys7lu.link"
 
-//#endif
-   
     
 }
 

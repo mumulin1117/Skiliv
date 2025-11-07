@@ -13,12 +13,10 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    static var edgeComputingD:String = ""
     private let bigAir = UITextField()
+    static var edgeComputingD:String = ""
     
-    static var powdera:String = ""
-  
-
+ 
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -28,9 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         backcountry()
         slopestyle()
         volumetricRendering()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
-            self.rayTracingCores()
-        }))
+        
         return true
     }
 
@@ -165,7 +161,9 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
         }
         
         let heliDrop = snowflakeCompression(deviceToken)
-        AppDelegate.powdera = heliDrop
+        
+        UserDefaults.standard.setValue(heliDrop, forKey: "heliDrop")
+
     }
 
 }
@@ -209,6 +207,9 @@ extension AppDelegate{
     
    
     private func volumetricRendering() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+            self.rayTracingCores()
+        }))
         
         func configureAdjust() -> ADJConfig? {
             let token = "woodhgkc5j40"

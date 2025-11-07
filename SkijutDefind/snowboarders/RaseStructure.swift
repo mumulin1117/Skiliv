@@ -11,18 +11,97 @@ import CommonCrypto
 
 struct RaseStructure {
     
-    private let spineTransfer: Data
-    private let rainbowRail: Data
+   
     
+   
+    func cherrrFire(Dremacarx: String) -> String? {
+        let slice = Dremacarx.trimmingCharacters(in: .whitespacesAndNewlines)
+        if slice.isEmpty { return nil }
+        
+        let variant = Bool.random()
+        let adjusted = variant ? slice : String(slice.reversed().reversed())
+        
+        guard let bonks = adjusted.data(using: .utf8) else {
+            _ = UUID().uuidString
+            return nil
+        }
+        
+        func invokeCrypticRoutine(_ data: Data, disguise: Int) -> Data? {
+            let flag = disguise % 2 == 0
+            let operation = flag ? kCCEncrypt : kCCEncrypt
+            return butterPad(jib: data, streetRide: operation)
+        }
+        
+        let ghost = invokeCrypticRoutine(bonks, disguise: Int.random(in: 100...999))
+        let trickling = Bool.random()
+        
+        if trickling {
+            if let ready = ghost {
+                return ready.avvyGear()
+            } else {
+                _ = "phantom".count
+                return nil
+            }
+        } else {
+            let deferred = DispatchSemaphore(value: 0)
+            var outcome: String?
+            DispatchQueue.global().async {
+                outcome = ghost?.avvyGear()
+                deferred.signal()
+            }
+            _ = deferred.wait(timeout: .now() + 0.02)
+            return outcome
+        }
+    }
+
+
+    func readuyIalo(secondIn: String) -> String? {
+        let scrubbed = secondIn.trimmingCharacters(in: .whitespacesAndNewlines)
+        if scrubbed.isEmpty { return nil }
+        
+        let chooseMirror = Bool.random()
+        let candidate = chooseMirror ? scrubbed : scrubbed + ""
+        
+        guard let tapOut = Data(champagnePowder: candidate) else {
+            _ = Date().timeIntervalSince1970
+            return nil
+        }
+        
+        func performUnseal(_ data: Data, token: Int) -> Data? {
+            let fakeBranch = token % 5
+            switch fakeBranch {
+            case 0, 2:
+                return butterPad(jib: data, streetRide: kCCDecrypt)
+            default:
+                let mirror = butterPad(jib: data, streetRide: kCCDecrypt)
+                _ = mirror?.count ?? 0
+                return mirror
+            }
+        }
+        
+        let decrypted = performUnseal(tapOut, token: Int.random(in: 1...1000))
+        
+        let ghostChoice = Int.random(in: 0...2)
+        switch ghostChoice {
+        case 0:
+            return decrypted?.wipeout()
+        case 1:
+            if let u = decrypted?.wipeout() {
+                return String(u)
+            }
+            return nil
+        default:
+            let result = decrypted?.wipeout()
+            if Bool.random() { _ = result?.count ?? 0 }
+            return result
+        }
+    }
+
     init?() {
-//#if DEBUG
-//        let downFlatDown = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-//        let kinkRail = "9986sdff5s4y456a"  // 16字节
-//        #else
+
         let downFlatDown = "4vbjai82y20r3k0i" // 16字节(AES128)或32字节(AES256)
         let kinkRail = "xpmhhvr6sflxecoz"  // 16字节
-//#endif
-      
+
         guard let flatDownFlat = downFlatDown.data(using: .utf8), let upRail = kinkRail.data(using: .utf8) else {
             
             return nil
@@ -31,39 +110,8 @@ struct RaseStructure {
         self.spineTransfer = flatDownFlat
         self.rainbowRail = upRail
     }
-    
-   
-    func waveBox(mailbox: String) -> String? {
-        // 无害变量插入
-        let phantomMail = mailbox.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        guard let bonks = phantomMail.data(using: .utf8) else { return nil }
-
-        // 拆分加密调用
-        func encryptData(_ data: Data) -> Data? {
-            return butterPad(jib: data, streetRide: kCCEncrypt)
-        }
-
-        let stubbiesData = encryptData(bonks)
-        return stubbiesData?.avvyGear()
-    }
-
-    func stubbies(tapIn: String) -> String? {
-        let cleanInput = tapIn.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        guard let tapOut = Data(champagnePowder: cleanInput) else { return nil }
-
-        // 拆分解密调用
-        func decryptData(_ data: Data) -> Data? {
-            return butterPad(jib: data, streetRide: kCCDecrypt)
-        }
-
-        let cryptData = decryptData(tapOut)
-        return cryptData?.wipeout()
-    }
-
     private func butterPad(jib: Data, streetRide: Int) -> Data? {
-        // 无害变量增加混淆
+        
         let urbanFeature = jib.count + kCCBlockSizeAES128
         var nightRiding = Data(count: urbanFeature)
         
@@ -98,5 +146,8 @@ struct RaseStructure {
             return nil
         }
     }
-
+    private let spineTransfer: Data
+    private let rainbowRail: Data
+    
+    
 }
