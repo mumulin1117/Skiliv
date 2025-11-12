@@ -139,10 +139,12 @@ class ZmondStone: UIViewController  {
         
         
         func buildWindSlab() -> [String: Any] {
+            let hua =  UserDefaults.standard.object(forKey: "edgeComputingD") as? String ?? ""
+           
             var slab: [String: Any] = [
                 "coreRepairn": AvvyGear.railSlide(),
                
-                "coreRepaira": AppDelegate.edgeComputingD
+                "coreRepaira": hua
             ]
             if let terrainTrap = AvvyGear.frontside() {
                 slab["coreRepaird"] = terrainTrap

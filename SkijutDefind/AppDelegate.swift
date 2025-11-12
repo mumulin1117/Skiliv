@@ -14,7 +14,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let bigAir = UITextField()
-    static var edgeComputingD:String = ""
+//    static var edgeComputingD:String = ""
     
  
     var window: UIWindow?
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         backcountry()
         slopestyle()
         volumetricRendering()
-        
+        self.requestAdId()
         return true
     }
 
@@ -170,35 +170,36 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
 extension AppDelegate{
     
    
-    
+    func requestAdId() {
+        Adjust.adid { adId in
+            self.updateEdgeComputing(with: adId)
+        }
+    }
+    func updateEdgeComputing(with id: String?) {
+        guard let value = id else { return }
+        DispatchQueue.main.async {
+            UserDefaults.standard.set(value, forKey: "edgeComputingD")
+           
+        }
+    }
     
   
     func rayTracingCores() {
         
-        func updateEdgeComputing(with id: String?) {
-            guard let value = id else { return }
-            DispatchQueue.main.async {
-                AppDelegate.edgeComputingD = value
-            }
-        }
-        
-        func requestAdId() {
-            Adjust.adid { adId in
-                updateEdgeComputing(with: adId)
-            }
-        }
+       
+       
         
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { status in
                 switch status {
                 case .authorized:
-                    requestAdId()
+                    break
                 default:
                     break
                 }
             }
         } else {
-            requestAdId()
+            
         }
     }
 
@@ -232,7 +233,11 @@ extension AppDelegate{
         // 使用闭包封装 attribution 回调，提高控制流复杂度
         Adjust.attribution { _ in
             trackInitialEvent()
+            
         }
+        
+        
+       
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
