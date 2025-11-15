@@ -7,7 +7,7 @@
 
 
 import UIKit
-
+import AppTrackingTransparency
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,7 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         window?.rootViewController = TouringBindings()
         window?.makeKeyAndVisible()
-      
+        ATTrackingManager.requestTrackingAuthorization { status in
+                        switch status {
+                        case .authorized:
+                            break
+                        default:
+                            break
+                        }
+                    }
     }
     
     
