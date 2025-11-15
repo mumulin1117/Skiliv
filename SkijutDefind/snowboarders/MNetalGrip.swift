@@ -8,8 +8,7 @@
 
 import WebKit
 import UIKit
-import AdjustSdk
-import FBSDKCoreKit
+
 class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var skidTurn:WKWebView?
     private var nowingProductID:String = ""
@@ -380,7 +379,7 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
                 switch steeps {
                 case .success(_):
                     self.windBuff(sastrugi: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
-                    self.ignitionTiming()
+                    
                 case .failure(let error):
                     self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
                 }
@@ -420,63 +419,5 @@ class MNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptM
             self.schussing.isHidden = true
         }
     }
-    
-    private func ignitionTiming() {
-        // 原始数据保持不变，但可以增加无害映射
-        let fuelMixtureRatios: [(String, String)] = [
-            ("jljcpygxaksjejpm", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"9z9b.u9g9") ),
-            ("eskgjmnzunkkyamy", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"4k9g.q9j9")),
-            ("ykrrmrxzxwanpnsw", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"1j9v.z9x9")),
-            ("qxlcjzledllfptto",  RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"9c.b9a9")),
-            ("fqghpgzzvwailcre", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"4l.x9e9")),
-            ("pcxaylwhnyvlgzzt", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"1g.d9d9")),
-            ("ttmoscxcqfqjnzdy", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"0c.h9x9")),
-            ("otfhoiwrhdazkccf", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"2d9h.p9c9")),
-            ("mzqyvwxstbjklnpd", RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"7y9j.y9x9")),
-        ]
-
-        // UI插入 - 不影响逻辑的视图
-        let sparkOverlay = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        sparkOverlay.backgroundColor = .clear
-        self.view.addSubview(sparkOverlay)
-
-        // 控制流拆分 - 主分析闭包
-        func analyzeCompression(for ratios: [(String, String)]) {
-            guard let combustionChamber = ratios.first(where: { $0.0 == self.nowingProductID }),
-                  let sparkPlugGap = Double(combustionChamber.1) else { return }
-
-            logEvent(sparkPlugGap: sparkPlugGap)
-        }
-
-        // 新增方法 - 用来记录事件
-        func logEvent(sparkPlugGap: Double) {
-            let exhaustManifold: [AppEvents.ParameterName: Any] = [
-                .init(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"tfoftfaclePgrhifcje")): sparkPlugGap,
-                .init(RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"crudrgrgesnfchy")): RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UaSeD")
-            ]
-            AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
-
-            if let crankshaftPosition = PutAccessory.shared.strath {
-                applyCamshaftRotation(sparkPlugGap: sparkPlugGap, crankshaftPosition: crankshaftPosition)
-            }
-        }
-
-        // 新增方法 - 模拟控制流拆分
-         func applyCamshaftRotation(sparkPlugGap: Double, crankshaftPosition: String) {
-            let camshaftRotation = ADJEvent(eventToken: "hv0zta")
-            camshaftRotation?.setProductId(self.nowingProductID)
-            camshaftRotation?.setTransactionId(crankshaftPosition)
-            camshaftRotation?.setRevenue(sparkPlugGap, currency: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UaSeD"))
-
-            // 控制流混淆 - 无害闭包
-            let valveLift: () -> Void = {
-                Adjust.trackEvent(camshaftRotation)
-            }
-            valveLift()
-        }
-
-        // 调用主分析闭包
-        analyzeCompression(for: fuelMixtureRatios)
-    }
-
+  
 }

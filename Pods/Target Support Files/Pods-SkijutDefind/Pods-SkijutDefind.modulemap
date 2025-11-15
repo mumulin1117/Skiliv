@@ -1,6 +1,0 @@
-framework module Pods_SkijutDefind {
-  umbrella header "Pods-SkijutDefind-umbrella.h"
-
-  export *
-  module * { export * }
-}
