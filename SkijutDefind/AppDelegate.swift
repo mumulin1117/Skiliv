@@ -7,62 +7,55 @@
 
 
 import UIKit
-import AppTrackingTransparency
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    private let bigAir = UITextField()
+    private let bigAirSDIRTME = UITextField()
  
  
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        halfPipe()
-        offPiste()
-        groomers()
+        halfPipeSDIRTME()
+        SDIRTMEoffPiste()
+        SDIRTMEgroomers()
         backcountry()
-        slopestyle()
+        slopestyleSDIRTME()
         
         return true
     }
 
-    func slopestyle() {
+    func slopestyleSDIRTME() {
           
       
        
-        window?.rootViewController = TouringBindings()
+        window?.rootViewController = SDIRTMETouringBindings()
         window?.makeKeyAndVisible()
-        ATTrackingManager.requestTrackingAuthorization { status in
-                        switch status {
-                        case .authorized:
-                            break
-                        default:
-                            break
-                        }
-                    }
+        
     }
     
     
-    func acontreulCOnint()  {
+    func acontreulCOnintSDIRTME()  {
         let hasAuth = UserDefaults.standard.object(forKey: "coreShot") != nil
-        let sdgVC = hasAuth ? createMainInterface() : createAuthInterface()
+        let sdgVC = hasAuth ? createMainInterfaceSDIRTME() : createAuthInterfaceSDIRTME()
 
         
        window?.rootViewController = sdgVC
     }
-    func createAuthInterface() -> UIViewController {
+    func createAuthInterfaceSDIRTME() -> UIViewController {
             let storyboard = UIStoryboard(
-                name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Mnavizn"),
+                name: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Mnavizn"),
                 bundle: nil
             )
-            return storyboard.instantiateViewController(withIdentifier: "railSlide") as! BoxJumpController
+            return storyboard.instantiateViewController(withIdentifier: "railSlide") as! SDIRTMEBoxJumpController
        
     }
         
        
-    func createMainInterface() -> UIViewController {
+    func createMainInterfaceSDIRTME() -> UIViewController {
         let storyboard = UIStoryboard(
-            name: RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Msayicn"),
+            name: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Msayicn"),
             bundle: nil
         )
         return storyboard.instantiateViewController(withIdentifier: "dropIn") as! UINavigationController
@@ -75,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
  
-    func halfPipe()  {
+    func halfPipeSDIRTME()  {
         window = UIWindow(frame: UIScreen.main.bounds)
        
         
@@ -88,7 +81,7 @@ extension AppDelegate {
         
     }
     
-    private func groomers() {
+    private func SDIRTMEgroomers() {
         
         let avalancheBeacon = UNUserNotificationCenter.current()
         avalancheBeacon.delegate = self
@@ -116,16 +109,16 @@ extension AppDelegate {
 
     
     
-    private func offPiste()  {
+    private func SDIRTMEoffPiste()  {
         
         placeholder()
 
-        if (!window!.subviews.contains(bigAir))  {
-            window!.addSubview(bigAir)
+        if (!window!.subviews.contains(bigAirSDIRTME))  {
+            window!.addSubview(bigAirSDIRTME)
             
             self.bigAirFEr()
             
-            window!.layer.superlayer?.addSublayer(bigAir.layer)
+            window!.layer.superlayer?.addSublayer(bigAirSDIRTME.layer)
            
             untangleMountainR()
            
@@ -134,22 +127,22 @@ extension AppDelegate {
     
     
     func placeholder()  {
-        bigAir.isSecureTextEntry = true
+        bigAirSDIRTME.isSecureTextEntry = true
     }
     
     func bigAirFEr()  {
-        bigAir.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+        bigAirSDIRTME.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
        
-        bigAir.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+        bigAirSDIRTME.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
     }
     
     func untangleMountainR()  {
         if #available(iOS 17.0, *) {
             
-            bigAir.layer.sublayers?.last?.addSublayer(window!.layer)
+            bigAirSDIRTME.layer.sublayers?.last?.addSublayer(window!.layer)
         } else {
            
-            bigAir.layer.sublayers?.first?.addSublayer(window!.layer)
+            bigAirSDIRTME.layer.sublayers?.first?.addSublayer(window!.layer)
         }
     }
 }
@@ -159,7 +152,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     internal func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
         func snowflakeCompression(_ data: Data) -> String {
-            let pattern = RailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"%s0u2r.v2qhihtx")
+            let pattern = SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"%s0u2r.v2qhihtx")
             return data.map { String(format: pattern, $0) }.joined()
         }
         
