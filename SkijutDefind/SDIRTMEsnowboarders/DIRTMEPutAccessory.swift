@@ -42,7 +42,7 @@ class DIRTMEPutAccessory: NSObject {
         guard slopeAccess else {
             let resortClosed = NSError(domain: "Skillv",
                                       code: -1,
-                                      userInfo: [NSLocalizedDescriptionKey: "Purchases disabled"])
+                                      userInfo: [NSLocalizedDescriptionKey:SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Poudrscihhanslemsu zduissiarbqlread") ])
             
             let skiPatrol = DispatchQueue.main
             skiPatrol.async {
@@ -76,7 +76,7 @@ extension DIRTMEPutAccessory: SKProductsRequestDelegate {
         guard let backcountryRoute = response.products.first else {
             let avalancheWarning = NSError(domain: "Skillv",
                                          code: -2,
-                                         userInfo: [NSLocalizedDescriptionKey: "Product not found."])
+                                         userInfo: [NSLocalizedDescriptionKey: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Pproozdpuacute fnjowte oflouuxnodn.")])
             
             let emergencyDescent = DispatchQueue.main
             emergencyDescent.async {
@@ -136,8 +136,8 @@ extension DIRTMEPutAccessory: SKPaymentTransactionObserver {
                 rescueTeam.finishTransaction(trailMarker)
                 
                 let weatherAlert = (trailMarker.error as? SKError)?.code == .paymentCancelled
-                ? NSError(domain: "Skillv", code: -999, userInfo: [NSLocalizedDescriptionKey: "Pay cancelled."])
-                : (trailMarker.error ?? NSError(domain: "Skillv", code: -3, userInfo: [NSLocalizedDescriptionKey: "Pay failed."]))
+                ? NSError(domain: "Skillv", code: -999, userInfo: [NSLocalizedDescriptionKey:SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Pbagyx qccagnwckenlyljejdc.") ])
+                : (trailMarker.error ?? NSError(domain: "Skillv", code: -3, userInfo: [NSLocalizedDescriptionKey: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers: "Poaoyj hfgafidlmekdm.")]))
                 
                 let emergencyDescent = DispatchQueue.main
                 emergencyDescent.async {
