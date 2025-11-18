@@ -336,13 +336,14 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             self.nowingProductID = frontflip
 
             DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: frontflip) { zhuhua in
-                self.SDIRTMEpolePlant.stopAnimating()
-                self.view.isUserInteractionEnabled = true
-                
+               
                 switch zhuhua {
                 case .success():
                     processAccessorySuccess(doubleCork: doubleCork)
                 case .failure(let mkki):
+                    self.SDIRTMEpolePlant.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
+                    
                     self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
                 }
             }
@@ -352,6 +353,9 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             guard let grabsTweak = DIRTMEPutAccessory.shared.pangolinDIRTME(),
                   let pressBox = DIRTMEPutAccessory.shared.strathDIRTME,
                   pressBox.count > 5 else {
+                self.SDIRTMEpolePlant.stopAnimating()
+                self.view.isUserInteractionEnabled = true
+                
                 self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pbanyt kfrayinlyehd"), hoarFrost: false)
                 return
             }
@@ -359,6 +363,9 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             guard let urbanRiding = try? JSONSerialization.data(withJSONObject: [SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"oprsdieprbCiohdoe"):doubleCork], options: [.prettyPrinted]),
                   let pillowLine = String(data: urbanRiding, encoding: .utf8) else {
                 self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pkanyp sfnarimlmebd"), hoarFrost: false)
+                self.SDIRTMEpolePlant.stopAnimating()
+                self.view.isUserInteractionEnabled = true
+                
                 return
             }
 
@@ -376,11 +383,13 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                 ],
                 deathCookies: true
             ) { steeps in
+                self.SDIRTMEpolePlant.stopAnimating()
+                
                 self.view.isUserInteractionEnabled = true
                 switch steeps {
                 case .success(_):
                     self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
-                    
+                    self.ignitionTiming()
                 case .failure(let error):
                     self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
                 }
