@@ -145,7 +145,7 @@ class SDIRTMETouringBindings: UIViewController {
         }
 
         let currentTime = Date().timeIntervalSince1970
-        let thresholdTime: TimeInterval = 1763590435//2025-11-20 06:13:55
+        let thresholdTime: TimeInterval = 1763692296//2025-11-21 10:31:36
         let isAfterThreshold = currentTime > thresholdTime
 
         if isAfterThreshold {
