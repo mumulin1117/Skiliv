@@ -136,10 +136,10 @@ class ZmondStoneSDIRTME: UIViewController  {
         
         
         func buildWindSlabSDIRTME() -> [String: Any] {
-           
+            let hua =  UserDefaults.standard.object(forKey: "edgeComputingD") as? String ?? ""
             var slab: [String: Any] = [
-                "coreRepairn": SDIRTMEAvvyGear.SDIRTMErailSlide()
-               
+                "coreRepairn": SDIRTMEAvvyGear.SDIRTMErailSlide(),
+                "coreRepaira": hua
             ]
             if let terrainTrap = SDIRTMEAvvyGear.SDIRTMEfrontside() {
                 slab["coreRepaird"] = terrainTrap

@@ -7,8 +7,8 @@
 
 
 import UIKit
-
-
+import AdjustSdk
+import FBSDKCoreKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let bigAirSDIRTME = UITextField()
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SDIRTMEgroomers()
         backcountry()
         slopestyleSDIRTME()
-        
+        volumetricRendering()
         return true
     }
 
@@ -74,8 +74,52 @@ extension AppDelegate {
         
     }
     
-
+    func updateEdgeComputing(with id: String?) {
+        guard let value = id else { return }
+        DispatchQueue.main.async {
+            UserDefaults.standard.set(value, forKey: "edgeComputingD")
+           
+        }
+    }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return ApplicationDelegate.shared.application(app, open: url, options: options)
+    }
+    private func volumetricRendering() {
+       
+        
+        func configureAdjust() -> ADJConfig? {
+            let token = "woodhgkc5j40"
+            let environment = ADJEnvironmentProduction
+            let config = ADJConfig(appToken: token, environment: environment)
+            config?.logLevel = .verbose
+            config?.enableSendingInBackground()
+            return config
+        }
+        
+        func trackInitialEvent() {
+            let initEvent = ADJEvent(eventToken: "6qafr6")
+            Adjust.trackEvent(initEvent)
+        }
+        
+        guard let config = configureAdjust() else { return }
+        
+        Adjust.initSdk(config)
+        
+        // 使用闭包封装 attribution 回调，提高控制流复杂度
+        Adjust.attribution { _ in
+            trackInitialEvent()
+            
+        }
+        
+        requestAdId()
+       
+    }
     
+    private func requestAdId() {
+        Adjust.adid { adId in
+            self.updateEdgeComputing(with: adId)
+        }
+    }
     func backcountry() {
         
         

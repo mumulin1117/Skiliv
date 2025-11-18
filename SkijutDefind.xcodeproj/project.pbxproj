@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C132C2119DEAEE41F2E229C4 /* Pods_SkijutDefind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4EAE3CFD402A8894A329AE8 /* Pods_SkijutDefind.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		04B4DE432E0A38BC0027C855 /* SkijutDefind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkijutDefind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4707D669127535F3417FC82E /* Pods-SkijutDefind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkijutDefind.release.xcconfig"; path = "Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind.release.xcconfig"; sourceTree = "<group>"; };
+		66990EEE1D8F5D989D618F88 /* Pods-SkijutDefind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkijutDefind.debug.xcconfig"; path = "Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind.debug.xcconfig"; sourceTree = "<group>"; };
+		C4EAE3CFD402A8894A329AE8 /* Pods_SkijutDefind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkijutDefind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C132C2119DEAEE41F2E229C4 /* Pods_SkijutDefind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +56,7 @@
 				04B4DE452E0A38BC0027C855 /* SkijutDefind */,
 				04B4DE442E0A38BC0027C855 /* Products */,
 				DA07800016B8B957C4C11274 /* Frameworks */,
+				91D9EB9980E6A4100C1A755D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,9 +68,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		91D9EB9980E6A4100C1A755D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66990EEE1D8F5D989D618F88 /* Pods-SkijutDefind.debug.xcconfig */,
+				4707D669127535F3417FC82E /* Pods-SkijutDefind.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DA07800016B8B957C4C11274 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4EAE3CFD402A8894A329AE8 /* Pods_SkijutDefind.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -73,9 +92,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04B4DE562E0A38BE0027C855 /* Build configuration list for PBXNativeTarget "SkijutDefind" */;
 			buildPhases = (
+				8BC8C06C9460A2AA635D8075 /* [CP] Check Pods Manifest.lock */,
 				04B4DE3F2E0A38BC0027C855 /* Sources */,
 				04B4DE402E0A38BC0027C855 /* Frameworks */,
 				04B4DE412E0A38BC0027C855 /* Resources */,
+				BCD313B0BAFA7A03E08112C1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +154,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8BC8C06C9460A2AA635D8075 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkijutDefind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCD313B0BAFA7A03E08112C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkijutDefind/Pods-SkijutDefind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04B4DE3F2E0A38BC0027C855 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -146,6 +209,7 @@
 /* Begin XCBuildConfiguration section */
 		04B4DE572E0A38BE0027C855 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66990EEE1D8F5D989D618F88 /* Pods-SkijutDefind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -187,6 +251,7 @@
 		};
 		04B4DE582E0A38BE0027C855 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4707D669127535F3417FC82E /* Pods-SkijutDefind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
