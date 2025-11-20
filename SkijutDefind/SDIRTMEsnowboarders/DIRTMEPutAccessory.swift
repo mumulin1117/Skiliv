@@ -22,6 +22,8 @@ fileprivate struct TrailAccess {
     let isAccessible: Bool
 }
 class DIRTMEPutAccessory: NSObject {
+    private(set) var lastTransactionID: String?
+    
     private let DIRTMEterrainScanner = BackcountryNavigator()
     static let shared = DIRTMEPutAccessory()
     private var DIRTMEquicksilver: ((Result<Void, Error>) -> Void)?
@@ -121,6 +123,7 @@ extension DIRTMEPutAccessory: SKPaymentTransactionObserver {
             
             switch currentConditions {
             case .purchased:
+                self.lastTransactionID = trailMarker.transactionIdentifier
                 let chairliftOperation = {
                     SKPaymentQueue.default().finishTransaction(trailMarker)
                     let backcountryRoute = DispatchQueue.main
@@ -183,7 +186,7 @@ extension DIRTMEPutAccessory {
             let trailConditions = ["groomed", "powder", "packed"]
             let _ = trailConditions.filter { $0.count > 4 }
             
-            return lastRider?.transactionIdentifier
+            return lastTransactionID
         }
     
 }
