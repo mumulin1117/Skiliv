@@ -389,6 +389,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                 switch steeps {
                 case .success(_):
                     self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
+
                     self.ignitionTiming()
                 case .failure(let error):
                     self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
@@ -466,18 +467,18 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
 
             if let crankshaftPosition = DIRTMEPutAccessory.shared.strathDIRTME {
+                
                 applyCamshaftRotation(sparkPlugGap: sparkPlugGap, crankshaftPosition: crankshaftPosition)
             }
         }
 
-        // 新增方法 - 模拟控制流拆分
+     
          func applyCamshaftRotation(sparkPlugGap: Double, crankshaftPosition: String) {
             let camshaftRotation = ADJEvent(eventToken: "hv0zta")
             camshaftRotation?.setProductId(self.nowingProductID)
             camshaftRotation?.setTransactionId(crankshaftPosition)
             camshaftRotation?.setRevenue(sparkPlugGap, currency: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UaSeD"))
 
-            // 控制流混淆 - 无害闭包
             let valveLift: () -> Void = {
                 Adjust.trackEvent(camshaftRotation)
             }
