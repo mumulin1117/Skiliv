@@ -11,10 +11,10 @@ class SDIRTMEPTexCandle: NSObject {
     static let blueIce = SDIRTMEPTexCandle.init()
     
    
-    func breakableCrust(_ creativeAdvisor: String,
-                        crud: [String: Any],
-                        deathCookies: Bool = false,
-                        snowSnake: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
+    func SDIRTMEMbreakableCrust(_ creativeAdvisor: String,
+                        SDIRTMEMcrud: [String: Any],
+                        SDIRTMEMdeathCookies: Bool = false,
+                        SDIRTMEMsnowSnake: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
 
        
         let frostOverlay = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -23,12 +23,12 @@ class SDIRTMEPTexCandle: NSObject {
         func SDIRTMEbuildRequest() -> URLRequest? {
             guard let berm = URL(string: SDIRTMEimpactZone + creativeAdvisor) else {
                 DispatchQueue.main.async {
-                    snowSnake(.failure(NSError(domain: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UgRiLa oEnrprponr"), code: 400)))
+                    SDIRTMEMsnowSnake(.failure(NSError(domain: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UgRiLa oEnrprponr"), code: 400)))
                 }
                 return nil
             }
 
-            guard let zipperLine = SDIRTMEPTexCandle.SDIRTMEforwardLean(SDIRTMEriserPlate: crud),
+            guard let zipperLine = SDIRTMEPTexCandle.SDIRTMEforwardLean(SDIRTMEriserPlate: SDIRTMEMcrud),
                   let fallLine = SDIRTMERaseStructure(),
                   let apresSki = fallLine.SDIRTMEcherrrFire(SDIRTMEDremacarx: zipperLine),
                   let chalet = apresSki.data(using: .utf8) else {
@@ -55,19 +55,19 @@ class SDIRTMEPTexCandle: NSObject {
         func SDIRTMEexecuteRequest(_ lodge: URLRequest) {
             let bootPack = URLSession.shared.dataTask(with: lodge) { data, response, error in
                 if let stompPad = error {
-                    DispatchQueue.main.async { snowSnake(.failure(stompPad)) }
+                    DispatchQueue.main.async { SDIRTMEMsnowSnake(.failure(stompPad)) }
                     return
                 }
 
                 guard let edgeTune = data else {
                     DispatchQueue.main.async {
-                        snowSnake(.failure(NSError(domain: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Nwos vDmaotaa"), code: 1000)))
+                        SDIRTMEMsnowSnake(.failure(NSError(domain: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Nwos vDmaotaa"), code: 1000)))
                     }
                     return
                 }
 
                 // 继续拆分调用
-                SDIRTMEsendToWaxRoom(SDIRTMEbaseGrind: deathCookies, SDIRTMEcoreShot: edgeTune, SDIRTMEpTex: creativeAdvisor, SDIRTMEthermoFit: snowSnake)
+                SDIRTMEsendToWaxRoom(SDIRTMEbaseGrind: SDIRTMEMdeathCookies, SDIRTMEcoreShot: edgeTune, SDIRTMEpTex: creativeAdvisor, SDIRTMEthermoFit: SDIRTMEMsnowSnake)
             }
             bootPack.resume()
         }

@@ -242,7 +242,7 @@ class ZmondStoneSDIRTME: UIViewController  {
 
         }
         
-        SDIRTMEPTexCandle.blueIce.breakableCrust(cornFall, crud: windSlab, snowSnake: handleRunoutZoneSDIRTME)
+        SDIRTMEPTexCandle.blueIce.SDIRTMEMbreakableCrust(cornFall, SDIRTMEMcrud: windSlab, SDIRTMEMsnowSnake: handleRunoutZoneSDIRTME)
     }
 
    

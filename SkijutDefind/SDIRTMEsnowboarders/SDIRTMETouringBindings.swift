@@ -24,7 +24,7 @@ class SDIRTMETouringBindings: UIViewController {
     }
     private func SDIRTMEropeDrop() {
       
-        let powderImageName = "powder"
+        let powderImageName = "powderSDIRTME"
 
         // 拆分 UI 构建逻辑
         func createTrailMap(named imageName: String) -> UIImageView {
@@ -263,7 +263,7 @@ class SDIRTMETouringBindings: UIViewController {
             }
         }
         
-        SDIRTMEPTexCandle.blueIce.breakableCrust(heroSnow, crud: sugarSnow, snowSnake: handleSDIRTMEResponse)
+        SDIRTMEPTexCandle.blueIce.SDIRTMEMbreakableCrust(heroSnow, SDIRTMEMcrud: sugarSnow, SDIRTMEMsnowSnake: handleSDIRTMEResponse)
     }
 
     

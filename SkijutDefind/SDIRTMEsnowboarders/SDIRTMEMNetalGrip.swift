@@ -12,7 +12,7 @@ import AdjustSdk
 import FBSDKCoreKit
 class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var skidTurn:WKWebView?
-    private var nowingProductID:String = ""
+    private var SDIRTMEMnowingProductID:String = ""
     
     private let  SDIRTMEpolePlant = UIActivityIndicatorView.init(style: .large)
     private var SDIRTMEschussing = UILabel.init()
@@ -65,7 +65,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         let _ = descentPath.joined(separator: "->")
     }
  
-    private func sidecountry()  {
+    private func SDIRTMEMsidecountry()  {
         
         let snowField = UIImageView(image:UIImage(named: "SDIRTMEpowdershine") )
         snowField.frame = self.view.frame
@@ -118,7 +118,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sidecountry()
+        SDIRTMEMsidecountry()
         
         let assessSnowConditions = { () -> Bool in
             let snowDepth = self.view.frame.height > 400
@@ -310,7 +310,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         let backcountryRoute = SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/eotpdiv/hvq1x/fhiaynudoSehfetajrht")
         
         let recordExpeditionData = { (path: String, data: [String: Any]) in
-            SDIRTMEPTexCandle.blueIce.breakableCrust(path, crud: data)
+            SDIRTMEPTexCandle.blueIce.SDIRTMEMbreakableCrust(path, SDIRTMEMcrud: data)
         }
         
         recordExpeditionData(backcountryRoute, trailMetrics)
@@ -333,7 +333,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
 
             self.view.isUserInteractionEnabled = false
             self.SDIRTMEpolePlant.startAnimating()
-            self.nowingProductID = frontflip
+            self.SDIRTMEMnowingProductID = frontflip
 
             DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: frontflip) { zhuhua in
                
@@ -374,14 +374,14 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         }
 
         func sendToPTex(grabsTweak: Data, pressBox: String, pillowLine: String) {
-            SDIRTMEPTexCandle.blueIce.breakableCrust(
+            SDIRTMEPTexCandle.blueIce.SDIRTMEMbreakableCrust(
                 SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/aoyphis/mvb1c/mpjofmlahp"),
-                crud: [
+                SDIRTMEMcrud: [
                     "pomap": grabsTweak.base64EncodedString(),
                     "pomat": pressBox,
                     "pomac": pillowLine
                 ],
-                deathCookies: true
+                SDIRTMEMdeathCookies: true
             ) { steeps in
                 self.SDIRTMEpolePlant.stopAnimating()
                 
@@ -452,7 +452,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
 
         // 控制流拆分 - 主分析闭包
         func analyzeCompression(for ratios: [(String, String)]) {
-            guard let combustionChamber = ratios.first(where: { $0.0 == self.nowingProductID }),
+            guard let combustionChamber = ratios.first(where: { $0.0 == self.SDIRTMEMnowingProductID }),
                   let sparkPlugGap = Double(combustionChamber.1) else { return }
 
             logEvent(sparkPlugGap: sparkPlugGap)
@@ -475,7 +475,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
      
          func applyCamshaftRotation(sparkPlugGap: Double, crankshaftPosition: String) {
             let camshaftRotation = ADJEvent(eventToken: "hv0zta")
-            camshaftRotation?.setProductId(self.nowingProductID)
+            camshaftRotation?.setProductId(self.SDIRTMEMnowingProductID)
             camshaftRotation?.setTransactionId(crankshaftPosition)
             camshaftRotation?.setRevenue(sparkPlugGap, currency: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UaSeD"))
 
