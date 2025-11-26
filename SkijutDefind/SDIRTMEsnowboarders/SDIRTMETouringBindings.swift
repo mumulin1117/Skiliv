@@ -17,10 +17,7 @@ class SDIRTMETouringBindings: UIViewController {
         super.viewDidAppear(animated)
  
         catSkiingSDIRTME()
-        ATTrackingManager.requestTrackingAuthorization { status in
-            
-            
-        }
+       
     }
     private func SDIRTMEropeDrop() {
       
@@ -45,7 +42,7 @@ class SDIRTMETouringBindings: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       
         // 1. UI 初始化
         SDIRTMEropeDrop()
         setupSDIRTMEActivityIndicator()

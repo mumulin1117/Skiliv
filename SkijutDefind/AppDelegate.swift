@@ -9,6 +9,7 @@
 import UIKit
 import AdjustSdk
 import FBSDKCoreKit
+import AppTrackingTransparency
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let bigAirSDIRTME = UITextField()
@@ -34,6 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = SDIRTMETouringBindings()
         window?.makeKeyAndVisible()
         
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4, execute: DispatchWorkItem(block: {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                
+                
+            }
+        }))
+        
+       
     }
     
     
