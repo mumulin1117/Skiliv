@@ -336,13 +336,13 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             self.SDIRTMEMnowingProductID = frontflip
 
             DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: frontflip) { zhuhua in
-               
+                self.view.isUserInteractionEnabled = true
                 switch zhuhua {
                 case .success():
                     processAccessorySuccess(doubleCork: doubleCork)
                 case .failure(let mkki):
                     self.SDIRTMEpolePlant.stopAnimating()
-                    self.view.isUserInteractionEnabled = true
+                   
                     
                     self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
                 }
