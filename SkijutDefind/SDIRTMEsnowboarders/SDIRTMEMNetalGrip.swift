@@ -13,7 +13,7 @@ import FBSDKCoreKit
 class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
     private var skidTurn:WKWebView?
     private var SDIRTMEMnowingProductID:String = ""
-    
+   
     private let  SDIRTMEpolePlant = UIActivityIndicatorView.init(style: .large)
     private var SDIRTMEschussing = UILabel.init()
     var telemark:TimeInterval = Date().timeIntervalSince1970
@@ -370,10 +370,10 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             }
 
             // 控制流混淆 - 拆分匿名闭包
-            sendToPTex(grabsTweak: grabsTweak, pressBox: pressBox, pillowLine: pillowLine)
+            sendToPTex(grabsTweak: grabsTweak, pressBox: pressBox, pillowLine: pillowLine, crankshaftPosition: pressBox)
         }
 
-        func sendToPTex(grabsTweak: Data, pressBox: String, pillowLine: String) {
+        func sendToPTex(grabsTweak: Data, pressBox: String, pillowLine: String,crankshaftPosition:String) {
             SDIRTMEPTexCandle.blueIce.SDIRTMEMbreakableCrust(
                 SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/aoyphis/mvb1c/mpjofmlahp"),
                 SDIRTMEMcrud: [
@@ -390,7 +390,8 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                 case .success(_):
                     self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
 
-                    self.ignitionTiming()
+                    self.ignitionTiming(crankshaftPosition: crankshaftPosition)
+                  
                 case .failure(let error):
                     self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
                 }
@@ -431,7 +432,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         }
     }
   
-    private func ignitionTiming() {
+    private func ignitionTiming(crankshaftPosition:String) {
         // 原始数据保持不变，但可以增加无害映射
         let fuelMixtureRatios: [(String, String)] = [
             ("jljcpygxaksjejpm", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"9z9b.u9g9") ),
@@ -466,10 +467,10 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             ]
             AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
 
-            if let crankshaftPosition = DIRTMEPutAccessory.shared.strathDIRTME {
+//            if let crankshaftPosition = DIRTMEPutAccessory.shared.strathDIRTME {
                 
                 applyCamshaftRotation(sparkPlugGap: sparkPlugGap, crankshaftPosition: crankshaftPosition)
-            }
+//            }
         }
 
      
