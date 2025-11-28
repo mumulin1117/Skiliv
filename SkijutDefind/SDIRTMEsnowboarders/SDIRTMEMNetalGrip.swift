@@ -467,10 +467,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             ]
             AppEvents.shared.logEvent(AppEvents.Name.purchased, parameters: exhaustManifold)
 
-//            if let crankshaftPosition = DIRTMEPutAccessory.shared.strathDIRTME {
-                
-                applyCamshaftRotation(sparkPlugGap: sparkPlugGap, crankshaftPosition: crankshaftPosition)
-//            }
+            applyCamshaftRotation(sparkPlugGap: sparkPlugGap, crankshaftPosition: crankshaftPosition)
         }
 
      

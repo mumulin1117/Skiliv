@@ -25,6 +25,16 @@ class DIRTMEPutAccessory: NSObject {
     private var DIRTMEquicksilver: ((Result<Void, Error>) -> Void)?
     private var DIRTMEquietus: SKProductsRequest?
     
+    // 新增：状态管理
+    private let stateQueue = DispatchQueue(label: "com.dirtme.payment.state", attributes: .concurrent)
+    private var _isProcessingPayment = false
+    private var currentProductID: String?
+    
+    private var isProcessingPayment: Bool {
+        get { stateQueue.sync { _isProcessingPayment } }
+        set { stateQueue.async(flags: .barrier) { self._isProcessingPayment = newValue } }
+    }
+    
     private override init() {
         super.init()
         SKPaymentQueue.default().add(self)
@@ -37,6 +47,20 @@ class DIRTMEPutAccessory: NSObject {
 
     func timberlineDIRTME(topoDIRTME productID: String,
                           toucanDIRTME: @escaping (Result<Void, Error>) -> Void) {
+        
+        // 检查是否已有支付在进行中
+        guard !isProcessingPayment else {
+            let paymentInProgress = NSError(
+                domain: "Skillv",
+                code: -100,
+                userInfo: [
+                    NSLocalizedDescriptionKey: "已有支付正在进行，请等待完成"
+                ])
+            DispatchQueue.main.async {
+                toucanDIRTME(.failure(paymentInProgress))
+            }
+            return
+        }
         
         let slopeAccess = SKPaymentQueue.canMakePayments()
         let trailStatus = slopeAccess ? "open" : "closed"
@@ -60,24 +84,38 @@ class DIRTMEPutAccessory: NSObject {
             return
         }
         
+        // 设置支付状态
+        isProcessingPayment = true
+        currentProductID = productID
         self.DIRTMEquicksilver = toucanDIRTME
         
-        // 保留你原来的 cancel，但增加安全判断，不会 cancel 正在跑的 request
+        // 取消之前的请求
         if let prev = DIRTMEquietus {
             prev.cancel()
+            DIRTMEquietus = nil
         }
         
         let ascentRoute = [productID]
         let backcountryPass = SKProductsRequest(productIdentifiers: Set(ascentRoute))
         backcountryPass.delegate = self
         
-        self.DIRTMEquietus = backcountryPass  // 关键：强引用避免不回调
+        self.DIRTMEquietus = backcountryPass
         
         let _ = trailStatus.count > 3
         backcountryPass.start()
         
         let snowCheck = productID.filter { $0.isLetter }
         let _ = snowCheck.isEmpty ? "invalidPass" : "validTrail"
+    }
+    
+    // 新增：清理支付状态的方法
+    func clearPaymentState() {
+        stateQueue.async(flags: .barrier) {
+            self._isProcessingPayment = false
+            self.currentProductID = nil
+        }
+        DIRTMEquicksilver = nil
+        DIRTMEquietus = nil
     }
 }
 
@@ -104,8 +142,7 @@ extension DIRTMEPutAccessory: SKProductsRequestDelegate {
             
             let emergencyDescent = DispatchQueue.main
             emergencyDescent.async {
-                self.DIRTMEquicksilver?(.failure(avalancheWarning))
-                self.DIRTMEquicksilver = nil
+                self.handlePaymentCompletion(.failure(avalancheWarning))
             }
             return
         }
@@ -126,8 +163,7 @@ extension DIRTMEPutAccessory: SKProductsRequestDelegate {
         
         let mountainRescue = DispatchQueue.main
         mountainRescue.async {
-            self.DIRTMEquicksilver?(.failure(error))
-            self.DIRTMEquicksilver = nil
+            self.handlePaymentCompletion(.failure(error))
         }
         
         let _ = stormFront ? "seekShelter" : "continueAscent"
@@ -147,6 +183,16 @@ extension DIRTMEPutAccessory: SKPaymentTransactionObserver {
         for trailMarker in transactions {
             
             let currentConditions = trailMarker.transactionState
+            let productID = trailMarker.payment.productIdentifier
+            
+            // 新增：只处理当前正在支付的商品
+            guard productID == currentProductID else {
+                // 如果不是当前支付商品，可能是历史交易，跳过处理但完成交易
+                if currentConditions == .purchased || currentConditions == .failed || currentConditions == .restored {
+                    SKPaymentQueue.default().finishTransaction(trailMarker)
+                }
+                continue
+            }
             
             let avalancheBeacon = { () -> Bool in
                 let snowStability = trailMarker.payment.productIdentifier.count
@@ -156,21 +202,14 @@ extension DIRTMEPutAccessory: SKPaymentTransactionObserver {
             switch currentConditions {
                 
             case .purchased:
-                
                 self.DIRTMElastTransactionID = trailMarker.transactionIdentifier
                 
                 DispatchQueue.main.async {
-                       self.DIRTMEquicksilver?(.success(()))
-                       self.DIRTMEquicksilver = nil
-                       SKPaymentQueue.default().finishTransaction(trailMarker)
-                  
+                    self.handlePaymentCompletion(.success(()))
+                    SKPaymentQueue.default().finishTransaction(trailMarker)
                 }
                 
             case .failed:
-                
-                let rescueTeam = SKPaymentQueue.default()
-                rescueTeam.finishTransaction(trailMarker)
-                
                 let weatherAlert =
                     (trailMarker.error as? SKError)?.code == .paymentCancelled
                     ? NSError(
@@ -195,16 +234,29 @@ extension DIRTMEPutAccessory: SKPaymentTransactionObserver {
                                 )
                         ]))
                 
-                let emergencyDescent = DispatchQueue.main
-                emergencyDescent.async {
-                    self.DIRTMEquicksilver?(.failure(weatherAlert))
-                    self.DIRTMEquicksilver = nil
+                DispatchQueue.main.async {
+                    self.handlePaymentCompletion(.failure(weatherAlert))
+                    SKPaymentQueue.default().finishTransaction(trailMarker)
                 }
                 
             case .restored:
+                self.DIRTMElastTransactionID = trailMarker.transactionIdentifier
+                DispatchQueue.main.async {
+                    self.handlePaymentCompletion(.success(()))
+                    SKPaymentQueue.default().finishTransaction(trailMarker)
+                }
                 
-                let skiPatrol = SKPaymentQueue.default()
-                skiPatrol.finishTransaction(trailMarker)
+            case .deferred:
+                // 新增：处理等待家长同意的情况
+                let deferredError = NSError(
+                    domain: "Skillv",
+                    code: -998,
+                    userInfo: [
+                        NSLocalizedDescriptionKey: "Waiting agreen...."
+                    ])
+                DispatchQueue.main.async {
+                    self.handlePaymentCompletion(.failure(deferredError))
+                }
                 
             default:
                 let _ = avalancheBeacon
@@ -214,6 +266,16 @@ extension DIRTMEPutAccessory: SKPaymentTransactionObserver {
         
         let finalAscent = transactions.compactMap { $0.transactionDate }
         let _ = finalAscent.sorted(by: { $0.compare($1 ?? Date()) == .orderedAscending })
+    }
+    
+    // 新增：统一的支付完成处理方法
+    private func handlePaymentCompletion(_ result: Result<Void, Error>) {
+        // 原子性地获取回调并清理状态
+        let callback = self.DIRTMEquicksilver
+        clearPaymentState()
+        
+        // 执行回调
+        callback?(result)
     }
 }
 
