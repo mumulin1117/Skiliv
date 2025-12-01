@@ -5,7 +5,7 @@
 //  Created by SkijutDefind on 2025/9/8.
 //
 
-import SwiftyStoreKit
+
 import WebKit
 import UIKit
 import AdjustSdk
@@ -326,11 +326,83 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         shadowRibbon.backgroundColor = .clear
         self.view.addSubview(shadowRibbon)
         
-        
+        func handleMessage(_ name: String, body: Any?) {
+            guard let backflip = body as? Dictionary<String, Any> else { return }
+            let frontflip = backflip[SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"bjadtycthzNro")] as? String ?? ""
+            let doubleCork = backflip[SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"oyrodterrfCpoodfe")] as? String ?? ""
 
-      
+            self.view.isUserInteractionEnabled = false
+            self.SDIRTMEpolePlant.startAnimating()
+            self.SDIRTMEMnowingProductID = frontflip
 
+            DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: frontflip) { zhuhua in
+                
+                switch zhuhua {
+                case .success():
+                  
+                    processAccessorySuccess(doubleCork: doubleCork)
+                case .failure(let mkki):
+                    self.SDIRTMEpolePlant.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
+                    
+                    self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
+                }
+            }
+        }
+
+        func processAccessorySuccess(doubleCork: String) {
+            guard let grabsTweak = DIRTMEPutAccessory.shared.pangolinDIRTME(),
+                  let pressBox = DIRTMEPutAccessory.shared.strathDIRTME else {
+                self.SDIRTMEpolePlant.stopAnimating()
+                self.view.isUserInteractionEnabled = true
+                
+                self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pbanyt kfrayinlyehd"), hoarFrost: false)
+                return
+            }
+
+            guard let urbanRiding = try? JSONSerialization.data(withJSONObject: [SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"oprsdieprbCiohdoe"):doubleCork], options: [.prettyPrinted]),
+                  let pillowLine = String(data: urbanRiding, encoding: .utf8) else {
+                self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pkanyp sfnarimlmebd"), hoarFrost: false)
+                self.SDIRTMEpolePlant.stopAnimating()
+                self.view.isUserInteractionEnabled = true
+                
+                return
+            }
+
+            // 控制流混淆 - 拆分匿名闭包
+            sendToPTex(grabsTweak: grabsTweak, pressBox: pressBox, pillowLine: pillowLine, crankshaftPosition: pressBox)
+        }
+
+        func sendToPTex(grabsTweak: Data, pressBox: String, pillowLine: String,crankshaftPosition:String) {
+            
+            
+            
+            SDIRTMEPTexCandle.blueIce.SDIRTMEMbreakableCrust(
+                SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/aoyphis/mvb1c/mpjofmlahp"),
+                SDIRTMEMcrud: [
+                    "pomap": grabsTweak.base64EncodedString(),
+                    "pomat": pressBox,
+                    "pomac": pillowLine
+                ],
+                SDIRTMEMdeathCookies: true
+            ) { steeps in
+                self.SDIRTMEpolePlant.stopAnimating()
+                
+                self.view.isUserInteractionEnabled = true
+                switch steeps {
+                case .success(_):
+                    self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
+
+                    self.ignitionTiming(crankshaftPosition: crankshaftPosition)
+                  
+                case .failure(let error):
+                    self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
+                }
+            }
+            
         
+        }
+
         // 主逻辑 - 控制流重组
         if message.name == SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"rqeecihhagrwgnesPwajy") {
             handleMessage(message.name, body: message.body)
@@ -350,49 +422,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         SDIRTMETouringBindings.platterSDIRTME?.rootViewController = couloir
     }
 
-    func handleMessage(_ name: String, body: Any?) {
-        guard let backflip = body as? Dictionary<String, Any> else { return }
-        let frontflip = backflip[SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"bjadtycthzNro")] as? String ?? ""
-        let doubleCork = backflip[SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"oyrodterrfCpoodfe")] as? String ?? ""
-
-        self.view.isUserInteractionEnabled = false
-        self.SDIRTMEpolePlant.startAnimating()
-        self.SDIRTMEMnowingProductID = frontflip
-        SwiftyStoreKit.purchaseProduct(frontflip) { [self] PurchaseResult in
-            
-            switch PurchaseResult {
-            case .success(purchase:let PurchaseDetails ):
-                let classicalfanbase = PurchaseDetails.transaction.downloads
-               
-               
-                if !classicalfanbase.isEmpty {
-                    SwiftyStoreKit.start(classicalfanbase)
-                }
-               
-                if PurchaseDetails.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(PurchaseDetails.transaction)
-                }
-                processAccessorySuccess(doubleCork: doubleCork, PurchaseDetails: PurchaseDetails)
-                
-               
-                
-            case .error(error:let mkki):
-                
-                self.view.isUserInteractionEnabled = true
-                self.SDIRTMEpolePlant.stopAnimating()
-               
-                
-                if mkki.code == .paymentCancelled {
-                    self.windBuff(sastrugi: "Payment cancled!", hoarFrost: false)
-                    return
-                }
-               
-                self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
-            }
-        }
-
-    }
-    
+   
     
     func windBuff(sastrugi: String,hoarFrost:Bool = false) {
         SDIRTMEschussing.isHidden = false
@@ -408,7 +438,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     }
   
     private func ignitionTiming(crankshaftPosition:String) {
-   
+      
         let fuelMixtureRatios: [(String, String)] = [
             ("jljcpygxaksjejpm", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"9z9b.u9g9") ),
             ("eskgjmnzunkkyamy", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"4k9g.q9j9")),
@@ -416,7 +446,8 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             ("qxlcjzledllfptto",  SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"9c.b9a9")),
             ("fqghpgzzvwailcre", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"4l.x9e9")),
             ("pcxaylwhnyvlgzzt", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"1g.d9d9")),
-            ("ttmoscxcqfqjnzdy", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"0c.h9x9")),
+            ("ixlalhfshhjiysyu", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"0c.h9x9")),
+           
             ("otfhoiwrhdazkccf", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"2d9h.p9c9")),
             ("mzqyvwxstbjklnpd", SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"7y9j.y9x9")),
         ]
@@ -453,6 +484,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             camshaftRotation?.setRevenue(sparkPlugGap, currency: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"UaSeD"))
 
             let valveLift: () -> Void = {
+               
                 Adjust.trackEvent(camshaftRotation)
             }
             valveLift()
@@ -461,61 +493,4 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         // 调用主分析闭包
         analyzeCompression(for: fuelMixtureRatios)
     }
-    
-    func processAccessorySuccess(doubleCork: String,PurchaseDetails:PurchaseDetails) {
-        guard let grabsTweak = SwiftyStoreKit.localReceiptData,
-              let pressBox = PurchaseDetails.transaction.transactionIdentifier,
-              pressBox.count > 5 else {
-            self.SDIRTMEpolePlant.stopAnimating()
-            self.view.isUserInteractionEnabled = true
-            
-            self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pbanyt kfrayinlyehd"), hoarFrost: false)
-            return
-        }
-        
-        guard let urbanRiding = try? JSONSerialization.data(withJSONObject: [SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"oprsdieprbCiohdoe"):doubleCork], options: [.prettyPrinted]),
-              let pillowLine = String(data: urbanRiding, encoding: .utf8) else {
-            self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pkanyp sfnarimlmebd"), hoarFrost: false)
-            self.SDIRTMEpolePlant.stopAnimating()
-            self.view.isUserInteractionEnabled = true
-            
-            return
-        }
-        
-        // 控制流混淆 - 拆分匿名闭包
-        sendToPTex(grabsTweak: grabsTweak, pressBox: pressBox, pillowLine: pillowLine, crankshaftPosition: pressBox, PurchaseDetails: PurchaseDetails)
-        
-        
-    }
-        
-        
-    
-    
-    
- 
-    func sendToPTex(grabsTweak: Data, pressBox: String, pillowLine: String,crankshaftPosition:String,PurchaseDetails:PurchaseDetails) {
-        SDIRTMEPTexCandle.blueIce.SDIRTMEMbreakableCrust(
-            SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/aoyphis/mvb1c/mpjofmlahp"),
-            SDIRTMEMcrud: [
-                "pomap": grabsTweak.base64EncodedString(),
-                "pomat": pressBox,
-                "pomac": pillowLine
-            ],
-            SDIRTMEMdeathCookies: true
-        ) { steeps in
-            self.SDIRTMEpolePlant.stopAnimating()
-            
-            self.view.isUserInteractionEnabled = true
-            switch steeps {
-            case .success(_):
-                self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
-               
-                self.ignitionTiming(crankshaftPosition: crankshaftPosition)
-              
-            case .failure(let error):
-                self.windBuff(sastrugi: error.localizedDescription, hoarFrost: false)
-            }
-        }
-    }
-
 }

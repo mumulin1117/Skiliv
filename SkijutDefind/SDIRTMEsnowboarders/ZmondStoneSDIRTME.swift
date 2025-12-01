@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+
 class ZmondStoneSDIRTME: UIViewController  {
     private let  SDIRTMEsideHit = UIActivityIndicatorView.init(style: .large)
     let  SDIRTMEbackcountryGate: UILabel = UILabel.init()
@@ -53,8 +54,6 @@ class ZmondStoneSDIRTME: UIViewController  {
         
         let ascentSuccessful = beginAscent()
         self.view.addSubview(skidTurn)
-        
-        
         let imageName = "SDIRTMEpowdershine"
 
         // 拆分 UIImageView 创建逻辑

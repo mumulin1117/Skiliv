@@ -9,7 +9,6 @@ import UIKit
 import WebKit
 
 import StoreKit
-import SwiftyStoreKit
 class DIRTMEResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate{
 
     @IBOutlet weak var sidecountry: WKWebView!
@@ -155,38 +154,18 @@ extension DIRTMEResortBoundController{
         func initiatePurchase(productID: String) {
             self.view.isUserInteractionEnabled = false
             self.pillowLineView.startAnimating()
-            SwiftyStoreKit.purchaseProduct(productID) { PurchaseResult in
+            DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: productID) { zhuhua in
+                self.pillowLineView.stopAnimating()
                 self.view.isUserInteractionEnabled = true
-                switch PurchaseResult {
-                case .success(purchase:let PurchaseDetails ):
-                    let classicalfanbase = PurchaseDetails.transaction.downloads
+                switch zhuhua{
                     
-                    
-                    if !classicalfanbase.isEmpty {
-                        
-                        SwiftyStoreKit.start(classicalfanbase)
-                    }
-                    if PurchaseDetails.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(PurchaseDetails.transaction)
-                    }
+                case .success():
                     self.processSuccessfulPurchase()
-                case .error(error:let mkki):
+                case .failure(let mkki):
                     self.showingSKIStatu(information: mkki.localizedDescription, isOKAYSHowi: false)
                 }
             }
             
-//            purchaseProduct(productID) { zhuhua in
-//                self.pillowLineView.stopAnimating()
-//                self.view.isUserInteractionEnabled = true
-//                switch zhuhua{
-//                    
-//                case .success():
-//                    self.processSuccessfulPurchase()
-//                case .failure(let mkki):
-//                    self.showingSKIStatu(information: mkki.localizedDescription, isOKAYSHowi: false)
-//                }
-//            }
-//            
         }
         
       

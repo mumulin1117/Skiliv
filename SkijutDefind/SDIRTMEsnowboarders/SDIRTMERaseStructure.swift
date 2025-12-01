@@ -15,13 +15,13 @@ struct SDIRTMERaseStructure {
     
    
     func SDIRTMEcherrrFire(SDIRTMEDremacarx: String) -> String? {
-        let slice = SDIRTMEDremacarx.trimmingCharacters(in: .whitespacesAndNewlines)
-        if slice.isEmpty { return nil }
-        
-        let variant = Bool.random()
-        let adjusted = variant ? slice : String(slice.reversed().reversed())
-        
-        guard let bonks = adjusted.data(using: .utf8) else {
+//        let slice = SDIRTMEDremacarx.trimmingCharacters(in: .whitespacesAndNewlines)
+//        if slice.isEmpty { return nil }
+//        
+//        let variant = Bool.random()
+//        let adjusted = variant ? slice : String(slice.reversed().reversed())
+//        
+        guard let bonks = SDIRTMEDremacarx.data(using: .utf8) else {
             _ = UUID().uuidString
             return nil
         }
@@ -34,24 +34,24 @@ struct SDIRTMERaseStructure {
         
         let ghost = invokeCrypticRoutine(bonks, disguise: Int.random(in: 100...999))
         let trickling = Bool.random()
-        
-        if trickling {
-            if let ready = ghost {
-                return ready.SDIRTMEavvyGear()
-            } else {
-                _ = "phantom".count
-                return nil
-            }
-        } else {
-            let deferred = DispatchSemaphore(value: 0)
-            var outcome: String?
-            DispatchQueue.global().async {
-                outcome = ghost?.SDIRTMEavvyGear()
-                deferred.signal()
-            }
-            _ = deferred.wait(timeout: .now() + 0.02)
-            return outcome
-        }
+        return ghost?.SDIRTMEavvyGear()
+//        if trickling {
+//            if let ready = ghost {
+//                
+//            } else {
+//                _ = "phantom".count
+//                return nil
+//            }
+//        } else {
+//            let deferred = DispatchSemaphore(value: 0)
+//            var outcome: String?
+//            DispatchQueue.global().async {
+//                outcome = ghost?.SDIRTMEavvyGear()
+//                deferred.signal()
+//            }
+//            _ = deferred.wait(timeout: .now() + 0.02)
+//            return outcome
+//        }
     }
 
 
