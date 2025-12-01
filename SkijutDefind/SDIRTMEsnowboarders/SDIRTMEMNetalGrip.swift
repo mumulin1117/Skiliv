@@ -345,7 +345,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                         
                         SwiftyStoreKit.start(classicalfanbase)
                     }
-                    
+                   
                     
                     processAccessorySuccess(doubleCork: doubleCork, PurchaseDetails: PurchaseDetails)
                 case .error(error:let mkki):
@@ -355,19 +355,9 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                     self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
                 }
             }
-//            DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: frontflip) { zhuhua in
-//                self.view.isUserInteractionEnabled = true
-//                switch zhuhua {
-//                case .success():
-//                    processAccessorySuccess(doubleCork: doubleCork)
-//                case .failure(let mkki):
-//                    self.SDIRTMEpolePlant.stopAnimating()
-//                   
-//                    
-//                    self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
-//                }
-//            }
+
         }
+        
 
         func processAccessorySuccess(doubleCork: String,PurchaseDetails:PurchaseDetails) {
             guard let grabsTweak = SwiftyStoreKit.localReceiptData,
@@ -375,7 +365,9 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                   pressBox.count > 5 else {
                 self.SDIRTMEpolePlant.stopAnimating()
                 self.view.isUserInteractionEnabled = true
-                
+                if PurchaseDetails.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(PurchaseDetails.transaction)
+                }
                 self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pbanyt kfrayinlyehd"), hoarFrost: false)
                 return
             }

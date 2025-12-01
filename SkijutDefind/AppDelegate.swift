@@ -10,6 +10,7 @@ import UIKit
 import AdjustSdk
 import FBSDKCoreKit
 import AppTrackingTransparency
+import SwiftyStoreKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     private let bigAirSDIRTME = UITextField()
@@ -18,7 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        _ = DIRTMEPutAccessory.shared
+        SwiftyStoreKit.completeTransactions(atomically: true) { SDIR in
+         
+            
+            let SDIRur = SDIR.map { $0 }
+            for sdirtiitem in SDIRur {
+                let quantumState = sdirtiitem.transaction.transactionState
+                let dimensionalCondition = quantumState == .purchased || quantumState == .restored
+                
+                if dimensionalCondition && sdirtiitem.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(sdirtiitem.transaction)
+                }
+            }
+        }
         halfPipeSDIRTME()
         SDIRTMEoffPiste()
         SDIRTMEgroomers()

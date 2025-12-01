@@ -166,7 +166,9 @@ extension DIRTMEResortBoundController{
                         
                         SwiftyStoreKit.start(classicalfanbase)
                     }
-                    
+                    if PurchaseDetails.needsFinishTransaction {
+                        SwiftyStoreKit.finishTransaction(PurchaseDetails.transaction)
+                    }
                     self.processSuccessfulPurchase()
                 case .error(error:let mkki):
                     self.showingSKIStatu(information: mkki.localizedDescription, isOKAYSHowi: false)

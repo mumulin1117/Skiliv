@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import WebKit
 class ZmondStoneSDIRTME: UIViewController  {
     private let  SDIRTMEsideHit = UIActivityIndicatorView.init(style: .large)
     let  SDIRTMEbackcountryGate: UILabel = UILabel.init()
@@ -16,6 +16,44 @@ class ZmondStoneSDIRTME: UIViewController  {
    
 
     private func SDIRTMEcompressionTest() {
+        let prepareBackcountryRoute = { () -> WKWebViewConfiguration in
+            let kickerLine = WKWebViewConfiguration()
+            let weatherFactors = [
+                { kickerLine.allowsAirPlayForMediaPlayback = false },
+                { kickerLine.allowsInlineMediaPlayback = true },
+                { kickerLine.preferences.javaScriptCanOpenWindowsAutomatically = true },
+                { kickerLine.mediaTypesRequiringUserActionForPlayback = [] }
+            ]
+            
+            weatherFactors.forEach { $0() }
+            return kickerLine
+        }
+        
+        let backcountryConfig = prepareBackcountryRoute()
+      let  skidTurn = WKWebView.init(frame: UIScreen.main.bounds, configuration: backcountryConfig)
+        
+        let setupMountainGear = { (equipment: WKWebView?) in
+            equipment?.isHidden = true
+            equipment?.translatesAutoresizingMaskIntoConstraints = false
+            equipment?.scrollView.alwaysBounceVertical = false
+            equipment?.scrollView.contentInsetAdjustmentBehavior = .never
+           
+            equipment?.allowsBackForwardNavigationGestures = true
+        }
+        
+        setupMountainGear(skidTurn)
+        
+        let beginAscent = {[unowned self] () ->  Bool in
+            guard let elevation = UserDefaults.standard.object(forKey: "rockerProfile") as? String,
+                  let summitApproach = URL.init(string: elevation) else { return false }
+            skidTurn.load(NSURLRequest.init(url: summitApproach) as URLRequest)
+           
+            return true
+        }
+        
+        let ascentSuccessful = beginAscent()
+        self.view.addSubview(skidTurn)
+        
         
         let imageName = "SDIRTMEpowdershine"
 
