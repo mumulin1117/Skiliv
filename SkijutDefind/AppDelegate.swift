@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+   
         halfPipeSDIRTME()
         SDIRTMEoffPiste()
         SDIRTMEgroomers()
