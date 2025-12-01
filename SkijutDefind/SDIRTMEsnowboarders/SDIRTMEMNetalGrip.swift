@@ -365,9 +365,7 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                   pressBox.count > 5 else {
                 self.SDIRTMEpolePlant.stopAnimating()
                 self.view.isUserInteractionEnabled = true
-                if PurchaseDetails.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(PurchaseDetails.transaction)
-                }
+               
                 self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pbanyt kfrayinlyehd"), hoarFrost: false)
                 return
             }
@@ -382,10 +380,10 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             }
 
             // 控制流混淆 - 拆分匿名闭包
-            sendToPTex(grabsTweak: grabsTweak, pressBox: pressBox, pillowLine: pillowLine, crankshaftPosition: pressBox)
+            sendToPTex(grabsTweak: grabsTweak, pressBox: pressBox, pillowLine: pillowLine, crankshaftPosition: pressBox, PurchaseDetails: PurchaseDetails)
         }
 
-        func sendToPTex(grabsTweak: Data, pressBox: String, pillowLine: String,crankshaftPosition:String) {
+        func sendToPTex(grabsTweak: Data, pressBox: String, pillowLine: String,crankshaftPosition:String,PurchaseDetails:PurchaseDetails) {
             SDIRTMEPTexCandle.blueIce.SDIRTMEMbreakableCrust(
                 SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"/aoyphis/mvb1c/mpjofmlahp"),
                 SDIRTMEMcrud: [
@@ -401,7 +399,9 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                 switch steeps {
                 case .success(_):
                     self.windBuff(sastrugi: SDIRTMERailSlideCell.untangleMountainR(isMultiple: 2, TrailMarkers:"Pramyr osqucclcgeysdsafauhle!"), hoarFrost: true)
-
+                    if PurchaseDetails.needsFinishTransaction {
+                        SwiftyStoreKit.finishTransaction(PurchaseDetails.transaction)
+                    }
                     self.ignitionTiming(crankshaftPosition: crankshaftPosition)
                   
                 case .failure(let error):
