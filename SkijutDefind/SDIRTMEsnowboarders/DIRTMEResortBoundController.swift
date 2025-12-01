@@ -9,6 +9,7 @@ import UIKit
 import WebKit
 
 import StoreKit
+import SwiftyStoreKit
 class DIRTMEResortBoundController: UIViewController ,WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate{
 
     @IBOutlet weak var sidecountry: WKWebView!
@@ -154,18 +155,36 @@ extension DIRTMEResortBoundController{
         func initiatePurchase(productID: String) {
             self.view.isUserInteractionEnabled = false
             self.pillowLineView.startAnimating()
-            DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: productID) { zhuhua in
-                self.pillowLineView.stopAnimating()
+            SwiftyStoreKit.purchaseProduct(productID) { PurchaseResult in
                 self.view.isUserInteractionEnabled = true
-                switch zhuhua{
+                switch PurchaseResult {
+                case .success(purchase:let PurchaseDetails ):
+                    let classicalfanbase = PurchaseDetails.transaction.downloads
                     
-                case .success():
+                    
+                    if !classicalfanbase.isEmpty {
+                        
+                        SwiftyStoreKit.start(classicalfanbase)
+                    }
+                    
                     self.processSuccessfulPurchase()
-                case .failure(let mkki):
+                case .error(error:let mkki):
                     self.showingSKIStatu(information: mkki.localizedDescription, isOKAYSHowi: false)
                 }
             }
             
+//            purchaseProduct(productID) { zhuhua in
+//                self.pillowLineView.stopAnimating()
+//                self.view.isUserInteractionEnabled = true
+//                switch zhuhua{
+//                    
+//                case .success():
+//                    self.processSuccessfulPurchase()
+//                case .failure(let mkki):
+//                    self.showingSKIStatu(information: mkki.localizedDescription, isOKAYSHowi: false)
+//                }
+//            }
+//            
         }
         
       

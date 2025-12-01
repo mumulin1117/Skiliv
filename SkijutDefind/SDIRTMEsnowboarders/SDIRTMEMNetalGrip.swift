@@ -5,7 +5,7 @@
 //  Created by SkijutDefind on 2025/9/8.
 //
 
-
+import SwiftyStoreKit
 import WebKit
 import UIKit
 import AdjustSdk
@@ -334,24 +334,44 @@ class SDIRTMEMNetalGrip: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             self.view.isUserInteractionEnabled = false
             self.SDIRTMEpolePlant.startAnimating()
             self.SDIRTMEMnowingProductID = frontflip
-
-            DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: frontflip) { zhuhua in
+            SwiftyStoreKit.purchaseProduct(frontflip) { PurchaseResult in
                 self.view.isUserInteractionEnabled = true
-                switch zhuhua {
-                case .success():
-                    processAccessorySuccess(doubleCork: doubleCork)
-                case .failure(let mkki):
+                switch PurchaseResult {
+                case .success(purchase:let PurchaseDetails ):
+                    let classicalfanbase = PurchaseDetails.transaction.downloads
+                    
+                    
+                    if !classicalfanbase.isEmpty {
+                        
+                        SwiftyStoreKit.start(classicalfanbase)
+                    }
+                    
+                    
+                    processAccessorySuccess(doubleCork: doubleCork, PurchaseDetails: PurchaseDetails)
+                case .error(error:let mkki):
                     self.SDIRTMEpolePlant.stopAnimating()
                    
                     
                     self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
                 }
             }
+//            DIRTMEPutAccessory.shared.timberlineDIRTME(topoDIRTME: frontflip) { zhuhua in
+//                self.view.isUserInteractionEnabled = true
+//                switch zhuhua {
+//                case .success():
+//                    processAccessorySuccess(doubleCork: doubleCork)
+//                case .failure(let mkki):
+//                    self.SDIRTMEpolePlant.stopAnimating()
+//                   
+//                    
+//                    self.windBuff(sastrugi: mkki.localizedDescription, hoarFrost: false)
+//                }
+//            }
         }
 
-        func processAccessorySuccess(doubleCork: String) {
-            guard let grabsTweak = DIRTMEPutAccessory.shared.pangolinDIRTME(),
-                  let pressBox = DIRTMEPutAccessory.shared.strathDIRTME,
+        func processAccessorySuccess(doubleCork: String,PurchaseDetails:PurchaseDetails) {
+            guard let grabsTweak = SwiftyStoreKit.localReceiptData,
+                  let pressBox = PurchaseDetails.transaction.transactionIdentifier,
                   pressBox.count > 5 else {
                 self.SDIRTMEpolePlant.stopAnimating()
                 self.view.isUserInteractionEnabled = true
